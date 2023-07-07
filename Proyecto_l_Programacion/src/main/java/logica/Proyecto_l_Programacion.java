@@ -15,5 +15,7 @@ public class Proyecto_l_Programacion {
     public static void main(String[] args) {
         Eliminatoria eli = new Eliminatoria();
         eli.setVisible(true);
+        eli.setResizable(false);
+        eli.setLocationRelativeTo(null);
     }
 }
