@@ -26,7 +26,7 @@ public class Eliminatoria extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        tblConfederaciones = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -48,7 +48,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             .addGap(0, 417, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("tab1", jPanel1);
+        tblConfederaciones.addTab("AFC", jPanel1);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -61,7 +61,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             .addGap(0, 417, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("tab2", jPanel2);
+        tblConfederaciones.addTab("CAF", jPanel2);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -74,7 +74,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             .addGap(0, 417, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("tab3", jPanel3);
+        tblConfederaciones.addTab("CONCACAF", jPanel3);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -87,7 +87,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             .addGap(0, 417, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("tab4", jPanel4);
+        tblConfederaciones.addTab("CONMEBOL", jPanel4);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -100,7 +100,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             .addGap(0, 417, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("tab5", jPanel5);
+        tblConfederaciones.addTab("OFC", jPanel5);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -113,7 +113,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             .addGap(0, 417, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("tab6", jPanel6);
+        tblConfederaciones.addTab("UEFA", jPanel6);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -126,7 +126,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             .addGap(0, 417, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("tab7", jPanel7);
+        tblConfederaciones.addTab("PANTALLA PRINCIPAL", jPanel7);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -134,14 +134,14 @@ public class Eliminatoria extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
+                .addComponent(tblConfederaciones)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
+                .addComponent(tblConfederaciones)
                 .addContainerGap())
         );
 
@@ -191,6 +191,6 @@ public class Eliminatoria extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane tblConfederaciones;
     // End of variables declaration//GEN-END:variables
 }
