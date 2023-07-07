@@ -6,8 +6,10 @@ package GUI;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -15,12 +17,115 @@ import javax.swing.JPanel;
  */
 public class Eliminatoria extends javax.swing.JFrame {
 
- // Instantiate the class created
-    imagenFondo fondo = new imagenFondo(); 
+    DefaultTableModel modeloConca = new DefaultTableModel();
+
+    private void cargaConca() {
+        ArrayList<Object> seleccionesConca = new ArrayList<Object>();
+        seleccionesConca.add("Selecciones");
+        for (Object columna : seleccionesConca) {
+            modeloConca.addColumn(columna);
+        }
+        this.tblSeleccionCONCACAF.setModel(modeloConca);
+
+        ArrayList<Object[]> SeleccionesConca = new ArrayList<Object[]>();
+
+        Object[] seleccion1Conca = new Object[]{"Anguila"};
+        Object[] seleccion2Conca = new Object[]{"Antigua y Barbuda"};
+        Object[] seleccion3Conca = new Object[]{"Aruba"};
+        Object[] seleccion4Conca = new Object[]{"Bahamas"};
+        Object[] seleccion5Conca = new Object[]{"Barbados"};
+        Object[] seleccion6Conca = new Object[]{"Belice"};
+        Object[] seleccion7Conca = new Object[]{"Bermudas"};
+        Object[] seleccion8Conca = new Object[]{"Bonaire"};
+        Object[] seleccion9Conca = new Object[]{"Canadá"};
+        Object[] seleccion10Conca = new Object[]{"Costa Rica"};
+        Object[] seleccion11Conca = new Object[]{"Cuba"};
+        Object[] seleccion12Conca = new Object[]{"Curazao"};
+        Object[] seleccion13Conca = new Object[]{"Dominica"};
+        Object[] seleccion14Conca = new Object[]{"El Salvador"};
+        Object[] seleccion15Conca = new Object[]{"Estados Unidos"};
+        Object[] seleccion16Conca = new Object[]{"Granada"};
+        Object[] seleccion17Conca = new Object[]{"Guatemala"};
+        Object[] seleccion18Conca = new Object[]{"Guadalupe"};
+        Object[] seleccion19Conca = new Object[]{"Guayana"};
+        Object[] seleccion20Conca = new Object[]{"Guayana Francesa"};
+        Object[] seleccion21Conca = new Object[]{"Haití"};
+        Object[] seleccion22Conca = new Object[]{"Honduras"};
+        Object[] seleccion23Conca = new Object[]{"Islas Caimán"};
+        Object[] seleccion24Conca = new Object[]{"Islas Turcas y Caicos"};
+        Object[] seleccion25Conca = new Object[]{"Islas Vírgenes Británicas"};
+        Object[] seleccion26Conca = new Object[]{"Islas Vírgenes de los Estados Unidos"};
+        Object[] seleccion27Conca = new Object[]{"Jamaica"};
+        Object[] seleccion28Conca = new Object[]{"Martinica"};
+        Object[] seleccion29Conca = new Object[]{"México"};
+        Object[] seleccion30Conca = new Object[]{"Montserrat"};
+        Object[] seleccion31Conca = new Object[]{"Nicaragua"};
+        Object[] seleccion32Conca = new Object[]{"Panamá"};
+        Object[] seleccion33Conca = new Object[]{"Puerto Rico"};
+        Object[] seleccion34Conca = new Object[]{"República Dominicana"};
+        Object[] seleccion35Conca = new Object[]{"Saint-Martin"};
+        Object[] seleccion36Conca = new Object[]{"San Cristóbal y Nieves"};
+        Object[] seleccion37Conca = new Object[]{"San Vicente y las Granadinas"};
+        Object[] seleccion38Conca = new Object[]{"Santa Lucía"};
+        Object[] seleccion39Conca = new Object[]{"Sint Maarten"};
+        Object[] seleccion40Conca = new Object[]{"Surinam"};
+        Object[] seleccion41Conca = new Object[]{"Trinidad y Tobago"};
+
+        SeleccionesConca.add(seleccion1Conca);
+        SeleccionesConca.add(seleccion2Conca);
+        SeleccionesConca.add(seleccion3Conca);
+        SeleccionesConca.add(seleccion4Conca);
+        SeleccionesConca.add(seleccion5Conca);
+        SeleccionesConca.add(seleccion6Conca);
+        SeleccionesConca.add(seleccion7Conca);
+        SeleccionesConca.add(seleccion8Conca);
+        SeleccionesConca.add(seleccion9Conca);
+        SeleccionesConca.add(seleccion10Conca);
+        SeleccionesConca.add(seleccion11Conca);
+        SeleccionesConca.add(seleccion12Conca);
+        SeleccionesConca.add(seleccion13Conca);
+        SeleccionesConca.add(seleccion14Conca);
+        SeleccionesConca.add(seleccion15Conca);
+        SeleccionesConca.add(seleccion16Conca);
+        SeleccionesConca.add(seleccion17Conca);
+        SeleccionesConca.add(seleccion18Conca);
+        SeleccionesConca.add(seleccion19Conca);
+        SeleccionesConca.add(seleccion20Conca);
+        SeleccionesConca.add(seleccion21Conca);
+        SeleccionesConca.add(seleccion22Conca);
+        SeleccionesConca.add(seleccion23Conca);
+        SeleccionesConca.add(seleccion24Conca);
+        SeleccionesConca.add(seleccion25Conca);
+        SeleccionesConca.add(seleccion26Conca);
+        SeleccionesConca.add(seleccion27Conca);
+        SeleccionesConca.add(seleccion28Conca);
+        SeleccionesConca.add(seleccion29Conca);
+        SeleccionesConca.add(seleccion30Conca);
+        SeleccionesConca.add(seleccion31Conca);
+        SeleccionesConca.add(seleccion32Conca);
+        SeleccionesConca.add(seleccion33Conca);
+        SeleccionesConca.add(seleccion34Conca);
+        SeleccionesConca.add(seleccion35Conca);
+        SeleccionesConca.add(seleccion36Conca);
+        SeleccionesConca.add(seleccion37Conca);
+        SeleccionesConca.add(seleccion38Conca);
+        SeleccionesConca.add(seleccion39Conca);
+        SeleccionesConca.add(seleccion40Conca);
+        SeleccionesConca.add(seleccion41Conca);
+
+        for (Object []SeleccioneConca : SeleccionesConca)
+        modeloConca.addRow(SeleccioneConca);
+        tblSeleccionCONCACAF.setModel(modeloConca);
+    }
+
+    // Instantiate the class created
+    imagenFondo fondo = new imagenFondo();
+
     public Eliminatoria() {
         initComponents();
+        cargaConca();
         this.setContentPane(fondo);
-        
+
     }
 
     /**
@@ -96,7 +201,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,7 +210,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         tblConfederaciones.addTab("AFC", jPanel1);
@@ -139,7 +244,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,7 +253,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         tblConfederaciones.addTab("CAF", jPanel2);
@@ -178,18 +283,18 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 55, Short.MAX_VALUE))
+                .addGap(0, 67, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 42, Short.MAX_VALUE))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 54, Short.MAX_VALUE))
         );
 
         tblConfederaciones.addTab("CONCACAF", jPanel3);
@@ -220,7 +325,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -231,7 +336,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         tblConfederaciones.addTab("CONMEBOL", jPanel4);
@@ -268,7 +373,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -277,7 +382,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         tblConfederaciones.addTab("OFC", jPanel5);
@@ -311,7 +416,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -320,7 +425,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         tblConfederaciones.addTab("UEFA", jPanel6);
@@ -329,11 +434,11 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 693, Short.MAX_VALUE)
+            .addGap(0, 705, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 469, Short.MAX_VALUE)
+            .addGap(0, 481, Short.MAX_VALUE)
         );
 
         tblConfederaciones.addTab("PANTALLA PRINCIPAL", jPanel7);
@@ -342,17 +447,11 @@ public class Eliminatoria extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tblConfederaciones)
-                .addContainerGap())
+            .addComponent(tblConfederaciones)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tblConfederaciones)
-                .addContainerGap())
+            .addComponent(tblConfederaciones, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
@@ -387,6 +486,7 @@ public class Eliminatoria extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Eliminatoria().setVisible(true);
             }
@@ -428,17 +528,19 @@ public class Eliminatoria extends javax.swing.JFrame {
     private javax.swing.JTable tblSeleccionUEFA;
     // End of variables declaration//GEN-END:variables
 
-    class imagenFondo extends JPanel{
+    class imagenFondo extends JPanel {
+
         //Atributs
         private Image imagen;
+
         //Metods
         @Override
-        public void paint (Graphics g){
+        public void paint(Graphics g) {
             imagen = new ImageIcon(getClass().getResource("Mundial.jpg")).getImage();
             g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);//With "this" we are calling de class created
             setOpaque(false); //to remove de found
             super.paint(g);
         }
     }
-    
+
 }
