@@ -1,14 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package GUI;
 
-import java.awt.Graphics;
-import java.awt.Image;
 import java.util.ArrayList;
-import javax.swing.ImageIcon;
-import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -118,13 +111,10 @@ public class Eliminatoria extends javax.swing.JFrame {
         tblSeleccionCONCACAF.setModel(modeloConca);
     }
 
-    // Instantiate the class created
-    imagenFondo fondo = new imagenFondo();
-
     public Eliminatoria() {
         initComponents();
         cargaConca();
-        this.setContentPane(fondo);
+
 
     }
 
@@ -138,7 +128,7 @@ public class Eliminatoria extends javax.swing.JFrame {
     private void initComponents() {
 
         tblConfederaciones = new javax.swing.JTabbedPane();
-        jPanel1 = new imagenFondo();
+        jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblSeleccionAFC = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -527,20 +517,5 @@ public class Eliminatoria extends javax.swing.JFrame {
     private javax.swing.JTable tblSeleccionOFC;
     private javax.swing.JTable tblSeleccionUEFA;
     // End of variables declaration//GEN-END:variables
-
-    class imagenFondo extends JPanel {
-
-        //Atributs
-        private Image imagen;
-
-        //Metods
-        @Override
-        public void paint(Graphics g) {
-            imagen = new ImageIcon(getClass().getResource("Mundial.jpg")).getImage();
-            g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);//With "this" we are calling de class created
-            setOpaque(false); //to remove de found
-            super.paint(g);
-        }
-    }
 
 }
