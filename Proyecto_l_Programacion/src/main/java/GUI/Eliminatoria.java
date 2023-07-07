@@ -29,19 +29,19 @@ public class Eliminatoria extends javax.swing.JFrame {
         tblConfederaciones = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblSeleccionAFC = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tblPuntajeAFC = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        tblSeleccionCAF = new javax.swing.JTable();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        tblPuntajeCAF = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        tblSeleccionCONCACAF = new javax.swing.JTable();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTable6 = new javax.swing.JTable();
+        tblPuntajeCONCACAF = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         tblSeleccionCONMEBOL = new javax.swing.JTable();
@@ -61,31 +61,25 @@ public class Eliminatoria extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblSeleccionAFC.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Seleccion AFC"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane1.setViewportView(tblSeleccionAFC);
+
+        tblPuntajeAFC.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Pos.", "Seleccion", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif."
+            }
+        ));
+        jScrollPane2.setViewportView(tblPuntajeAFC);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -110,31 +104,25 @@ public class Eliminatoria extends javax.swing.JFrame {
 
         tblConfederaciones.addTab("AFC", jPanel1);
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        tblSeleccionCAF.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane3.setViewportView(jTable3);
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Seleccion CAF"
             }
         ));
-        jScrollPane4.setViewportView(jTable4);
+        jScrollPane3.setViewportView(tblSeleccionCAF);
+
+        tblPuntajeCAF.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Pos.", "Seleccion", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif."
+            }
+        ));
+        jScrollPane4.setViewportView(tblPuntajeCAF);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -159,31 +147,25 @@ public class Eliminatoria extends javax.swing.JFrame {
 
         tblConfederaciones.addTab("CAF", jPanel2);
 
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        tblSeleccionCONCACAF.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane5.setViewportView(jTable5);
 
-        jTable6.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Seleccion CONCACAF"
             }
         ));
-        jScrollPane6.setViewportView(jTable6);
+        jScrollPane5.setViewportView(tblSeleccionCONCACAF);
+
+        tblPuntajeCONCACAF.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Pos.", "Seleccion", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif."
+            }
+        ));
+        jScrollPane6.setViewportView(tblPuntajeCONCACAF);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -211,7 +193,7 @@ public class Eliminatoria extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Selecciones Conmebol"
+                "Selecciones CONMEBOL"
             }
         ));
         jScrollPane7.setViewportView(tblSeleccionCONMEBOL);
@@ -422,16 +404,16 @@ public class Eliminatoria extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
-    private javax.swing.JTable jTable5;
-    private javax.swing.JTable jTable6;
     private javax.swing.JTabbedPane tblConfederaciones;
+    private javax.swing.JTable tblPuntajeAFC;
+    private javax.swing.JTable tblPuntajeCAF;
+    private javax.swing.JTable tblPuntajeCONCACAF;
     private javax.swing.JTable tblPuntajeCONMEBOL;
     private javax.swing.JTable tblPuntajeOFC;
     private javax.swing.JTable tblPuntajeUEFA;
+    private javax.swing.JTable tblSeleccionAFC;
+    private javax.swing.JTable tblSeleccionCAF;
+    private javax.swing.JTable tblSeleccionCONCACAF;
     private javax.swing.JTable tblSeleccionCONMEBOL;
     private javax.swing.JTable tblSeleccionOFC;
     private javax.swing.JTable tblSeleccionUEFA;
