@@ -4,6 +4,8 @@
 
 package logica;
 
+import GUI.*;
+
 /**
  *
  * @author jefry
@@ -11,6 +13,7 @@ package logica;
 public class Proyecto_l_Programacion {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Eliminatoria eli = new Eliminatoria();
+        eli.setVisible(true);
     }
 }
