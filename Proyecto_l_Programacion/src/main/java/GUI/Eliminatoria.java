@@ -44,19 +44,19 @@ public class Eliminatoria extends javax.swing.JFrame {
         jTable6 = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTable7 = new javax.swing.JTable();
+        tblSeleccionCONMEBOL = new javax.swing.JTable();
         jScrollPane8 = new javax.swing.JScrollPane();
-        jTable8 = new javax.swing.JTable();
+        tblPuntajeCONMEBOL = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
-        jTable9 = new javax.swing.JTable();
+        tblSeleccionOFC = new javax.swing.JTable();
         jScrollPane10 = new javax.swing.JScrollPane();
-        jTable10 = new javax.swing.JTable();
+        tblPuntajeOFC = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane11 = new javax.swing.JScrollPane();
-        jTable11 = new javax.swing.JTable();
+        tblSeleccionUEFA = new javax.swing.JTable();
         jScrollPane12 = new javax.swing.JScrollPane();
-        jTable12 = new javax.swing.JTable();
+        tblPuntajeUEFA = new javax.swing.JTable();
         jPanel7 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -206,31 +206,25 @@ public class Eliminatoria extends javax.swing.JFrame {
 
         tblConfederaciones.addTab("CONCACAF", jPanel3);
 
-        jTable7.setModel(new javax.swing.table.DefaultTableModel(
+        tblSeleccionCONMEBOL.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane7.setViewportView(jTable7);
 
-        jTable8.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Selecciones Conmebol"
             }
         ));
-        jScrollPane8.setViewportView(jTable8);
+        jScrollPane7.setViewportView(tblSeleccionCONMEBOL);
+
+        tblPuntajeCONMEBOL.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Pos.", "Selección", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif."
+            }
+        ));
+        jScrollPane8.setViewportView(tblPuntajeCONMEBOL);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -254,31 +248,25 @@ public class Eliminatoria extends javax.swing.JFrame {
 
         tblConfederaciones.addTab("CONMEBOL", jPanel4);
 
-        jTable9.setModel(new javax.swing.table.DefaultTableModel(
+        tblSeleccionOFC.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane9.setViewportView(jTable9);
 
-        jTable10.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Selecciones OFC"
             }
         ));
-        jScrollPane10.setViewportView(jTable10);
+        jScrollPane9.setViewportView(tblSeleccionOFC);
+
+        tblPuntajeOFC.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Pos.", "Selección", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif."
+            }
+        ));
+        jScrollPane10.setViewportView(tblPuntajeOFC);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -303,31 +291,25 @@ public class Eliminatoria extends javax.swing.JFrame {
 
         tblConfederaciones.addTab("OFC", jPanel5);
 
-        jTable11.setModel(new javax.swing.table.DefaultTableModel(
+        tblSeleccionUEFA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane11.setViewportView(jTable11);
 
-        jTable12.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Selecciones UEFA"
             }
         ));
-        jScrollPane12.setViewportView(jTable12);
+        jScrollPane11.setViewportView(tblSeleccionUEFA);
+
+        tblPuntajeUEFA.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Pos.", "Selección", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif."
+            }
+        ));
+        jScrollPane12.setViewportView(tblPuntajeUEFA);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -441,17 +423,17 @@ public class Eliminatoria extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable10;
-    private javax.swing.JTable jTable11;
-    private javax.swing.JTable jTable12;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
-    private javax.swing.JTable jTable7;
-    private javax.swing.JTable jTable8;
-    private javax.swing.JTable jTable9;
     private javax.swing.JTabbedPane tblConfederaciones;
+    private javax.swing.JTable tblPuntajeCONMEBOL;
+    private javax.swing.JTable tblPuntajeOFC;
+    private javax.swing.JTable tblPuntajeUEFA;
+    private javax.swing.JTable tblSeleccionCONMEBOL;
+    private javax.swing.JTable tblSeleccionOFC;
+    private javax.swing.JTable tblSeleccionUEFA;
     // End of variables declaration//GEN-END:variables
 }
