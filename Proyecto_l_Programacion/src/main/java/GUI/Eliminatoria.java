@@ -4,17 +4,23 @@
  */
 package GUI;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+
 /**
  *
  * @author 50672
  */
 public class Eliminatoria extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Eliminatoria
-     */
+ // Instantiate the class created
+    imagenFondo fondo = new imagenFondo(); 
     public Eliminatoria() {
         initComponents();
+        this.setContentPane(fondo);
+        
     }
 
     /**
@@ -27,7 +33,7 @@ public class Eliminatoria extends javax.swing.JFrame {
     private void initComponents() {
 
         tblConfederaciones = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
+        jPanel1 = new imagenFondo();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblSeleccionAFC = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -230,6 +236,8 @@ public class Eliminatoria extends javax.swing.JFrame {
 
         tblConfederaciones.addTab("CONMEBOL", jPanel4);
 
+        jPanel5.setBackground(new java.awt.Color(102, 102, 102));
+
         tblSeleccionOFC.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -248,6 +256,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 "Pos.", "Selección", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif."
             }
         ));
+        tblPuntajeOFC.setOpaque(false);
         jScrollPane10.setViewportView(tblPuntajeOFC);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -418,4 +427,18 @@ public class Eliminatoria extends javax.swing.JFrame {
     private javax.swing.JTable tblSeleccionOFC;
     private javax.swing.JTable tblSeleccionUEFA;
     // End of variables declaration//GEN-END:variables
+
+    class imagenFondo extends JPanel{
+        //Atributs
+        private Image imagen;
+        //Metods
+        @Override
+        public void paint (Graphics g){
+            imagen = new ImageIcon(getClass().getResource("Mundial.jpg")).getImage();
+            g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);//With "this" we are calling de class created
+            setOpaque(false); //to remove de found
+            super.paint(g);
+        }
+    }
+    
 }
