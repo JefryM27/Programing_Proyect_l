@@ -515,6 +515,49 @@ public class Eliminatoria extends javax.swing.JFrame {
         }
         tblSeleccionUEFA.setModel(modeloUEFA);
     }
+    private void cargarOFC() {
+        ArrayList<Object> seleccionesOFC = new ArrayList<Object>();
+        seleccionesOFC.add("Selecciones");
+        for (Object columna : seleccionesOFC) {
+            modeloOFC.addColumn(columna);
+        }
+        this.tblSeleccionOFC.setModel(modeloOFC);
+
+        ArrayList<Object[]> SeleccionesOFC = new ArrayList<Object[]>();
+
+        Object[] seleccion1OFC = new Object[]{"Fiyi"};
+        Object[] seleccion2OFC = new Object[]{"Islas Cook"};
+        Object[] seleccion3OFC = new Object[]{"Islas Salomón"};
+        Object[] seleccion4OFC = new Object[]{"Nueva Caledonia"};
+        Object[] seleccion5OFC = new Object[]{"Nueva Zelanda"};
+        Object[] seleccion6OFC = new Object[]{"Papúa Nueva Guinea"};
+        Object[] seleccion7OFC = new Object[]{"Samoa"};
+        Object[] seleccion8OFC = new Object[]{"Samoa Americana"};
+        Object[] seleccion9OFC = new Object[]{"Tahiti"};
+        Object[] seleccion10OFC = new Object[]{"Tonga"};
+        Object[] seleccion11OFC = new Object[]{"Vanuatu"};
+        Object[] seleccion12OFC = new Object[]{"Islas Kiribati"};
+        Object[] seleccion13OFC = new Object[]{"Tuvalu"};
+
+        SeleccionesOFC.add(seleccion1OFC);
+        SeleccionesOFC.add(seleccion2OFC);
+        SeleccionesOFC.add(seleccion3OFC);
+        SeleccionesOFC.add(seleccion4OFC);
+        SeleccionesOFC.add(seleccion5OFC);
+        SeleccionesOFC.add(seleccion6OFC);
+        SeleccionesOFC.add(seleccion7OFC);
+        SeleccionesOFC.add(seleccion8OFC);
+        SeleccionesOFC.add(seleccion9OFC);
+        SeleccionesOFC.add(seleccion10OFC);
+        SeleccionesOFC.add(seleccion11OFC);
+        SeleccionesOFC.add(seleccion12OFC);
+        SeleccionesOFC.add(seleccion13OFC);
+
+        for (Object[] SeleccioneOFC : SeleccionesOFC) {
+            modeloOFC.addRow(SeleccioneOFC);
+        }
+        tblSeleccionOFC.setModel(modeloOFC);
+    }
     public Eliminatoria() {
         initComponents();
         cargaConca();
@@ -522,6 +565,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         cargarAFC();
         cargarCAF();
         cargarUEFA();
+        cargarOFC();
 
     }
     
