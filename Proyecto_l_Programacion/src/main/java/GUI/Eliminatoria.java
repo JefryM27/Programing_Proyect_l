@@ -264,12 +264,138 @@ public class Eliminatoria extends javax.swing.JFrame {
         }
         tblSeleccionCONMEBOL.setModel(modeloCONMEBOL);
     }
+    
+    private void cargarCAF() {
+        ArrayList<Object> seleccionesCAF = new ArrayList<Object>();
+        seleccionesCAF.add("Selecciones");
+        for (Object columna : seleccionesCAF) {
+            modeloCAF.addColumn(columna);
+        }
+        this.tblSeleccionCAF.setModel(modeloCAF);
+
+        ArrayList<Object[]> SeleccionesCAF = new ArrayList<Object[]>();
+
+        Object[] seleccion1CAF = new Object[]{"Angola"};
+        Object[] seleccion2CAF = new Object[]{"Argelia"};
+        Object[] seleccion3CAF = new Object[]{"Benín"};
+        Object[] seleccion4CAF = new Object[]{"Botsuana"};
+        Object[] seleccion5CAF = new Object[]{"Burkina Faso"};
+        Object[] seleccion6CAF = new Object[]{"Burundi"};
+        Object[] seleccion7CAF = new Object[]{"Cabo Verde"};
+        Object[] seleccion8CAF = new Object[]{"Camerún"};
+        Object[] seleccion9CAF = new Object[]{"Chad"};
+        Object[] seleccion10CAF = new Object[]{"Comoras"};
+        Object[] seleccion11CAF = new Object[]{"Congo"};
+        Object[] seleccion12CAF = new Object[]{"Costa de Marfil"};
+        Object[] seleccion13CAF = new Object[]{"Egipto"};
+        Object[] seleccion14CAF = new Object[]{"Eritrea"};
+        Object[] seleccion15CAF = new Object[]{"Esuatini"};
+        Object[] seleccion16CAF = new Object[]{"Etiopía"};
+        Object[] seleccion17CAF = new Object[]{"Gabón"};
+        Object[] seleccion18CAF = new Object[]{"Gambia"};
+        Object[] seleccion19CAF = new Object[]{"Ghana"};
+        Object[] seleccion20CAF = new Object[]{"Guinea"};
+        Object[] seleccion21CAF = new Object[]{"Guinea Ecuatorial"};
+        Object[] seleccion22CAF = new Object[]{"Guinea-Bissáu"};
+        Object[] seleccion23CAF = new Object[]{"Kenia"};
+        Object[] seleccion24CAF = new Object[]{"Lesoto"};
+        Object[] seleccion25CAF = new Object[]{"Liberia"};
+        Object[] seleccion26CAF = new Object[]{"Libia"};
+        Object[] seleccion27CAF = new Object[]{"Madagascar"};
+        Object[] seleccion28CAF = new Object[]{"Malaui"};
+        Object[] seleccion29CAF = new Object[]{"Mali"};
+        Object[] seleccion30CAF = new Object[]{"Marruecos"};
+        Object[] seleccion31CAF = new Object[]{"Mauricio"};
+        Object[] seleccion32CAF = new Object[]{"Mauritania"};
+        Object[] seleccion33CAF = new Object[]{"Mozambique"};
+        Object[] seleccion34CAF = new Object[]{"Namibia"};
+        Object[] seleccion35CAF = new Object[]{"Níger"};
+        Object[] seleccion36CAF = new Object[]{"Nigeria"};
+        Object[] seleccion37CAF = new Object[]{"RD del Congo"};
+        Object[] seleccion38CAF = new Object[]{"República Centroafricana"};
+        Object[] seleccion39CAF = new Object[]{"Ruanda"};
+        Object[] seleccion40CAF = new Object[]{"Santo Tomé y Príncipe"};
+        Object[] seleccion41CAF = new Object[]{"Senegal"};
+        Object[] seleccion42CAF = new Object[]{"Seychelles"};
+        Object[] seleccion43CAF = new Object[]{"Sierra Leona"};
+        Object[] seleccion44CAF = new Object[]{"Somalia"};
+        Object[] seleccion45CAF = new Object[]{"Sudáfrica"};
+        Object[] seleccion46CAF = new Object[]{"Sudán"};
+        Object[] seleccion47CAF = new Object[]{"Sudán del Sur"};
+        Object[] seleccion48CAF = new Object[]{"Tanzania"};
+        Object[] seleccion49CAF = new Object[]{"Togo"};
+        Object[] seleccion50CAF = new Object[]{"Túnez"};
+        Object[] seleccion51CAF = new Object[]{"Uganda"};
+        Object[] seleccion52CAF = new Object[]{"Yibuti"};
+        Object[] seleccion53CAF = new Object[]{"Zambia"};
+
+
+        SeleccionesCAF.add(seleccion1CAF);
+        SeleccionesCAF.add(seleccion2CAF);
+        SeleccionesCAF.add(seleccion3CAF);
+        SeleccionesCAF.add(seleccion4CAF);
+        SeleccionesCAF.add(seleccion5CAF);
+        SeleccionesCAF.add(seleccion6CAF);
+        SeleccionesCAF.add(seleccion7CAF);
+        SeleccionesCAF.add(seleccion8CAF);
+        SeleccionesCAF.add(seleccion9CAF);
+        SeleccionesCAF.add(seleccion10CAF);
+        SeleccionesCAF.add(seleccion11CAF);
+        SeleccionesCAF.add(seleccion12CAF);
+        SeleccionesCAF.add(seleccion13CAF);
+        SeleccionesCAF.add(seleccion14CAF);
+        SeleccionesCAF.add(seleccion15CAF);
+        SeleccionesCAF.add(seleccion16CAF);
+        SeleccionesCAF.add(seleccion17CAF);
+        SeleccionesCAF.add(seleccion18CAF);
+        SeleccionesCAF.add(seleccion19CAF);
+        SeleccionesCAF.add(seleccion20CAF);
+        SeleccionesCAF.add(seleccion21CAF);
+        SeleccionesCAF.add(seleccion22CAF);
+        SeleccionesCAF.add(seleccion23CAF);
+        SeleccionesCAF.add(seleccion24CAF);
+        SeleccionesCAF.add(seleccion25CAF);
+        SeleccionesCAF.add(seleccion26CAF);
+        SeleccionesCAF.add(seleccion27CAF);
+        SeleccionesCAF.add(seleccion28CAF);
+        SeleccionesCAF.add(seleccion29CAF);
+        SeleccionesCAF.add(seleccion30CAF);
+        SeleccionesCAF.add(seleccion31CAF);
+        SeleccionesCAF.add(seleccion32CAF);
+        SeleccionesCAF.add(seleccion33CAF);
+        SeleccionesCAF.add(seleccion34CAF);
+        SeleccionesCAF.add(seleccion35CAF);
+        SeleccionesCAF.add(seleccion36CAF);
+        SeleccionesCAF.add(seleccion37CAF);
+        SeleccionesCAF.add(seleccion38CAF);
+        SeleccionesCAF.add(seleccion39CAF);
+        SeleccionesCAF.add(seleccion40CAF);
+        SeleccionesCAF.add(seleccion41CAF);
+        SeleccionesCAF.add(seleccion42CAF);
+        SeleccionesCAF.add(seleccion43CAF);
+        SeleccionesCAF.add(seleccion44CAF);
+        SeleccionesCAF.add(seleccion45CAF);
+        SeleccionesCAF.add(seleccion46CAF);
+        SeleccionesCAF.add(seleccion47CAF);
+        SeleccionesCAF.add(seleccion48CAF);
+        SeleccionesCAF.add(seleccion49CAF);
+        SeleccionesCAF.add(seleccion50CAF);
+        SeleccionesCAF.add(seleccion51CAF);
+        SeleccionesCAF.add(seleccion52CAF);
+        SeleccionesCAF.add(seleccion53CAF);
+
+        for (Object[] SeleccioneCAF : SeleccionesCAF) {
+            modeloCAF.addRow(SeleccioneCAF);
+        }
+        tblSeleccionCAF.setModel(modeloCAF);
+    }
 
     public Eliminatoria() {
         initComponents();
         cargaConca();
         cargarCONMEBOL();
         cargarAFC();
+        cargarCAF();
 
     }
     
