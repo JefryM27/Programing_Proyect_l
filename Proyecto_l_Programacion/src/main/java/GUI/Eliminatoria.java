@@ -117,6 +117,115 @@ public class Eliminatoria extends javax.swing.JFrame {
         }
             tblSeleccionCONCACAF.setModel(modeloConca);
     }
+    private void cargarAFC() {
+        ArrayList<Object> seleccionesAFC = new ArrayList<Object>();
+        seleccionesAFC.add("Selecciones");
+        for (Object columna : seleccionesAFC) {
+            modeloAFC.addColumn(columna);
+        }
+        this.tblSeleccionAFC.setModel(modeloAFC);
+
+        ArrayList<Object[]> SeleccionesAFC = new ArrayList<Object[]>();
+
+        Object[] seleccion1AFC = new Object[]{"Afganistán"};
+        Object[] seleccion2AFC = new Object[]{"Arabia Saudí"};
+        Object[] seleccion3AFC = new Object[]{"Australia"};
+        Object[] seleccion4AFC = new Object[]{"Bahréin"};
+        Object[] seleccion5AFC = new Object[]{"Bangladesh"};
+        Object[] seleccion6AFC = new Object[]{"Brunéi Darussalam"};
+        Object[] seleccion7AFC = new Object[]{"Bután"};
+        Object[] seleccion8AFC = new Object[]{"Camboya"};
+        Object[] seleccion9AFC = new Object[]{"Chinese Taipei"};
+        Object[] seleccion10AFC = new Object[]{"Emiratos Árabes Unidos"};
+        Object[] seleccion11AFC = new Object[]{"Filipinas"};
+        Object[] seleccion12AFC = new Object[]{"Guam"};
+        Object[] seleccion13AFC = new Object[]{"Hong Kong China"};
+        Object[] seleccion14AFC = new Object[]{"India"};
+        Object[] seleccion15AFC = new Object[]{"Indonesia"};
+        Object[] seleccion16AFC = new Object[]{"Irak"};
+        Object[] seleccion17AFC = new Object[]{"Japón"};
+        Object[] seleccion18AFC = new Object[]{"Jordania"};
+        Object[] seleccion19AFC = new Object[]{"Kuwait"};
+        Object[] seleccion20AFC = new Object[]{"Laos"};
+        Object[] seleccion21AFC = new Object[]{"Líbano"};
+        Object[] seleccion22AFC = new Object[]{"Macao"};
+        Object[] seleccion23AFC = new Object[]{"Malasia"};
+        Object[] seleccion24AFC = new Object[]{"Maldivas"};
+        Object[] seleccion25AFC = new Object[]{"Mongolia"};
+        Object[] seleccion26AFC = new Object[]{"Myanmar"};
+        Object[] seleccion27AFC = new Object[]{"Nepal"};
+        Object[] seleccion28AFC = new Object[]{"Omán"};
+        Object[] seleccion29AFC = new Object[]{"Pakistán"};
+        Object[] seleccion30AFC = new Object[]{"Palestina"};
+        Object[] seleccion31AFC = new Object[]{"Qatar"};
+        Object[] seleccion32AFC = new Object[]{"RDP de Corea"};
+        Object[] seleccion33AFC = new Object[]{"República de Corea"};
+        Object[] seleccion34AFC = new Object[]{"República Kirguisa"};
+        Object[] seleccion35AFC = new Object[]{"Rl de Irán"};
+        Object[] seleccion36AFC = new Object[]{"RP China"};
+        Object[] seleccion37AFC = new Object[]{"Singapur"};
+        Object[] seleccion38AFC = new Object[]{"Siria"};
+        Object[] seleccion39AFC = new Object[]{"Sri Lanka"};
+        Object[] seleccion40AFC = new Object[]{"Tailandia"};
+        Object[] seleccion41AFC = new Object[]{"Tayikistán"};
+        Object[] seleccion42AFC = new Object[]{"Timor Oriental"};
+        Object[] seleccion43AFC = new Object[]{"Turkmenistán"};
+        Object[] seleccion44AFC = new Object[]{"Uzbekistán"};
+        Object[] seleccion45AFC = new Object[]{"Vietnam"};
+        Object[] seleccion46AFC = new Object[]{"Yemen"};
+
+        SeleccionesAFC.add(seleccion1AFC);
+        SeleccionesAFC.add(seleccion2AFC);
+        SeleccionesAFC.add(seleccion3AFC);
+        SeleccionesAFC.add(seleccion4AFC);
+        SeleccionesAFC.add(seleccion5AFC);
+        SeleccionesAFC.add(seleccion6AFC);
+        SeleccionesAFC.add(seleccion7AFC);
+        SeleccionesAFC.add(seleccion8AFC);
+        SeleccionesAFC.add(seleccion9AFC);
+        SeleccionesAFC.add(seleccion10AFC);
+        SeleccionesAFC.add(seleccion11AFC);
+        SeleccionesAFC.add(seleccion12AFC);
+        SeleccionesAFC.add(seleccion13AFC);
+        SeleccionesAFC.add(seleccion14AFC);
+        SeleccionesAFC.add(seleccion15AFC);
+        SeleccionesAFC.add(seleccion16AFC);
+        SeleccionesAFC.add(seleccion17AFC);
+        SeleccionesAFC.add(seleccion18AFC);
+        SeleccionesAFC.add(seleccion19AFC);
+        SeleccionesAFC.add(seleccion20AFC);
+        SeleccionesAFC.add(seleccion21AFC);
+        SeleccionesAFC.add(seleccion22AFC);
+        SeleccionesAFC.add(seleccion23AFC);
+        SeleccionesAFC.add(seleccion24AFC);
+        SeleccionesAFC.add(seleccion25AFC);
+        SeleccionesAFC.add(seleccion26AFC);
+        SeleccionesAFC.add(seleccion27AFC);
+        SeleccionesAFC.add(seleccion28AFC);
+        SeleccionesAFC.add(seleccion29AFC);
+        SeleccionesAFC.add(seleccion30AFC);
+        SeleccionesAFC.add(seleccion31AFC);
+        SeleccionesAFC.add(seleccion32AFC);
+        SeleccionesAFC.add(seleccion33AFC);
+        SeleccionesAFC.add(seleccion34AFC);
+        SeleccionesAFC.add(seleccion35AFC);
+        SeleccionesAFC.add(seleccion36AFC);
+        SeleccionesAFC.add(seleccion37AFC);
+        SeleccionesAFC.add(seleccion38AFC);
+        SeleccionesAFC.add(seleccion39AFC);
+        SeleccionesAFC.add(seleccion40AFC);
+        SeleccionesAFC.add(seleccion41AFC);
+        SeleccionesAFC.add(seleccion42AFC);
+        SeleccionesAFC.add(seleccion43AFC);
+        SeleccionesAFC.add(seleccion44AFC);
+        SeleccionesAFC.add(seleccion45AFC);
+        SeleccionesAFC.add(seleccion46AFC);
+
+        for (Object[] seleccioneAFC : SeleccionesAFC) {
+            modeloAFC.addRow(seleccioneAFC);
+        }
+        tblSeleccionAFC.setModel(modeloAFC);
+    }
     
     private void cargarCONMEBOL() {
         ArrayList<Object> seleccionesCONMEBOL = new ArrayList<Object>();
@@ -160,9 +269,10 @@ public class Eliminatoria extends javax.swing.JFrame {
         initComponents();
         cargaConca();
         cargarCONMEBOL();
-
+        cargarAFC();
 
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
