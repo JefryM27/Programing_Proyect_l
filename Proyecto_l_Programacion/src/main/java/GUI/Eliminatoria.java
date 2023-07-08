@@ -10,7 +10,13 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Eliminatoria extends javax.swing.JFrame {
 
-    DefaultTableModel modeloConca = new DefaultTableModel();
+    DefaultTableModel modeloConca = new DefaultTableModel();//Se crean los objetos DefaultTableModel vacíos con los nombres modeloConca, modeloAFC, modeloCAF, modeloCONMEBOL, modeloOFC, modeloUEFA
+    DefaultTableModel modeloAFC = new DefaultTableModel();//es una implementación de la interfaz TableModel en Swing que proporciona una estructura de datos tabular para almacenar y gestionar los datos de una tabla.
+    DefaultTableModel modeloCAF = new DefaultTableModel();//estos objetos permiten definir las columnas y filas de una tabla, así como realizar operaciones de inserción, eliminación y modificación de datos en la tabla.
+    DefaultTableModel modeloCONMEBOL = new DefaultTableModel();//en este caso, los objetos DefaultTableModel se inicializan sin ninguna columna o fila específica, lo que significa que están vacíos.
+    DefaultTableModel modeloOFC = new DefaultTableModel();//se crearon estos objetos para crear y gestionar el modelo de tabla que necesitamos.
+    DefaultTableModel modeloUEFA = new DefaultTableModel();
+    
 
     private void cargaConca() {
         ArrayList<Object> seleccionesConca = new ArrayList<Object>();
@@ -106,14 +112,54 @@ public class Eliminatoria extends javax.swing.JFrame {
         SeleccionesConca.add(seleccion40Conca);
         SeleccionesConca.add(seleccion41Conca);
 
-        for (Object []SeleccioneConca : SeleccionesConca)
-        modeloConca.addRow(SeleccioneConca);
-        tblSeleccionCONCACAF.setModel(modeloConca);
+        for (Object []SeleccioneConca : SeleccionesConca){
+            modeloConca.addRow(SeleccioneConca);
+        }
+            tblSeleccionCONCACAF.setModel(modeloConca);
+    }
+    
+    private void cargarCONMEBOL() {
+        ArrayList<Object> seleccionesCONMEBOL = new ArrayList<Object>();
+        seleccionesCONMEBOL.add("Selecciones");
+        for (Object columna : seleccionesCONMEBOL) {
+            modeloCONMEBOL.addColumn(columna);
+        }
+        this.tblSeleccionCONMEBOL.setModel(modeloCONMEBOL);
+
+        ArrayList<Object[]> SeleccionesCONMEBOL = new ArrayList<Object[]>();
+
+        Object[] seleccion1Conmebol = new Object[]{"Argentina"};
+        Object[] seleccion2Conmebol = new Object[]{"Bolivia"};
+        Object[] seleccion3Conmebol = new Object[]{"Brasil"};
+        Object[] seleccion4Conmebol = new Object[]{"Chile"};
+        Object[] seleccion5Conmebol = new Object[]{"Colombia"};
+        Object[] seleccion6Conmebol = new Object[]{"Ecuador"};
+        Object[] seleccion7Conmebol = new Object[]{"Paraguay"};
+        Object[] seleccion8Conmebol = new Object[]{"Perú"};
+        Object[] seleccion9Conmebol = new Object[]{"Uruguay"};
+        Object[] seleccion10Conmebol = new Object[]{"Venezuela"};
+
+        SeleccionesCONMEBOL.add(seleccion1Conmebol);
+        SeleccionesCONMEBOL.add(seleccion2Conmebol);
+        SeleccionesCONMEBOL.add(seleccion3Conmebol);
+        SeleccionesCONMEBOL.add(seleccion4Conmebol);
+        SeleccionesCONMEBOL.add(seleccion5Conmebol);
+        SeleccionesCONMEBOL.add(seleccion6Conmebol);
+        SeleccionesCONMEBOL.add(seleccion7Conmebol);
+        SeleccionesCONMEBOL.add(seleccion8Conmebol);
+        SeleccionesCONMEBOL.add(seleccion9Conmebol);
+        SeleccionesCONMEBOL.add(seleccion10Conmebol);
+
+        for (Object[] SeleccioneCONMEBOL : SeleccionesCONMEBOL) {
+            modeloCONMEBOL.addRow(SeleccioneCONMEBOL);
+        }
+        tblSeleccionCONMEBOL.setModel(modeloCONMEBOL);
     }
 
     public Eliminatoria() {
         initComponents();
         cargaConca();
+        cargarCONMEBOL();
 
 
     }
