@@ -390,12 +390,138 @@ public class Eliminatoria extends javax.swing.JFrame {
         tblSeleccionCAF.setModel(modeloCAF);
     }
 
+    private void cargarUEFA() {
+        ArrayList<Object> seleccionesUEFA = new ArrayList<Object>();
+        seleccionesUEFA.add("Selecciones");
+        for (Object columna : seleccionesUEFA) {
+            modeloUEFA.addColumn(columna);
+        }
+        this.tblSeleccionUEFA.setModel(modeloUEFA);
+
+        ArrayList<Object[]> SeleccionesUEFA = new ArrayList<Object[]>();
+
+        Object[] seleccion1UEFA = new Object[]{"Albania"};
+        Object[] seleccion2UEFA = new Object[]{"Alemania"};
+        Object[] seleccion3UEFA = new Object[]{"Andorra"};
+        Object[] seleccion4UEFA = new Object[]{"Armenia"};
+        Object[] seleccion5UEFA = new Object[]{"Austria"};
+        Object[] seleccion6UEFA = new Object[]{"Azerbaiyán"};
+        Object[] seleccion7UEFA = new Object[]{"Bélgica"};
+        Object[] seleccion8UEFA = new Object[]{"Bielorrusia"};
+        Object[] seleccion9UEFA = new Object[]{"Bosnia y Herzegovina"};
+        Object[] seleccion10UEFA = new Object[]{"Bulgaria"};
+        Object[] seleccion11UEFA = new Object[]{"Chipre"};
+        Object[] seleccion12UEFA = new Object[]{"Croacia"};
+        Object[] seleccion13UEFA = new Object[]{"Dinamarca"};
+        Object[] seleccion14UEFA = new Object[]{"Escocia"};
+        Object[] seleccion15UEFA = new Object[]{"Eslovaquia"};
+        Object[] seleccion16UEFA = new Object[]{"Eslovenia"};
+        Object[] seleccion17UEFA = new Object[]{"España"};
+        Object[] seleccion18UEFA = new Object[]{"Estonia"};
+        Object[] seleccion19UEFA = new Object[]{"Finlandia"};
+        Object[] seleccion20UEFA = new Object[]{"Francia"};
+        Object[] seleccion21UEFA = new Object[]{"Gales"};
+        Object[] seleccion22UEFA = new Object[]{"Georgia"};
+        Object[] seleccion23UEFA = new Object[]{"Gibraltar"};
+        Object[] seleccion24UEFA = new Object[]{"Hungría"};
+        Object[] seleccion25UEFA = new Object[]{"Inglaterra"};
+        Object[] seleccion26UEFA = new Object[]{"Irlanda"};
+        Object[] seleccion27UEFA = new Object[]{"Irlanda del Norte"};
+        Object[] seleccion28UEFA = new Object[]{"Islandia"};
+        Object[] seleccion29UEFA = new Object[]{"Islas Feroe"};
+        Object[] seleccion30UEFA = new Object[]{"Israel"};
+        Object[] seleccion31UEFA = new Object[]{"Italia"};
+        Object[] seleccion32UEFA = new Object[]{"Kazajistán"};
+        Object[] seleccion33UEFA = new Object[]{"Kosovo"};
+        Object[] seleccion34UEFA = new Object[]{"Letonia"};
+        Object[] seleccion35UEFA = new Object[]{"Liechtenstein"};
+        Object[] seleccion36UEFA = new Object[]{"Lituania"};
+        Object[] seleccion37UEFA = new Object[]{"Luxemburgo"};
+        Object[] seleccion38UEFA = new Object[]{"Macedonia del Norte"};
+        Object[] seleccion39UEFA = new Object[]{"Malta"};
+        Object[] seleccion40UEFA = new Object[]{"Moldavia"};
+        Object[] seleccion41UEFA = new Object[]{"Montenegro"};
+        Object[] seleccion42UEFA = new Object[]{"Noruega"};
+        Object[] seleccion43UEFA = new Object[]{"Paises Bajos"};
+        Object[] seleccion44UEFA = new Object[]{"Polonia"};
+        Object[] seleccion45UEFA = new Object[]{"Portugal"};
+        Object[] seleccion46UEFA = new Object[]{"Republica Checa"};
+        Object[] seleccion47UEFA = new Object[]{"Rumania"};
+        Object[] seleccion48UEFA = new Object[]{"Rusia"};
+        Object[] seleccion49UEFA = new Object[]{"San Marino"};
+        Object[] seleccion50UEFA = new Object[]{"Serbia"};
+        Object[] seleccion51UEFA = new Object[]{"Suecia"};
+        Object[] seleccion52UEFA = new Object[]{"Suiza"};
+        Object[] seleccion53UEFA = new Object[]{"Turquia"};
+        Object[] seleccion54UEFA = new Object[]{"Ucrania"};
+
+        SeleccionesUEFA.add(seleccion1UEFA);
+        SeleccionesUEFA.add(seleccion2UEFA);
+        SeleccionesUEFA.add(seleccion3UEFA);
+        SeleccionesUEFA.add(seleccion4UEFA);
+        SeleccionesUEFA.add(seleccion5UEFA);
+        SeleccionesUEFA.add(seleccion6UEFA);
+        SeleccionesUEFA.add(seleccion7UEFA);
+        SeleccionesUEFA.add(seleccion8UEFA);
+        SeleccionesUEFA.add(seleccion9UEFA);
+        SeleccionesUEFA.add(seleccion10UEFA);
+        SeleccionesUEFA.add(seleccion11UEFA);
+        SeleccionesUEFA.add(seleccion12UEFA);
+        SeleccionesUEFA.add(seleccion13UEFA);
+        SeleccionesUEFA.add(seleccion14UEFA);
+        SeleccionesUEFA.add(seleccion15UEFA);
+        SeleccionesUEFA.add(seleccion16UEFA);
+        SeleccionesUEFA.add(seleccion17UEFA);
+        SeleccionesUEFA.add(seleccion18UEFA);
+        SeleccionesUEFA.add(seleccion19UEFA);
+        SeleccionesUEFA.add(seleccion20UEFA);
+        SeleccionesUEFA.add(seleccion21UEFA);
+        SeleccionesUEFA.add(seleccion22UEFA);
+        SeleccionesUEFA.add(seleccion23UEFA);
+        SeleccionesUEFA.add(seleccion24UEFA);
+        SeleccionesUEFA.add(seleccion25UEFA);
+        SeleccionesUEFA.add(seleccion26UEFA);
+        SeleccionesUEFA.add(seleccion27UEFA);
+        SeleccionesUEFA.add(seleccion28UEFA);
+        SeleccionesUEFA.add(seleccion29UEFA);
+        SeleccionesUEFA.add(seleccion30UEFA);
+        SeleccionesUEFA.add(seleccion31UEFA);
+        SeleccionesUEFA.add(seleccion32UEFA);
+        SeleccionesUEFA.add(seleccion33UEFA);
+        SeleccionesUEFA.add(seleccion34UEFA);
+        SeleccionesUEFA.add(seleccion35UEFA);
+        SeleccionesUEFA.add(seleccion36UEFA);
+        SeleccionesUEFA.add(seleccion37UEFA);
+        SeleccionesUEFA.add(seleccion38UEFA);
+        SeleccionesUEFA.add(seleccion39UEFA);
+        SeleccionesUEFA.add(seleccion40UEFA);
+        SeleccionesUEFA.add(seleccion41UEFA);
+        SeleccionesUEFA.add(seleccion42UEFA);
+        SeleccionesUEFA.add(seleccion43UEFA);
+        SeleccionesUEFA.add(seleccion44UEFA);
+        SeleccionesUEFA.add(seleccion45UEFA);
+        SeleccionesUEFA.add(seleccion46UEFA);
+        SeleccionesUEFA.add(seleccion47UEFA);
+        SeleccionesUEFA.add(seleccion48UEFA);
+        SeleccionesUEFA.add(seleccion49UEFA);
+        SeleccionesUEFA.add(seleccion50UEFA);
+        SeleccionesUEFA.add(seleccion51UEFA);
+        SeleccionesUEFA.add(seleccion52UEFA);
+        SeleccionesUEFA.add(seleccion53UEFA);
+        SeleccionesUEFA.add(seleccion54UEFA);
+
+        for (Object[] SeleccioneUEFA : SeleccionesUEFA) {
+            modeloUEFA.addRow(SeleccioneUEFA);
+        }
+        tblSeleccionUEFA.setModel(modeloUEFA);
+    }
     public Eliminatoria() {
         initComponents();
         cargaConca();
         cargarCONMEBOL();
         cargarAFC();
         cargarCAF();
+        cargarUEFA();
 
     }
     
