@@ -11,6 +11,7 @@ import javax.swing.table.DefaultTableModel;
 public class Eliminatoria extends javax.swing.JFrame {
 
     DefaultTableModel modeloConca = new DefaultTableModel();//Se crean los objetos DefaultTableModel vacíos con los nombres modeloConca, modeloAFC, modeloCAF, modeloCONMEBOL, modeloOFC, modeloUEFA
+    DefaultTableModel modeloPuntajeCONCACAF = new DefaultTableModel();//Implementacion del puntaje 
     DefaultTableModel modeloAFC = new DefaultTableModel();//es una implementación de la interfaz TableModel en Swing que proporciona una estructura de datos tabular para almacenar y gestionar los datos de una tabla.
     DefaultTableModel modeloCAF = new DefaultTableModel();//estos objetos permiten definir las columnas y filas de una tabla, así como realizar operaciones de inserción, eliminación y modificación de datos en la tabla.
     DefaultTableModel modeloCONMEBOL = new DefaultTableModel();//en este caso, los objetos DefaultTableModel se inicializan sin ninguna columna o fila específica, lo que significa que están vacíos.
@@ -25,96 +26,52 @@ public class Eliminatoria extends javax.swing.JFrame {
         }
         this.tblSeleccionCONCACAF.setModel(modeloConca);
 
-        ArrayList<Object[]> SeleccionesConca = new ArrayList<Object[]>();
+            String[] nombresSelecciones = {"Costa Rica", "Nicaragua", "Honduras", "Panamá", "El Salvador", "Jamaica", "Trinidad y Tobago", "Guatemala"};
+ArrayList<Object[]> SeleccionesConca = new ArrayList<Object[]>();
 
-        Object[] seleccion1Conca = new Object[]{"Anguila"};
-        Object[] seleccion2Conca = new Object[]{"Antigua y Barbuda"};
-        Object[] seleccion3Conca = new Object[]{"Aruba"};
-        Object[] seleccion4Conca = new Object[]{"Bahamas"};
-        Object[] seleccion5Conca = new Object[]{"Barbados"};
-        Object[] seleccion6Conca = new Object[]{"Belice"};
-        Object[] seleccion7Conca = new Object[]{"Bermudas"};
-        Object[] seleccion8Conca = new Object[]{"Bonaire"};
-        Object[] seleccion9Conca = new Object[]{"Canadá"};
-        Object[] seleccion10Conca = new Object[]{"Costa Rica"};
-        Object[] seleccion11Conca = new Object[]{"Cuba"};
-        Object[] seleccion12Conca = new Object[]{"Curazao"};
-        Object[] seleccion13Conca = new Object[]{"Dominica"};
-        Object[] seleccion14Conca = new Object[]{"El Salvador"};
-        Object[] seleccion15Conca = new Object[]{"Estados Unidos"};
-        Object[] seleccion16Conca = new Object[]{"Granada"};
-        Object[] seleccion17Conca = new Object[]{"Guatemala"};
-        Object[] seleccion18Conca = new Object[]{"Guadalupe"};
-        Object[] seleccion19Conca = new Object[]{"Guayana"};
-        Object[] seleccion20Conca = new Object[]{"Guayana Francesa"};
-        Object[] seleccion21Conca = new Object[]{"Haití"};
-        Object[] seleccion22Conca = new Object[]{"Honduras"};
-        Object[] seleccion23Conca = new Object[]{"Islas Caimán"};
-        Object[] seleccion24Conca = new Object[]{"Islas Turcas y Caicos"};
-        Object[] seleccion25Conca = new Object[]{"Islas Vírgenes Británicas"};
-        Object[] seleccion26Conca = new Object[]{"Islas Vírgenes de los Estados Unidos"};
-        Object[] seleccion27Conca = new Object[]{"Jamaica"};
-        Object[] seleccion28Conca = new Object[]{"Martinica"};
-        Object[] seleccion29Conca = new Object[]{"México"};
-        Object[] seleccion30Conca = new Object[]{"Montserrat"};
-        Object[] seleccion31Conca = new Object[]{"Nicaragua"};
-        Object[] seleccion32Conca = new Object[]{"Panamá"};
-        Object[] seleccion33Conca = new Object[]{"Puerto Rico"};
-        Object[] seleccion34Conca = new Object[]{"República Dominicana"};
-        Object[] seleccion35Conca = new Object[]{"Saint-Martin"};
-        Object[] seleccion36Conca = new Object[]{"San Cristóbal y Nieves"};
-        Object[] seleccion37Conca = new Object[]{"San Vicente y las Granadinas"};
-        Object[] seleccion38Conca = new Object[]{"Santa Lucía"};
-        Object[] seleccion39Conca = new Object[]{"Sint Maarten"};
-        Object[] seleccion40Conca = new Object[]{"Surinam"};
-        Object[] seleccion41Conca = new Object[]{"Trinidad y Tobago"};
-
-        SeleccionesConca.add(seleccion1Conca);
-        SeleccionesConca.add(seleccion2Conca);
-        SeleccionesConca.add(seleccion3Conca);
-        SeleccionesConca.add(seleccion4Conca);
-        SeleccionesConca.add(seleccion5Conca);
-        SeleccionesConca.add(seleccion6Conca);
-        SeleccionesConca.add(seleccion7Conca);
-        SeleccionesConca.add(seleccion8Conca);
-        SeleccionesConca.add(seleccion9Conca);
-        SeleccionesConca.add(seleccion10Conca);
-        SeleccionesConca.add(seleccion11Conca);
-        SeleccionesConca.add(seleccion12Conca);
-        SeleccionesConca.add(seleccion13Conca);
-        SeleccionesConca.add(seleccion14Conca);
-        SeleccionesConca.add(seleccion15Conca);
-        SeleccionesConca.add(seleccion16Conca);
-        SeleccionesConca.add(seleccion17Conca);
-        SeleccionesConca.add(seleccion18Conca);
-        SeleccionesConca.add(seleccion19Conca);
-        SeleccionesConca.add(seleccion20Conca);
-        SeleccionesConca.add(seleccion21Conca);
-        SeleccionesConca.add(seleccion22Conca);
-        SeleccionesConca.add(seleccion23Conca);
-        SeleccionesConca.add(seleccion24Conca);
-        SeleccionesConca.add(seleccion25Conca);
-        SeleccionesConca.add(seleccion26Conca);
-        SeleccionesConca.add(seleccion27Conca);
-        SeleccionesConca.add(seleccion28Conca);
-        SeleccionesConca.add(seleccion29Conca);
-        SeleccionesConca.add(seleccion30Conca);
-        SeleccionesConca.add(seleccion31Conca);
-        SeleccionesConca.add(seleccion32Conca);
-        SeleccionesConca.add(seleccion33Conca);
-        SeleccionesConca.add(seleccion34Conca);
-        SeleccionesConca.add(seleccion35Conca);
-        SeleccionesConca.add(seleccion36Conca);
-        SeleccionesConca.add(seleccion37Conca);
-        SeleccionesConca.add(seleccion38Conca);
-        SeleccionesConca.add(seleccion39Conca);
-        SeleccionesConca.add(seleccion40Conca);
-        SeleccionesConca.add(seleccion41Conca);
-
+for (String nombre : nombresSelecciones) {
+    SeleccionesConca.add(new Object[]{nombre});
+}
         for (Object []SeleccioneConca : SeleccionesConca){
             modeloConca.addRow(SeleccioneConca);
         }
             tblSeleccionCONCACAF.setModel(modeloConca);
+             // Inicializa la tabla de posiciones con las columnas necesarias
+        modeloPuntajeCONCACAF.addColumn("Imagen");
+        modeloPuntajeCONCACAF.addColumn("Posición");
+        modeloPuntajeCONCACAF.addColumn("Selecciones");
+        modeloPuntajeCONCACAF.addColumn("PTS");
+        modeloPuntajeCONCACAF.addColumn("PJ");
+        modeloPuntajeCONCACAF.addColumn("PG");
+        modeloPuntajeCONCACAF.addColumn("PE");
+        modeloPuntajeCONCACAF.addColumn("PP");
+        modeloPuntajeCONCACAF.addColumn("GF");
+        modeloPuntajeCONCACAF.addColumn("GC");
+        modeloPuntajeCONCACAF.addColumn("DIF");
+
+        // Agregar los equipos y puntajes iniciales a la tabla de posiciones
+        for (int i = 0; i < SeleccionesConca.size(); i++) {
+            Object[] equipo = SeleccionesConca.get(i);
+            Object[] filaPuntaje = new Object[modeloPuntajeCONCACAF.getColumnCount()];  // Crear una fila para almacenar los puntajes
+
+            // Cargar la imagen de la bandera desde el paquete "imagenes"
+            /* ImageIcon imagen = new ImageIcon(getClass().getResource("/img/Anguila.png"));*/
+            // Añadir la imagen a la primera fila de la primera columna
+            /*  modeloConca.setValueAt(imagen, 0, 0);*/
+            filaPuntaje[0] = null;  // Agregar la columna de imagen (puede ser null o agregar una imagen en particular)
+            filaPuntaje[1] = i + 1;  // Agregar la posición
+            filaPuntaje[2] = equipo[0];  // Agregar el nombre del equipo
+
+            // Establecer ceros en las columnas de puntajes
+            for (int j = 3; j < modeloPuntajeCONCACAF.getColumnCount(); j++) {
+                filaPuntaje[j] = 0;
+            }
+
+            // Agregar la fila a la tabla de puntajes
+            modeloPuntajeCONCACAF.addRow(filaPuntaje);
+        }
+
+        tblPuntajeCONCACAF.setModel(modeloPuntajeCONCACAF);
     }
     private void cargarAFC() {
         ArrayList<Object> seleccionesAFC = new ArrayList<Object>();
@@ -641,7 +598,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(tblPuntajeCAF);
 
-        lblImagenCAF.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Mundial.jpg")); // NOI18N
         lblImagenCAF.setOpaque(true);
 
         javax.swing.GroupLayout PanelCAFLayout = new javax.swing.GroupLayout(PanelCAF);
@@ -699,7 +655,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         ));
         jScrollPane6.setViewportView(tblPuntajeCONCACAF);
 
-        lblImagenCONCACAF.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Mundial.jpg")); // NOI18N
         lblImagenCONCACAF.setOpaque(true);
 
         javax.swing.GroupLayout PanelCONCACAFLayout = new javax.swing.GroupLayout(PanelCONCACAF);
@@ -708,9 +663,9 @@ public class Eliminatoria extends javax.swing.JFrame {
             PanelCONCACAFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelCONCACAFLayout.createSequentialGroup()
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(174, 174, 174)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 407, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 853, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 174, Short.MAX_VALUE))
             .addGroup(PanelCONCACAFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelCONCACAFLayout.createSequentialGroup()
                     .addContainerGap()
@@ -721,11 +676,10 @@ public class Eliminatoria extends javax.swing.JFrame {
             PanelCONCACAFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelCONCACAFLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(254, Short.MAX_VALUE))
-            .addGroup(PanelCONCACAFLayout.createSequentialGroup()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(PanelCONCACAFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(220, Short.MAX_VALUE))
             .addGroup(PanelCONCACAFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelCONCACAFLayout.createSequentialGroup()
                     .addContainerGap()
@@ -756,7 +710,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         ));
         jScrollPane8.setViewportView(tblPuntajeCONMEBOL);
 
-        lblImagenCONMEBOL.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Mundial.jpg")); // NOI18N
         lblImagenCONMEBOL.setOpaque(true);
 
         javax.swing.GroupLayout PanelCONMEBOLLayout = new javax.swing.GroupLayout(PanelCONMEBOL);
@@ -814,7 +767,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         tblPuntajeOFC.setOpaque(false);
         jScrollPane10.setViewportView(tblPuntajeOFC);
 
-        lblImagenOFC.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Mundial.jpg")); // NOI18N
         lblImagenOFC.setOpaque(true);
 
         javax.swing.GroupLayout PanelOFCLayout = new javax.swing.GroupLayout(PanelOFC);
@@ -870,7 +822,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         ));
         jScrollPane12.setViewportView(tblPuntajeUEFA);
 
-        lblIImagenUEFA.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Pictures\\Proyects\\Mundial.jpg")); // NOI18N
         lblIImagenUEFA.setOpaque(true);
 
         javax.swing.GroupLayout PanelUEFALayout = new javax.swing.GroupLayout(PanelUEFA);
@@ -906,7 +857,6 @@ public class Eliminatoria extends javax.swing.JFrame {
 
         tblConfederaciones.addTab("UEFA", PanelUEFA);
 
-        lblImagenPP.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Pictures\\Proyects\\Mundial.jpg")); // NOI18N
         lblImagenPP.setOpaque(true);
 
         javax.swing.GroupLayout PanelPPLayout = new javax.swing.GroupLayout(PanelPP);
@@ -956,7 +906,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         tblPuntajeAFC.setOpaque(false);
         jScrollPane2.setViewportView(tblPuntajeAFC);
 
-        lblImagenAFC.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Mundial.jpg")); // NOI18N
         lblImagenAFC.setOpaque(true);
 
         javax.swing.GroupLayout PanelAFCLayout = new javax.swing.GroupLayout(PanelAFC);
