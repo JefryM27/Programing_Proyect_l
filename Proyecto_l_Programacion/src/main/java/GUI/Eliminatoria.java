@@ -16,7 +16,6 @@ public class Eliminatoria extends javax.swing.JFrame {
     DefaultTableModel modeloCONMEBOL = new DefaultTableModel();//en este caso, los objetos DefaultTableModel se inicializan sin ninguna columna o fila específica, lo que significa que están vacíos.
     DefaultTableModel modeloOFC = new DefaultTableModel();//se crearon estos objetos para crear y gestionar el modelo de tabla que necesitamos.
     DefaultTableModel modeloUEFA = new DefaultTableModel();
-    
 
     private void cargaConca() {
         ArrayList<Object> seleccionesConca = new ArrayList<Object>();
@@ -580,82 +579,46 @@ public class Eliminatoria extends javax.swing.JFrame {
     private void initComponents() {
 
         tblConfederaciones = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblSeleccionAFC = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tblPuntajeAFC = new javax.swing.JTable();
-        jPanel2 = new javax.swing.JPanel();
+        PanelCAF = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblSeleccionCAF = new javax.swing.JTable();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblPuntajeCAF = new javax.swing.JTable();
-        jPanel3 = new javax.swing.JPanel();
+        lblImagenCAF = new javax.swing.JLabel();
+        PanelCONCACAF = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         tblSeleccionCONCACAF = new javax.swing.JTable();
         jScrollPane6 = new javax.swing.JScrollPane();
         tblPuntajeCONCACAF = new javax.swing.JTable();
-        jPanel4 = new javax.swing.JPanel();
+        lblImagenCONCACAF = new javax.swing.JLabel();
+        PanelCONMEBOL = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         tblSeleccionCONMEBOL = new javax.swing.JTable();
         jScrollPane8 = new javax.swing.JScrollPane();
         tblPuntajeCONMEBOL = new javax.swing.JTable();
-        jPanel5 = new javax.swing.JPanel();
+        lblImagenCONMEBOL = new javax.swing.JLabel();
+        PanelOFC = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
         tblSeleccionOFC = new javax.swing.JTable();
         jScrollPane10 = new javax.swing.JScrollPane();
         tblPuntajeOFC = new javax.swing.JTable();
-        jPanel6 = new javax.swing.JPanel();
+        lblImagenOFC = new javax.swing.JLabel();
+        PanelUEFA = new javax.swing.JPanel();
         jScrollPane11 = new javax.swing.JScrollPane();
         tblSeleccionUEFA = new javax.swing.JTable();
         jScrollPane12 = new javax.swing.JScrollPane();
         tblPuntajeUEFA = new javax.swing.JTable();
-        jPanel7 = new javax.swing.JPanel();
+        lblIImagenUEFA = new javax.swing.JLabel();
+        PanelPP = new javax.swing.JPanel();
+        lblImagenPP = new javax.swing.JLabel();
+        PanelAFC = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblSeleccionAFC = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblPuntajeAFC = new javax.swing.JTable();
+        lblImagenAFC = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        tblSeleccionAFC.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Seleccion AFC"
-            }
-        ));
-        jScrollPane1.setViewportView(tblSeleccionAFC);
-
-        tblPuntajeAFC.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Pos.", "Seleccion", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif."
-            }
-        ));
-        jScrollPane2.setViewportView(tblPuntajeAFC);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(48, Short.MAX_VALUE))
-        );
-
-        tblConfederaciones.addTab("AFC", jPanel1);
 
         tblSeleccionCAF.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -665,6 +628,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 "Seleccion CAF"
             }
         ));
+        tblSeleccionCAF.setOpaque(false);
         jScrollPane3.setViewportView(tblSeleccionCAF);
 
         tblPuntajeCAF.setModel(new javax.swing.table.DefaultTableModel(
@@ -677,28 +641,43 @@ public class Eliminatoria extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(tblPuntajeCAF);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        lblImagenCAF.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Mundial.jpg")); // NOI18N
+        lblImagenCAF.setOpaque(true);
+
+        javax.swing.GroupLayout PanelCAFLayout = new javax.swing.GroupLayout(PanelCAF);
+        PanelCAF.setLayout(PanelCAFLayout);
+        PanelCAFLayout.setHorizontalGroup(
+            PanelCAFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCAFLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(569, Short.MAX_VALUE))
+            .addGroup(PanelCAFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelCAFLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(lblImagenCAF)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        PanelCAFLayout.setVerticalGroup(
+            PanelCAFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCAFLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelCAFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(254, Short.MAX_VALUE))
+            .addGroup(PanelCAFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelCAFLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(lblImagenCAF)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        tblConfederaciones.addTab("CAF", jPanel2);
+        tblConfederaciones.addTab("CAF", PanelCAF);
+
+        jScrollPane5.setOpaque(false);
 
         tblSeleccionCONCACAF.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -720,26 +699,41 @@ public class Eliminatoria extends javax.swing.JFrame {
         ));
         jScrollPane6.setViewportView(tblPuntajeCONCACAF);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        lblImagenCONCACAF.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Mundial.jpg")); // NOI18N
+        lblImagenCONCACAF.setOpaque(true);
+
+        javax.swing.GroupLayout PanelCONCACAFLayout = new javax.swing.GroupLayout(PanelCONCACAF);
+        PanelCONCACAF.setLayout(PanelCONCACAFLayout);
+        PanelCONCACAFLayout.setHorizontalGroup(
+            PanelCONCACAFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCONCACAFLayout.createSequentialGroup()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(174, 174, 174)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 67, Short.MAX_VALUE))
+                .addGap(0, 407, Short.MAX_VALUE))
+            .addGroup(PanelCONCACAFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelCONCACAFLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(lblImagenCONCACAF)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 54, Short.MAX_VALUE))
+        PanelCONCACAFLayout.setVerticalGroup(
+            PanelCONCACAFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCONCACAFLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(254, Short.MAX_VALUE))
+            .addGroup(PanelCONCACAFLayout.createSequentialGroup()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(PanelCONCACAFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelCONCACAFLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(lblImagenCONCACAF)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
-        tblConfederaciones.addTab("CONCACAF", jPanel3);
+        tblConfederaciones.addTab("CONCACAF", PanelCONCACAF);
 
         tblSeleccionCONMEBOL.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -749,6 +743,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 "Selecciones CONMEBOL"
             }
         ));
+        tblSeleccionCONMEBOL.setOpaque(false);
         jScrollPane7.setViewportView(tblSeleccionCONMEBOL);
 
         tblPuntajeCONMEBOL.setModel(new javax.swing.table.DefaultTableModel(
@@ -761,29 +756,42 @@ public class Eliminatoria extends javax.swing.JFrame {
         ));
         jScrollPane8.setViewportView(tblPuntajeCONMEBOL);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        lblImagenCONMEBOL.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Mundial.jpg")); // NOI18N
+        lblImagenCONMEBOL.setOpaque(true);
+
+        javax.swing.GroupLayout PanelCONMEBOLLayout = new javax.swing.GroupLayout(PanelCONMEBOL);
+        PanelCONMEBOL.setLayout(PanelCONMEBOLLayout);
+        PanelCONMEBOLLayout.setHorizontalGroup(
+            PanelCONMEBOLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCONMEBOLLayout.createSequentialGroup()
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                .addGap(36, 36, 36)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(561, Short.MAX_VALUE))
+            .addGroup(PanelCONMEBOLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelCONMEBOLLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(lblImagenCONMEBOL)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        PanelCONMEBOLLayout.setVerticalGroup(
+            PanelCONMEBOLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCONMEBOLLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelCONMEBOLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(254, Short.MAX_VALUE))
+            .addGroup(PanelCONMEBOLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelCONMEBOLLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(lblImagenCONMEBOL)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
-        tblConfederaciones.addTab("CONMEBOL", jPanel4);
+        tblConfederaciones.addTab("CONMEBOL", PanelCONMEBOL);
 
-        jPanel5.setBackground(new java.awt.Color(102, 102, 102));
+        PanelOFC.setBackground(new java.awt.Color(102, 102, 102));
 
         tblSeleccionOFC.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -806,28 +814,41 @@ public class Eliminatoria extends javax.swing.JFrame {
         tblPuntajeOFC.setOpaque(false);
         jScrollPane10.setViewportView(tblPuntajeOFC);
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        lblImagenOFC.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Mundial.jpg")); // NOI18N
+        lblImagenOFC.setOpaque(true);
+
+        javax.swing.GroupLayout PanelOFCLayout = new javax.swing.GroupLayout(PanelOFC);
+        PanelOFC.setLayout(PanelOFCLayout);
+        PanelOFCLayout.setHorizontalGroup(
+            PanelOFCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelOFCLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(604, Short.MAX_VALUE))
+            .addGroup(PanelOFCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelOFCLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(lblImagenOFC)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        PanelOFCLayout.setVerticalGroup(
+            PanelOFCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelOFCLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelOFCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(244, Short.MAX_VALUE))
+            .addGroup(PanelOFCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelOFCLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(lblImagenOFC)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
-        tblConfederaciones.addTab("OFC", jPanel5);
+        tblConfederaciones.addTab("OFC", PanelOFC);
 
         tblSeleccionUEFA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -849,47 +870,139 @@ public class Eliminatoria extends javax.swing.JFrame {
         ));
         jScrollPane12.setViewportView(tblPuntajeUEFA);
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        lblIImagenUEFA.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Pictures\\Proyects\\Mundial.jpg")); // NOI18N
+        lblIImagenUEFA.setOpaque(true);
+
+        javax.swing.GroupLayout PanelUEFALayout = new javax.swing.GroupLayout(PanelUEFA);
+        PanelUEFA.setLayout(PanelUEFALayout);
+        PanelUEFALayout.setHorizontalGroup(
+            PanelUEFALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelUEFALayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(545, Short.MAX_VALUE))
+            .addGroup(PanelUEFALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelUEFALayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(lblIImagenUEFA)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        PanelUEFALayout.setVerticalGroup(
+            PanelUEFALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelUEFALayout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelUEFALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(246, Short.MAX_VALUE))
+            .addGroup(PanelUEFALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelUEFALayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(lblIImagenUEFA)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
-        tblConfederaciones.addTab("UEFA", jPanel6);
+        tblConfederaciones.addTab("UEFA", PanelUEFA);
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 705, Short.MAX_VALUE)
+        lblImagenPP.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Pictures\\Proyects\\Mundial.jpg")); // NOI18N
+        lblImagenPP.setOpaque(true);
+
+        javax.swing.GroupLayout PanelPPLayout = new javax.swing.GroupLayout(PanelPP);
+        PanelPP.setLayout(PanelPPLayout);
+        PanelPPLayout.setHorizontalGroup(
+            PanelPPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1212, Short.MAX_VALUE)
+            .addGroup(PanelPPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelPPLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(lblImagenPP)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 481, Short.MAX_VALUE)
+        PanelPPLayout.setVerticalGroup(
+            PanelPPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 687, Short.MAX_VALUE)
+            .addGroup(PanelPPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelPPLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(lblImagenPP)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
-        tblConfederaciones.addTab("PANTALLA PRINCIPAL", jPanel7);
+        tblConfederaciones.addTab("PANTALLA PRINCIPAL", PanelPP);
+
+        PanelAFC.setOpaque(false);
+
+        tblSeleccionAFC.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Seleccion AFC"
+            }
+        ));
+        tblSeleccionAFC.setOpaque(false);
+        jScrollPane1.setViewportView(tblSeleccionAFC);
+
+        tblPuntajeAFC.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Pos.", "Seleccion", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif."
+            }
+        ));
+        tblPuntajeAFC.setOpaque(false);
+        jScrollPane2.setViewportView(tblPuntajeAFC);
+
+        lblImagenAFC.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Mundial.jpg")); // NOI18N
+        lblImagenAFC.setOpaque(true);
+
+        javax.swing.GroupLayout PanelAFCLayout = new javax.swing.GroupLayout(PanelAFC);
+        PanelAFC.setLayout(PanelAFCLayout);
+        PanelAFCLayout.setHorizontalGroup(
+            PanelAFCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelAFCLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(102, 102, 102)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(463, Short.MAX_VALUE))
+            .addGroup(PanelAFCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelAFCLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(lblImagenAFC)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        PanelAFCLayout.setVerticalGroup(
+            PanelAFCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelAFCLayout.createSequentialGroup()
+                .addGroup(PanelAFCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelAFCLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelAFCLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(241, Short.MAX_VALUE))
+            .addGroup(PanelAFCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelAFCLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(lblImagenAFC)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        tblConfederaciones.addTab("AFC", PanelAFC);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tblConfederaciones)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tblConfederaciones)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -936,13 +1049,13 @@ public class Eliminatoria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel PanelAFC;
+    private javax.swing.JPanel PanelCAF;
+    private javax.swing.JPanel PanelCONCACAF;
+    private javax.swing.JPanel PanelCONMEBOL;
+    private javax.swing.JPanel PanelOFC;
+    private javax.swing.JPanel PanelPP;
+    private javax.swing.JPanel PanelUEFA;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
@@ -955,6 +1068,13 @@ public class Eliminatoria extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JLabel lblIImagenUEFA;
+    private javax.swing.JLabel lblImagenAFC;
+    private javax.swing.JLabel lblImagenCAF;
+    private javax.swing.JLabel lblImagenCONCACAF;
+    private javax.swing.JLabel lblImagenCONMEBOL;
+    private javax.swing.JLabel lblImagenOFC;
+    private javax.swing.JLabel lblImagenPP;
     private javax.swing.JTabbedPane tblConfederaciones;
     private javax.swing.JTable tblPuntajeAFC;
     private javax.swing.JTable tblPuntajeCAF;
@@ -969,5 +1089,4 @@ public class Eliminatoria extends javax.swing.JFrame {
     private javax.swing.JTable tblSeleccionOFC;
     private javax.swing.JTable tblSeleccionUEFA;
     // End of variables declaration//GEN-END:variables
-
 }
