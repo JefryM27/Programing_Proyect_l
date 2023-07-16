@@ -536,27 +536,27 @@ for (String nombre : nombresSelecciones) {
         tblConfederaciones = new javax.swing.JTabbedPane();
         PanelCAF = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblSeleccionCAF = new javax.swing.JTable();
         lblImagenCAF = new javax.swing.JLabel();
         PanelCONCACAF = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tblSeleccionCONCACAF = new javax.swing.JTable();
         lblConcacaf = new javax.swing.JLabel();
         PanelCONMEBOL = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
-        tblPuntajeCONMEBOL = new javax.swing.JTable();
+        tblSeleccionCONMEBOL = new javax.swing.JTable();
         lblImagenCONMEBOL = new javax.swing.JLabel();
         PanelOFC = new javax.swing.JPanel();
         jScrollPane10 = new javax.swing.JScrollPane();
-        tblPuntajeOFC = new javax.swing.JTable();
+        tblSeleccionOFC = new javax.swing.JTable();
         lblImagenOFC = new javax.swing.JLabel();
         PanelUEFA = new javax.swing.JPanel();
         jScrollPane12 = new javax.swing.JScrollPane();
-        tblPuntajeUEFA = new javax.swing.JTable();
+        tblSeleccionUEFA = new javax.swing.JTable();
         lblIImagenUEFA = new javax.swing.JLabel();
         PanelAFC = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        tblSeleccionAFC = new javax.swing.JTable();
         lblImagenAFC = new javax.swing.JLabel();
         JPanelPP = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -576,7 +576,7 @@ for (String nombre : nombresSelecciones) {
 
         PanelCAF.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblSeleccionCAF.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null},
@@ -587,7 +587,7 @@ for (String nombre : nombresSelecciones) {
                 "Posicion", "Banderas", "Seleccion", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblSeleccionCAF);
 
         PanelCAF.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 370));
 
@@ -598,7 +598,7 @@ for (String nombre : nombresSelecciones) {
 
         PanelCONCACAF.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tblSeleccionCONCACAF.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null},
@@ -609,7 +609,7 @@ for (String nombre : nombresSelecciones) {
                 "Posicion", "Banderas", "Seleccion", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"
             }
         ));
-        jScrollPane3.setViewportView(jTable2);
+        jScrollPane3.setViewportView(tblSeleccionCONCACAF);
 
         PanelCONCACAF.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 360));
 
@@ -618,7 +618,7 @@ for (String nombre : nombresSelecciones) {
 
         tblConfederaciones.addTab("CONCACAF", PanelCONCACAF);
 
-        tblPuntajeCONMEBOL.setModel(new javax.swing.table.DefaultTableModel(
+        tblSeleccionCONMEBOL.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -626,7 +626,7 @@ for (String nombre : nombresSelecciones) {
                 "Posicion", "Banderas", "Selección", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"
             }
         ));
-        jScrollPane8.setViewportView(tblPuntajeCONMEBOL);
+        jScrollPane8.setViewportView(tblSeleccionCONMEBOL);
 
         lblImagenCONMEBOL.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\src\\test\\java\\Fondos\\Conmebol.jpg")); // NOI18N
         lblImagenCONMEBOL.setMinimumSize(new java.awt.Dimension(700, 700));
@@ -662,7 +662,7 @@ for (String nombre : nombresSelecciones) {
 
         PanelOFC.setBackground(new java.awt.Color(102, 102, 102));
 
-        tblPuntajeOFC.setModel(new javax.swing.table.DefaultTableModel(
+        tblSeleccionOFC.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -670,8 +670,8 @@ for (String nombre : nombresSelecciones) {
                 "Posicion", "Banderas", "Seleccion", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"
             }
         ));
-        tblPuntajeOFC.setOpaque(false);
-        jScrollPane10.setViewportView(tblPuntajeOFC);
+        tblSeleccionOFC.setOpaque(false);
+        jScrollPane10.setViewportView(tblSeleccionOFC);
 
         lblImagenOFC.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\src\\test\\java\\Fondos\\OFC.jpg")); // NOI18N
         lblImagenOFC.setMinimumSize(new java.awt.Dimension(700, 700));
@@ -706,7 +706,7 @@ for (String nombre : nombresSelecciones) {
 
         tblConfederaciones.addTab("OFC", PanelOFC);
 
-        tblPuntajeUEFA.setModel(new javax.swing.table.DefaultTableModel(
+        tblSeleccionUEFA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -714,7 +714,7 @@ for (String nombre : nombresSelecciones) {
                 "Posicion", "Banderas", "Seleccion", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"
             }
         ));
-        jScrollPane12.setViewportView(tblPuntajeUEFA);
+        jScrollPane12.setViewportView(tblSeleccionUEFA);
 
         lblIImagenUEFA.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\src\\test\\java\\Fondos\\UEFA.jpg")); // NOI18N
         lblIImagenUEFA.setMinimumSize(new java.awt.Dimension(700, 700));
@@ -750,7 +750,7 @@ for (String nombre : nombresSelecciones) {
         PanelAFC.setOpaque(false);
         PanelAFC.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        tblSeleccionAFC.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null},
@@ -761,7 +761,7 @@ for (String nombre : nombresSelecciones) {
                 "Posicion", "Banderas", "Seleccion", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"
             }
         ));
-        jScrollPane9.setViewportView(jTable3);
+        jScrollPane9.setViewportView(tblSeleccionAFC);
 
         PanelAFC.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 620, 290));
 
@@ -853,9 +853,6 @@ for (String nombre : nombresSelecciones) {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
     private javax.swing.JLabel lblConcacaf;
     private javax.swing.JLabel lblIImagenUEFA;
     private javax.swing.JLabel lblImagenAFC;
@@ -864,8 +861,11 @@ for (String nombre : nombresSelecciones) {
     private javax.swing.JLabel lblImagenOFC;
     private javax.swing.JTabbedPane tblConfederaciones;
     private javax.swing.JTable tblPuntajeCONCACAF;
-    private javax.swing.JTable tblPuntajeCONMEBOL;
-    private javax.swing.JTable tblPuntajeOFC;
-    private javax.swing.JTable tblPuntajeUEFA;
+    private javax.swing.JTable tblSeleccionAFC;
+    private javax.swing.JTable tblSeleccionCAF;
+    private javax.swing.JTable tblSeleccionCONCACAF;
+    private javax.swing.JTable tblSeleccionCONMEBOL;
+    private javax.swing.JTable tblSeleccionOFC;
+    private javax.swing.JTable tblSeleccionUEFA;
     // End of variables declaration//GEN-END:variables
 }
