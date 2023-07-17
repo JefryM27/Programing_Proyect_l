@@ -418,6 +418,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         jScrollPane23 = new javax.swing.JScrollPane();
         txtResultadoOFC = new javax.swing.JTextArea();
         btnResultadoOFC = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         btnResultadoUEFA = new javax.swing.JButton();
         jScrollPane24 = new javax.swing.JScrollPane();
@@ -426,7 +427,9 @@ public class Eliminatoria extends javax.swing.JFrame {
         btnSimularTodoUEFA = new javax.swing.JButton();
         jScrollPane25 = new javax.swing.JScrollPane();
         txtResultadoUEFA = new javax.swing.JTextArea();
+        jLabel6 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
 
         tblPuntajeCONCACAF.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -448,13 +451,13 @@ public class Eliminatoria extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Pos.", "Seleccion", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif."
+                "Pos.", "Banderas", "Seleccion", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif."
             }
         ));
         tblPuntajeAFC.setOpaque(false);
         jScrollPane16.setViewportView(tblPuntajeAFC);
 
-        jPanel1.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 0, 1331, 540));
+        jPanel1.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 830, 440));
 
         btnPartidoAFC.setText("Simular partido");
         btnPartidoAFC.addActionListener(new java.awt.event.ActionListener() {
@@ -476,7 +479,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         txtResultadoAFC.setRows(5);
         jScrollPane17.setViewportView(txtResultadoAFC);
 
-        jPanel1.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 161, 530));
+        jPanel1.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 161, 440));
 
         btnResultadoAFC.setText("Ver resultados");
         btnResultadoAFC.addActionListener(new java.awt.event.ActionListener() {
@@ -499,12 +502,12 @@ public class Eliminatoria extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Pos.", "Seleccion", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif."
+                "Pos.", "Banderas", "Seleccion", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif."
             }
         ));
         jScrollPane18.setViewportView(tblPuntajeCAF);
 
-        jPanel2.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 0, 1331, 550));
+        jPanel2.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 0, 710, 380));
 
         btnPartidoCAF.setText("Simular partido");
         btnPartidoCAF.addActionListener(new java.awt.event.ActionListener() {
@@ -526,7 +529,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         txtResultadoCAF.setRows(5);
         jScrollPane19.setViewportView(txtResultadoCAF);
 
-        jPanel2.add(jScrollPane19, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 540));
+        jPanel2.add(jScrollPane19, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 380));
 
         btnResultadoCAF.setText("Ver resultados");
         btnResultadoCAF.addActionListener(new java.awt.event.ActionListener() {
@@ -549,12 +552,12 @@ public class Eliminatoria extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Pos.", "Seleccion", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif."
+                "Pos.", "Banderas", "Seleccion", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif."
             }
         ));
         jScrollPane7.setViewportView(tblPuntajeCONCACAF1);
 
-        jPanel3.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 0, 1331, 510));
+        jPanel3.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 700, 450));
 
         btnPartidoConca.setText("Simular partido");
         btnPartidoConca.addActionListener(new java.awt.event.ActionListener() {
@@ -576,7 +579,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         txtResultadoCONCACAF.setRows(5);
         jScrollPane13.setViewportView(txtResultadoCONCACAF);
 
-        jPanel3.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 500));
+        jPanel3.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 440));
 
         btnResultadoConca.setText("Ver resultados");
         btnResultadoConca.addActionListener(new java.awt.event.ActionListener() {
@@ -588,7 +591,7 @@ public class Eliminatoria extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/Concacaf.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1500, 840));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1500, 850));
 
         tblConfederaciones.addTab("CONCACAF", jPanel3);
 
@@ -599,12 +602,12 @@ public class Eliminatoria extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Pos.", "Seleccion", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif."
+                "Pos.", "Banderas", "Seleccion", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif."
             }
         ));
         jScrollPane20.setViewportView(tblPuntajeCONMEBOL);
 
-        jPanel4.add(jScrollPane20, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 0, 1331, 460));
+        jPanel4.add(jScrollPane20, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 0, 740, 370));
 
         btnPartidoCONMEBOL.setText("Simular partido");
         btnPartidoCONMEBOL.addActionListener(new java.awt.event.ActionListener() {
@@ -626,7 +629,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         txtResultadoCONMEBOL.setRows(5);
         jScrollPane21.setViewportView(txtResultadoCONMEBOL);
 
-        jPanel4.add(jScrollPane21, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 450));
+        jPanel4.add(jScrollPane21, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 360));
 
         btnResultadoCONMEBOL.setText("Ver resultados");
         btnResultadoCONMEBOL.addActionListener(new java.awt.event.ActionListener() {
@@ -644,15 +647,19 @@ public class Eliminatoria extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(102, 102, 102));
 
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         tblPuntajeOFC.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Pos.", "Seleccion", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif."
+                "Pos.", "Banderas", "Seleccion", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif."
             }
         ));
         jScrollPane22.setViewportView(tblPuntajeOFC);
+
+        jPanel8.add(jScrollPane22, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 0, 630, 350));
 
         btnPartidoOFC.setText("Simular partido");
         btnPartidoOFC.addActionListener(new java.awt.event.ActionListener() {
@@ -660,6 +667,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 btnPartidoOFCActionPerformed(evt);
             }
         });
+        jPanel8.add(btnPartidoOFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 730, -1, -1));
 
         btnSimularTodoOFC.setText("Simular todos ");
         btnSimularTodoOFC.addActionListener(new java.awt.event.ActionListener() {
@@ -667,10 +675,13 @@ public class Eliminatoria extends javax.swing.JFrame {
                 btnSimularTodoOFCActionPerformed(evt);
             }
         });
+        jPanel8.add(btnSimularTodoOFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 771, 112, -1));
 
         txtResultadoOFC.setColumns(20);
         txtResultadoOFC.setRows(5);
         jScrollPane23.setViewportView(txtResultadoOFC);
+
+        jPanel8.add(jScrollPane23, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 350));
 
         btnResultadoOFC.setText("Ver resultados");
         btnResultadoOFC.addActionListener(new java.awt.event.ActionListener() {
@@ -678,37 +689,11 @@ public class Eliminatoria extends javax.swing.JFrame {
                 btnResultadoOFCActionPerformed(evt);
             }
         });
+        jPanel8.add(btnResultadoOFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 689, 111, -1));
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btnSimularTodoOFC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnPartidoOFC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(btnResultadoOFC, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane22, javax.swing.GroupLayout.DEFAULT_SIZE, 1331, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane23, javax.swing.GroupLayout.DEFAULT_SIZE, 671, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnResultadoOFC)
-                .addGap(18, 18, 18)
-                .addComponent(btnPartidoOFC)
-                .addGap(18, 18, 18)
-                .addComponent(btnSimularTodoOFC)
-                .addGap(45, 45, 45))
-            .addComponent(jScrollPane22)
-        );
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/OFC.jpg"))); // NOI18N
+        jLabel5.setText("jLabel5");
+        jPanel8.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -4, 1500, 840));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -728,22 +713,27 @@ public class Eliminatoria extends javax.swing.JFrame {
 
         tblConfederaciones.addTab("OFC", jPanel5);
 
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         btnResultadoUEFA.setText("Ver resultados");
         btnResultadoUEFA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResultadoUEFAActionPerformed(evt);
             }
         });
+        jPanel6.add(btnResultadoUEFA, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 111, -1));
 
         tblPuntajeUEFA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Pos.", "Seleccion", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif."
+                "Pos.", "Banderas", "Seleccion", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif."
             }
         ));
         jScrollPane24.setViewportView(tblPuntajeUEFA);
+
+        jPanel6.add(jScrollPane24, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 600, 480));
 
         btnPartidoUEFA.setText("Simular partido");
         btnPartidoUEFA.addActionListener(new java.awt.event.ActionListener() {
@@ -751,6 +741,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 btnPartidoUEFAActionPerformed(evt);
             }
         });
+        jPanel6.add(btnPartidoUEFA, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 530, -1, -1));
 
         btnSimularTodoUEFA.setText("Simular todos ");
         btnSimularTodoUEFA.addActionListener(new java.awt.event.ActionListener() {
@@ -758,54 +749,24 @@ public class Eliminatoria extends javax.swing.JFrame {
                 btnSimularTodoUEFAActionPerformed(evt);
             }
         });
+        jPanel6.add(btnSimularTodoUEFA, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 530, 112, -1));
 
         txtResultadoUEFA.setColumns(20);
         txtResultadoUEFA.setRows(5);
         jScrollPane25.setViewportView(txtResultadoUEFA);
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btnSimularTodoUEFA, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnPartidoUEFA, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(btnResultadoUEFA, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane24, javax.swing.GroupLayout.DEFAULT_SIZE, 1331, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane25, javax.swing.GroupLayout.DEFAULT_SIZE, 671, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnResultadoUEFA)
-                .addGap(18, 18, 18)
-                .addComponent(btnPartidoUEFA)
-                .addGap(18, 18, 18)
-                .addComponent(btnSimularTodoUEFA)
-                .addGap(45, 45, 45))
-            .addComponent(jScrollPane24)
-        );
+        jPanel6.add(jScrollPane25, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 470));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/UEFA.jpg"))); // NOI18N
+        jLabel6.setText("jLabel6");
+        jPanel6.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1500, 840));
 
         tblConfederaciones.addTab("UEFA", jPanel6);
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1510, Short.MAX_VALUE)
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 839, Short.MAX_VALUE)
-        );
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Fondos/Mundial.jpg"))); // NOI18N
+        jPanel7.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1500, 830));
 
         tblConfederaciones.addTab("PANTALLA PRINCIPAL", jPanel7);
 
@@ -913,6 +874,9 @@ public class Eliminatoria extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
