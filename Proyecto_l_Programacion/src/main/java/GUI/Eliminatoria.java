@@ -101,7 +101,7 @@ public class Eliminatoria extends javax.swing.JFrame {
     }
 
     //------------------------------------------Carga modelo CONMEBOL------------------------------------------------------------------------------------------
-        private void cargarModeloCONMEBOL() {
+    private void cargarModeloCONMEBOL() {
         String[] columnas = {"Posición", "Bandera", "Selecciones", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"};
         DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
         tblPuntajeCONMEBOL.setModel(modelo);
@@ -122,8 +122,9 @@ public class Eliminatoria extends javax.swing.JFrame {
             return cellComponent;
         });
     }
+
     //------------------------------------------Carga modelo OFC------------------------------------------------------------------------------------------
-      private void cargarModeloOFC() {
+    private void cargarModeloOFC() {
         String[] columnas = {"Posición", "Bandera", "Selecciones", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"};
         DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
         tblPuntajeOFC.setModel(modelo);
@@ -144,8 +145,9 @@ public class Eliminatoria extends javax.swing.JFrame {
             return cellComponent;
         });
     }
+
     //------------------------------------------Carga modelo UEFA------------------------------------------------------------------------------------------
-      private void cargarModeloUEFA() {
+    private void cargarModeloUEFA() {
         String[] columnas = {"Posición", "Bandera", "Selecciones", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"};
         DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
         tblPuntajeUEFA.setModel(modelo);
@@ -157,7 +159,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             // Verificar si el modelo ha sido cargado
             if (modeloCargado) {
                 int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
-                 Color color = (posicion <= 16) ? new Color(0, 255, 0) : table.getBackground();
+                Color color = (posicion <= 16) ? new Color(0, 255, 0) : table.getBackground();
 
                 cellComponent.setBackground(color);
             } else {
@@ -168,6 +170,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         });
     }
 //------------------------------------------Espacios para cargar Selecciones------------------------------------------------------------------------------------------
+
     private void cargarSeleccionesConca() {
         String[] nombresSelecciones = {"Anguila", "Antigua y Barbuda", "Aruba", "Bahamas", "Barbados", "Belice", "Bermudas", "Canadá", "Costa Rica", "Cuba", "Curazao", "Dominica", "EEUU", "El Salvador", "Granada", "Guatemala", "Guyana", "Haití", "Honduras", "Islas Caimán", "Islas Vírgenes Británicas", "Islas Vírgenes Estadounidenses", "Jamaica", "México", "Montserrat", "Nicaragua", "Panamá", "Puerto Rico", "República Dominicana", "San Cristóbal y Nieves", "San Vicente y las Granadinas", "Santa Lucía", "Surinam", "Trinidad y Tobago", "Turcas y Caicos"};
         DefaultTableModel modelo = (DefaultTableModel) tblPuntajeCONCACAF.getModel();
@@ -200,7 +203,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             modelo.addRow(new Object[]{0, null, nombre, 0, 0, 0, 0, 0, 0, 0, 0});
         }
     }
-    
+
     private void cargarSeleccionesCONMEBOL() {
         String[] nombresSelecciones = {"Argentina", "Bolivia", "Brasil", "Chile", "Colombia", "Ecuador", "Paraguay", "Perú", "Uruguay", "Venezuela"};
         DefaultTableModel modelo = (DefaultTableModel) tblPuntajeCONMEBOL.getModel();
@@ -209,7 +212,8 @@ public class Eliminatoria extends javax.swing.JFrame {
             modelo.addRow(new Object[]{0, null, nombre, 0, 0, 0, 0, 0, 0, 0, 0});
         }
     }
-     private void cargarSeleccionesOFC() {
+
+    private void cargarSeleccionesOFC() {
         String[] nombresSelecciones = {"Fiyi", "Islas Cook", "Islas Salomón", "Nueva Caledonia", "Nueva Zelanda", "Papúa Nueva Guinea", "Samoa", "Samoa Americana", "Tahití", "Tonga", "Vanuatu", "islas Kiribati", "Tuvalu"};
         DefaultTableModel modelo = (DefaultTableModel) tblPuntajeCAF.getModel();
 
@@ -218,7 +222,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         }
     }
 
-     private void cargarSeleccionesUEFA() {
+    private void cargarSeleccionesUEFA() {
         String[] nombresSelecciones = {"Albania", "Alemania", "Andorra", "Armenia", "Austria", "Azerbaiyán", "Bélgica", "Bielorrusia", "Bosnia y Herzegovina", "Bulgaria", "Chipre", "Croacia", "Dinamarca",
             "Escocia" + "Eslovaqui", "Eslovenia", "España", "Estonia", "Finlandia", "Francia", "Gales", "Georgia", "Gibraltar", "Hungría", "Inglaterra", "Irlanda", "Irlanda del Norte",
             "Islandia", "Islas Feroe", "Israel", "Italia", "Kazajistán", "Kosovo", "Letonia", "Liechtenstein", "Lituania", "Luxemburgo", "Macedonia del Norte", "Malta", "Moldavia", "Montenegro", "Noruega", "Paises Bajos",
@@ -229,6 +233,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             modelo.addRow(new Object[]{0, null, nombre, 0, 0, 0, 0, 0, 0, 0, 0});
         }
     }
+
     //---------------------------------Metodo Simular Partidos------------------------------------------------------------------------------------------
     private void simularPartidos(JTable tabla) {
         Random rand = new Random();
@@ -356,7 +361,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         }
     }
 
-   //--------------------------------------------Desactivar botones---------------------------------------------------
+    //--------------------------------------------Desactivar botones---------------------------------------------------
     private void desactivarBotones(JButton simularPartido, JButton botonPartido, JButton botonResultado) {
         btnSimularTodoConca.setEnabled(false);
         btnPartidoConca.setEnabled(false);
@@ -388,7 +393,15 @@ public class Eliminatoria extends javax.swing.JFrame {
     //---------------------------------------------OFC-----------------------------------------------------------
 
     //---------------------------------------------CONMEBOL-----------------------------------------------------------
-    
+    private void cargarCONMEBOL() {
+        cargarModeloAFC();
+        cargarSeleccionesAFC();
+        simularPartidos(tblPuntajeCONMEBOL);
+        actualizarPuntosPartidosJugados(tblPuntajeCONMEBOL);
+        actualizarDiferenciaGoles(tblPuntajeCONMEBOL);
+        ordenarPosiciones(tblPuntajeCONMEBOL);
+        desactivarBotones(btnSimularTodoCONMEBOL, btnPartidoCONMEBOL, btnResultadoCONMEBOL);
+    }
     //---------------------------------------------UEFA-----------------------------------------------------------
     
 //-----------------------------------------------Mensajes--------------------------------------------------------------
@@ -411,8 +424,11 @@ public class Eliminatoria extends javax.swing.JFrame {
         cargarSeleccionesAFC();
         //-----------OFC--------------
         //-----------CONMEBOL---------
+        cargarModeloCONMEBOL();
+        cargarSeleccionesCONMEBOL();
         //-----------UEFA-------------
     }
+//-----------------------------------------SedeEncuentros----------------------------------------------------
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -829,12 +845,12 @@ public class Eliminatoria extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
  //---------------------------Concacaf------------------------------------------------------
     private void btnPartidoConcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoConcaActionPerformed
-cargarConca();
+        cargarConca();
         mensajeUno();
     }//GEN-LAST:event_btnPartidoConcaActionPerformed
 
     private void btnSimularTodoConcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodoConcaActionPerformed
-cargarConca();
+        cargarConca();
         mensajeTodo();
     }//GEN-LAST:event_btnSimularTodoConcaActionPerformed
 
