@@ -391,6 +391,16 @@ public class Eliminatoria extends javax.swing.JFrame {
         desactivarBotones(btnSimularTodoAFC, btnPartidoAFC, btnResultadoAFC);
     }
     //---------------------------------------------OFC-----------------------------------------------------------
+    
+ private void cargarOFC() {
+        cargarModeloConca();
+        cargarSeleccionesConca();
+        simularPartidos(tblPuntajeOFC);
+        actualizarPuntosPartidosJugados(tblPuntajeOFC);
+        actualizarDiferenciaGoles(tblPuntajeOFC);
+        ordenarPosiciones(tblPuntajeOFC);
+        desactivarBotones(btnSimularTodoOFC,btnPartidoOFC,btnResultadoOFC);
+    }
 
     //---------------------------------------------CONMEBOL-----------------------------------------------------------
     private void cargarCONMEBOL() {
