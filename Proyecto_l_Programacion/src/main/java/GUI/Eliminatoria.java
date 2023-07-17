@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Image;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
@@ -465,7 +466,168 @@ public class Eliminatoria extends javax.swing.JFrame {
         cargarSeleccionesUEFA();
     }
 //-----------------------------------------SedeEncuentros----------------------------------------------------
+    public class SedesEncuentros {
 
+        private String identificador;
+        private String paisSede;
+        private String sede;
+        private String[] paisesEncuentro;
+        private String marcador;
+
+        public SedesEncuentros(String identificador, String paisSede, String sede, String[] paisesEncuentro, String marcador) {
+            this.identificador = identificador;
+            this.paisSede = paisSede;
+            this.sede = sede;
+            this.paisesEncuentro = paisesEncuentro;
+            this.marcador = marcador;
+        }
+
+        public String getIdentificador() {
+            return identificador;
+        }
+
+        public void setIdentificador(String identificador) {
+            this.identificador = identificador;
+        }
+
+        public String getPaisSede() {
+            return paisSede;
+        }
+
+        public void setPaisSede(String paisSede) {
+            this.paisSede = paisSede;
+        }
+
+        public String getSede() {
+            return sede;
+        }
+
+        public void setSede(String sede) {
+            this.sede = sede;
+        }
+
+        public String[] getPaisesEncuentro() {
+            return paisesEncuentro;
+        }
+
+        public void setPaisesEncuentro(String[] paisesEncuentro) {
+            this.paisesEncuentro = paisesEncuentro;
+        }
+
+        public String getMarcador() {
+            return marcador;
+        }
+
+        public void setMarcador(String marcador) {
+            this.marcador = marcador;
+        }
+
+        // Método para obtener dos equipos al azar de una confederación, EL ERROR ESTÁ EN OBTENER INFORMACION DE LA CLASE CONFEDERACION 
+        private List<String> obtenerEquiposAlAzar(Confederacion confederacion, Random random) {
+            String[] equiposArray = confederacion.getCONCACAF();
+            List<String> equipos = new ArrayList<>(Arrays.asList(equiposArray));
+
+            int numEquipos = equipos.size();
+
+            // Obtener dos índices aleatorios distintos para los equipos
+            int indexEquipo1 = random.nextInt(numEquipos);
+            int indexEquipo2 = random.nextInt(numEquipos - 1);
+            if (indexEquipo2 >= indexEquipo1) {
+                indexEquipo2++; // Asegurar que el segundo índice sea distinto del primero
+            }
+
+            String equipo1 = equipos.get(indexEquipo1);
+            String equipo2 = equipos.get(indexEquipo2);
+
+            return Arrays.asList(equipo1, equipo2);
+        }
+
+        private static String generarPaisSede(Random random) {
+            String[] paisesSede = {"Estados Unidos", "México", "Canadá"};
+            int index = random.nextInt(paisesSede.length);
+            return paisesSede[index];
+        }
+
+        private static String generarSede(Random random, String paisSede) {
+            String sede;
+            switch (paisSede) {
+                case "Estados Unidos":
+                    String[] sedesEstadosUnidos = {"Atlanta", "Boston", "Dallas", "Houston", "Kansas City", "Los Ángeles",
+                        "Miami", "Nueva York/Nueva Jersey", "Filadelfia", "San Francisco", "Seattle"};
+                    int indexUsa = random.nextInt(sedesEstadosUnidos.length);
+                    sede = sedesEstadosUnidos[indexUsa];
+                    break;
+                case "México":
+                    String[] sedesMexico = {"Guadalajara", "Ciudad de México", "Monterrey"};
+                    int indexMexico = random.nextInt(sedesMexico.length);
+                    sede = sedesMexico[indexMexico];
+                    break;
+                case "Canadá":
+                    String[] sedesCanada = {"Toronto", "Vancouver"};
+                    int indexCanada = random.nextInt(sedesCanada.length);
+                    sede = sedesCanada[indexCanada];
+                    break;
+                default:
+                    sede = "";
+                    break;
+            }
+            return sede;
+        }
+
+        public SedesEncuentros generarSedeEncuentro(String identificador, String[] paisesEncuentro) {
+            Random random = new Random();
+            String paisSede = generarPaisSede(random);
+            String sede = generarSede(random, paisSede);
+            String marcador = " - ";
+
+            return new SedesEncuentros(identificador, paisSede, sede, paisesEncuentro, marcador);
+        }
+
+        //METODO PARA GENERAR UN MARCADOR EN VER RESULTADOS
+        private String generarMarcador(Random random) {
+            int golesEquipoA = random.nextInt(11); // Generar un número aleatorio entre 0 y 10 para los goles del equipo A
+            int golesEquipoB = random.nextInt(11); // Generar un número aleatorio entre 0 y 10 para los goles del equipo B
+
+            return golesEquipoA + "-" + golesEquipoB; // Retornar el marcador en el formato "golesEquipoA-golesEquipoB"
+        }
+
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("Identificador: ").append(identificador).append("\n");
+            sb.append("País de la sede: ").append(paisSede).append("\n");
+            sb.append("Sede: ").append(sede).append("\n");
+            sb.append("Países del encuentro: ").append(String.join(" vs ", paisesEncuentro)).append("\n");
+            sb.append("Marcador: ").append(marcador).append("\n");
+            return sb.toString();
+        }
+
+        private String generarIdentificador() {
+
+            String identificador = "ID-" + identificadorIterativo;
+            identificadorIterativo++; // Incrementar el identificador iterativo
+            return identificador;
+        }
+
+        // Método para obtener el resultado como String
+        private void obtenerResultadoSedeEncuentro() {
+            Random random = new Random();
+            String[] equipos = obtenerEquiposAlAzar(confederacion, random).toArray(new String[0]);
+            String paisSede = generarPaisSede(random);
+            String sede = generarSede(random, paisSede);
+            String marcador = generarMarcador(random);
+            String identificador = generarIdentificador();
+
+            SedesEncuentros sedeEncuentro = new SedesEncuentros(identificador, paisSede, sede, equipos, marcador);
+            txtResultadoAFC.append(sedeEncuentro.toString() + "\n");
+        }
+
+        public void mostrarResultados() {
+            for (int i = 0; i < 160; i++) {
+                obtenerResultadoSedeEncuentro();
+            }
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
