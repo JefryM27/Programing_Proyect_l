@@ -143,6 +143,28 @@ public class Eliminatoria extends javax.swing.JFrame {
         });
     }
     //------------------------------------------Carga modelo UEFA------------------------------------------------------------------------------------------
+      private void cargarModeloUEFA() {
+        String[] columnas = {"Posición", "Bandera", "Selecciones", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"};
+        DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
+        tblPuntajeUEFA.setModel(modelo);
+        modeloCargado = true;
+        // Asignar el renderizador personalizado a todas las columnas
+        tblPuntajeUEFA.setDefaultRenderer(Object.class, (table, value, isSelected, hasFocus, row, column) -> {
+            Component cellComponent = new DefaultTableCellRenderer().getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+
+            // Verificar si el modelo ha sido cargado
+            if (modeloCargado) {
+                int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
+                 Color color = (posicion <= 16) ? new Color(0, 255, 0) : table.getBackground();
+
+                cellComponent.setBackground(color);
+            } else {
+                cellComponent.setBackground(table.getBackground());
+            }
+
+            return cellComponent;
+        });
+    }
 //------------------------------------------Espacios para cargar Selecciones------------------------------------------------------------------------------------------
     private void cargarSeleccionesConca() {
         String[] nombresSelecciones = {"Anguila", "Antigua y Barbuda", "Aruba", "Bahamas", "Barbados", "Belice", "Bermudas", "Canadá", "Costa Rica", "Cuba", "Curazao", "Dominica", "EEUU", "El Salvador", "Granada", "Guatemala", "Guyana", "Haití", "Honduras", "Islas Caimán", "Islas Vírgenes Británicas", "Islas Vírgenes Estadounidenses", "Jamaica", "México", "Montserrat", "Nicaragua", "Panamá", "Puerto Rico", "República Dominicana", "San Cristóbal y Nieves", "San Vicente y las Granadinas", "Santa Lucía", "Surinam", "Trinidad y Tobago", "Turcas y Caicos"};
@@ -194,6 +216,17 @@ public class Eliminatoria extends javax.swing.JFrame {
         }
     }
 
+     private void cargarSeleccionesUEFA() {
+        String[] nombresSelecciones = {"Albania", "Alemania", "Andorra", "Armenia", "Austria", "Azerbaiyán", "Bélgica", "Bielorrusia", "Bosnia y Herzegovina", "Bulgaria", "Chipre", "Croacia", "Dinamarca",
+            "Escocia" + "Eslovaqui", "Eslovenia", "España", "Estonia", "Finlandia", "Francia", "Gales", "Georgia", "Gibraltar", "Hungría", "Inglaterra", "Irlanda", "Irlanda del Norte",
+            "Islandia", "Islas Feroe", "Israel", "Italia", "Kazajistán", "Kosovo", "Letonia", "Liechtenstein", "Lituania", "Luxemburgo", "Macedonia del Norte", "Malta", "Moldavia", "Montenegro", "Noruega", "Paises Bajos",
+            "Polonia", "Portugal", "Republica Checa", "Rumania", "Rusia", "San Marino", "Serbia", "Suecia", "Suiza", "Turquia", "Ucrania"};
+        DefaultTableModel modelo = (DefaultTableModel) tblPuntajeUEFA.getModel();
+
+        for (String nombre : nombresSelecciones) {
+            modelo.addRow(new Object[]{0, null, nombre, 0, 0, 0, 0, 0, 0, 0, 0});
+        }
+    }
     //---------------------------------Metodo Simular Partidos------------------------------------------------------------------------------------------
     private void simularPartidos(JTable tabla) {
         Random rand = new Random();
