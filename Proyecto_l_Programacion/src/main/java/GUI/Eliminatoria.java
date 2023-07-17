@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Image;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JTable;
@@ -98,6 +100,27 @@ public class Eliminatoria extends javax.swing.JFrame {
 
     //------------------------------------------Carga modelo CONMEBOL------------------------------------------------------------------------------------------
     //------------------------------------------Carga modelo OFC------------------------------------------------------------------------------------------
+      private void cargarModeloOFC() {
+        String[] columnas = {"Posición", "Bandera", "Selecciones", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"};
+        DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
+        tblPuntajeOFC.setModel(modelo);
+        modeloCargado = true;
+        // Asignar el renderizador personalizado a todas las columnas
+        tblPuntajeOFC.setDefaultRenderer(Object.class, (table, value, isSelected, hasFocus, row, column) -> {
+            Component cellComponent = new DefaultTableCellRenderer().getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+
+            // Verificar si el modelo ha sido cargado
+            if (modeloCargado) {
+                int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
+                Color color = (posicion <= 1) ? new Color(0, 255, 0) : ((posicion == 2) ? new Color(240, 70, 70) : table.getBackground());
+                cellComponent.setBackground(color);
+            } else {
+                cellComponent.setBackground(table.getBackground());
+            }
+
+            return cellComponent;
+        });
+    }
     //------------------------------------------Carga modelo UEFA------------------------------------------------------------------------------------------
 //------------------------------------------Espacios para cargar Selecciones------------------------------------------------------------------------------------------
     private void cargarSeleccionesConca() {
@@ -126,6 +149,15 @@ public class Eliminatoria extends javax.swing.JFrame {
             "Esuatini", "Etiopía", "Gabón", "Gambia", "Ghana", "Guinea", "Guinea Ecuatorial", "Guinea-Bissáu", "Kenia", "Lesoto", "Liberia", "Libia", "Madagascar", "Malaui", "Mali", "Marruecos", "Mauricio",
             "Mauritania", "Mozambique", "Namibia", "Níger", "Nigeria", "RD del Congo", "República Centroafricana", "Ruanda", "Santo Tomé y Príncipe", "Senegal", "Seychelles", "Sierra Leona", "Somalia",
             "Sudáfrica", "Sudán", "Sudán del Sur", "Tanzania", "Togo", "Túnez", "Uganda", "Yibuti", "Zambia"};
+        DefaultTableModel modelo = (DefaultTableModel) tblPuntajeCAF.getModel();
+
+        for (String nombre : nombresSelecciones) {
+            modelo.addRow(new Object[]{0, null, nombre, 0, 0, 0, 0, 0, 0, 0, 0});
+        }
+    }
+    
+     private void cargarSeleccionesOFC() {
+        String[] nombresSelecciones = {"Fiyi", "Islas Cook", "Islas Salomón", "Nueva Caledonia", "Nueva Zelanda", "Papúa Nueva Guinea", "Samoa", "Samoa Americana", "Tahití", "Tonga", "Vanuatu", "islas Kiribati", "Tuvalu"};
         DefaultTableModel modelo = (DefaultTableModel) tblPuntajeCAF.getModel();
 
         for (String nombre : nombresSelecciones) {
@@ -227,6 +259,42 @@ public class Eliminatoria extends javax.swing.JFrame {
     }
 
     //---------------------------------Metodo Ordenar Posiciones------------------------------------------------------------------------------------------
+    private void ordenarPosiciones(JTable tabla) {
+        DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+
+        // Crear un comparador personalizado para ordenar las filas según el puntaje PTS en forma descendente
+        Comparator<Object[]> comparador = (fila1, fila2) -> {
+            int pts1 = (int) fila1[3];
+            int pts2 = (int) fila2[3];
+            return Integer.compare(pts2, pts1);
+        };
+
+        // Obtener la cantidad de filas del modelo
+        int rowCount = modelo.getRowCount();
+
+        // Ordenar las filas según el puntaje PTS en forma descendente
+        List<Object[]> filas = new ArrayList<>();
+        for (int i = 0; i < rowCount; i++) {
+            Object[] fila = new Object[modelo.getColumnCount()];
+            for (int j = 0; j < modelo.getColumnCount(); j++) {
+                fila[j] = modelo.getValueAt(i, j);
+            }
+            filas.add(fila);
+        }
+        filas.sort(comparador);
+
+        // Actualizar las posiciones en la tabla de posiciones
+        for (int i = 0; i < filas.size(); i++) {
+            Object[] fila = filas.get(i);
+            fila[0] = i + 1; // Actualizar la posición
+            modelo.removeRow(i);
+            modelo.insertRow(i, fila);
+        }
+    }
+
+    
+    
+    
     public Eliminatoria() {
 
     }
