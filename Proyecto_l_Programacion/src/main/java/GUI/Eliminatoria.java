@@ -390,6 +390,16 @@ public class Eliminatoria extends javax.swing.JFrame {
         ordenarPosiciones(tblPuntajeAFC);
         desactivarBotones(btnSimularTodoAFC, btnPartidoAFC, btnResultadoAFC);
     }
+    //---------------------------------------------CAF-----------------------------------------------------------
+     private void cargarCAF() {
+        cargarModeloConca();
+        cargarSeleccionesConca();
+        simularPartidos(tblPuntajeCAF);
+        actualizarPuntosPartidosJugados(tblPuntajeCAF);
+        actualizarDiferenciaGoles(tblPuntajeCAF);
+        ordenarPosiciones(tblPuntajeCAF);
+        desactivarBotones(btnSimularTodoCAF,btnPartidoCAF,btnResultadoCAF);
+    }
     //---------------------------------------------OFC-----------------------------------------------------------
     
  private void cargarOFC() {
@@ -897,11 +907,13 @@ public class Eliminatoria extends javax.swing.JFrame {
     }//GEN-LAST:event_btnResultadoAFCActionPerformed
 //---------------------------CAF------------------------------------------------------
     private void btnPartidoCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoCAFActionPerformed
-        // TODO add your handling code here:
+        cargarCAF();
+        mensajeUno();
     }//GEN-LAST:event_btnPartidoCAFActionPerformed
 
     private void btnSimularTodoCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodoCAFActionPerformed
-        // TODO add your handling code here:
+        cargarCAF();
+        mensajeTodo();
     }//GEN-LAST:event_btnSimularTodoCAFActionPerformed
 
     private void btnResultadoCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoCAFActionPerformed
