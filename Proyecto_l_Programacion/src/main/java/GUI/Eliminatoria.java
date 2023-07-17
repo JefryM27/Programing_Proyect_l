@@ -99,6 +99,27 @@ public class Eliminatoria extends javax.swing.JFrame {
     }
 
     //------------------------------------------Carga modelo CONMEBOL------------------------------------------------------------------------------------------
+        private void cargarModeloCONMEBOL() {
+        String[] columnas = {"Posición", "Bandera", "Selecciones", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"};
+        DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
+        tblPuntajeCONMEBOL.setModel(modelo);
+        modeloCargado = true;
+        // Asignar el renderizador personalizado a todas las columnas
+        tblPuntajeCONMEBOL.setDefaultRenderer(Object.class, (table, value, isSelected, hasFocus, row, column) -> {
+            Component cellComponent = new DefaultTableCellRenderer().getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+
+            // Verificar si el modelo ha sido cargado
+            if (modeloCargado) {
+                int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
+                Color color = (posicion <= 6) ? new Color(0, 255, 0) : ((posicion == 7) ? new Color(240, 70, 70) : table.getBackground());
+                cellComponent.setBackground(color);
+            } else {
+                cellComponent.setBackground(table.getBackground());
+            }
+
+            return cellComponent;
+        });
+    }
     //------------------------------------------Carga modelo OFC------------------------------------------------------------------------------------------
       private void cargarModeloOFC() {
         String[] columnas = {"Posición", "Bandera", "Selecciones", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"};
@@ -156,6 +177,14 @@ public class Eliminatoria extends javax.swing.JFrame {
         }
     }
     
+    private void cargarSeleccionesCONMEBOL() {
+        String[] nombresSelecciones = {"Argentina", "Bolivia", "Brasil", "Chile", "Colombia", "Ecuador", "Paraguay", "Perú", "Uruguay", "Venezuela"};
+        DefaultTableModel modelo = (DefaultTableModel) tblPuntajeCONMEBOL.getModel();
+
+        for (String nombre : nombresSelecciones) {
+            modelo.addRow(new Object[]{0, null, nombre, 0, 0, 0, 0, 0, 0, 0, 0});
+        }
+    }
      private void cargarSeleccionesOFC() {
         String[] nombresSelecciones = {"Fiyi", "Islas Cook", "Islas Salomón", "Nueva Caledonia", "Nueva Zelanda", "Papúa Nueva Guinea", "Samoa", "Samoa Americana", "Tahití", "Tonga", "Vanuatu", "islas Kiribati", "Tuvalu"};
         DefaultTableModel modelo = (DefaultTableModel) tblPuntajeCAF.getModel();
