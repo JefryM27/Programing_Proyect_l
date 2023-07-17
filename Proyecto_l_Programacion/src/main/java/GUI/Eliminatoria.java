@@ -413,7 +413,16 @@ public class Eliminatoria extends javax.swing.JFrame {
         desactivarBotones(btnSimularTodoCONMEBOL, btnPartidoCONMEBOL, btnResultadoCONMEBOL);
     }
     //---------------------------------------------UEFA-----------------------------------------------------------
-    
+    private void cargarUEFA() {
+        cargarModeloAFC();
+        cargarSeleccionesAFC();
+        simularPartidos(tblPuntajeUEFA);
+        actualizarPuntosPartidosJugados(tblPuntajeUEFA);
+        actualizarDiferenciaGoles(tblPuntajeUEFA);
+        ordenarPosiciones(tblPuntajeUEFA);
+        desactivarBotones(btnSimularTodoUEFA,btnPartidoUEFA,btnResultadoUEFA);  
+    }
+
 //-----------------------------------------------Mensajes--------------------------------------------------------------
     private void mensajeTodo() {
         JOptionPane.showMessageDialog(this, "Se a jugado todos los partidos");
