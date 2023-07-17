@@ -26,6 +26,7 @@ public class Eliminatoria extends javax.swing.JFrame {
     private boolean modeloCargado = false;
 //------------------------------------------Espacios para cargar modelos------------------------------------------------------------------------------------------
     //------------------------------------------Carga modelo Conca------------------------------------------------------------------------------------------
+
     private void cargarModeloConca() {
         String[] columnas = {"Posición", "Bandera", "Selecciones", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"};
         DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
@@ -48,6 +49,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             return cellComponent;
         });
     }
+
     //------------------------------------------Carga modelo AFC------------------------------------------------------------------------------------------
     private void cargarModeloAFC() {
         String[] columnas = {"Posición", "Bandera", "Selecciones", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"};
@@ -70,19 +72,33 @@ public class Eliminatoria extends javax.swing.JFrame {
             return cellComponent;
         });
     }
-    
+
     //------------------------------------------Carga modelo CAF------------------------------------------------------------------------------------------
-    
-    
+    private void cargarModeloCAF() {
+        String[] columnas = {"Posición", "Bandera", "Selecciones", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"};
+        DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
+        tblPuntajeCAF.setModel(modelo);
+        modeloCargado = true;
+        // Asignar el renderizador personalizado a todas las columnas
+        tblPuntajeCAF.setDefaultRenderer(Object.class, (table, value, isSelected, hasFocus, row, column) -> {
+            Component cellComponent = new DefaultTableCellRenderer().getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+
+            // Verificar si el modelo ha sido cargado
+            if (modeloCargado) {
+                int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
+                Color color = (posicion <= 9) ? new Color(0, 255, 0) : ((posicion == 10) ? new Color(240, 70, 70) : table.getBackground());
+                cellComponent.setBackground(color);
+            } else {
+                cellComponent.setBackground(table.getBackground());
+            }
+
+            return cellComponent;
+        });
+    }
+
     //------------------------------------------Carga modelo CONMEBOL------------------------------------------------------------------------------------------
-    
-    
     //------------------------------------------Carga modelo OFC------------------------------------------------------------------------------------------
-    
-    
     //------------------------------------------Carga modelo UEFA------------------------------------------------------------------------------------------
-    
-    
 //------------------------------------------Espacios para cargar Selecciones------------------------------------------------------------------------------------------
     private void cargarSeleccionesConca() {
         String[] nombresSelecciones = {"Anguila", "Antigua y Barbuda", "Aruba", "Bahamas", "Barbados", "Belice", "Bermudas", "Canadá", "Costa Rica", "Cuba", "Curazao", "Dominica", "EEUU", "El Salvador", "Granada", "Guatemala", "Guyana", "Haití", "Honduras", "Islas Caimán", "Islas Vírgenes Británicas", "Islas Vírgenes Estadounidenses", "Jamaica", "México", "Montserrat", "Nicaragua", "Panamá", "Puerto Rico", "República Dominicana", "San Cristóbal y Nieves", "San Vicente y las Granadinas", "Santa Lucía", "Surinam", "Trinidad y Tobago", "Turcas y Caicos"};
@@ -92,14 +108,25 @@ public class Eliminatoria extends javax.swing.JFrame {
             modelo.addRow(new Object[]{0, null, nombre, 0, 0, 0, 0, 0, 0, 0, 0});
         }
     }
-    
-    
-     private void cargarSeleccionesAFC() {
+
+    private void cargarSeleccionesAFC() {
         String[] nombresSelecciones = {"Afganistán", "Arabia Saudí", "Australia", "Bahréin", "Bangladesh", "Brunéi Darussalam", "Bután ", "Camboya", "Chinese Taipei", "Emiratos Árabes Unidos", "Filipinas",
             "Guam", "Hong Kong China", "India ", "Indonesia", "Irak", "Japón", "Jordania", "Kuwait", "Laos", "Líbano", "Macao", "Malasia", "Maldivas", "Mongolia", "Myanmar", "Nepal", "Omán", "Pakistán",
             "Palestina", "Qatar", "RDP de Corea", "República de Corea", "República Kirguisa", "Rl de Irán", "RP China", "Singapur", "Siria", "Sri Lanka", "Tailandia", "Tayikistán", "Timor Oriental",
             "Turkmenistán", "Uzbekistán", "Vietnam", "Yemen"};
         DefaultTableModel modelo = (DefaultTableModel) tblPuntajeAFC.getModel();
+
+        for (String nombre : nombresSelecciones) {
+            modelo.addRow(new Object[]{0, null, nombre, 0, 0, 0, 0, 0, 0, 0, 0});
+        }
+    }
+
+    private void cargarSeleccionesCAF() {
+        String[] nombresSelecciones = {"Angola", "Argelia", "Benín", "Botsuana", "Botsuana", "Burkina Faso", "Burundi", "Cabo Verde", "Camerún", "Chad", "Comoras", "Congo", "Costa de Marfil", "Egipto", "Eritrea",
+            "Esuatini", "Etiopía", "Gabón", "Gambia", "Ghana", "Guinea", "Guinea Ecuatorial", "Guinea-Bissáu", "Kenia", "Lesoto", "Liberia", "Libia", "Madagascar", "Malaui", "Mali", "Marruecos", "Mauricio",
+            "Mauritania", "Mozambique", "Namibia", "Níger", "Nigeria", "RD del Congo", "República Centroafricana", "Ruanda", "Santo Tomé y Príncipe", "Senegal", "Seychelles", "Sierra Leona", "Somalia",
+            "Sudáfrica", "Sudán", "Sudán del Sur", "Tanzania", "Togo", "Túnez", "Uganda", "Yibuti", "Zambia"};
+        DefaultTableModel modelo = (DefaultTableModel) tblPuntajeCAF.getModel();
 
         for (String nombre : nombresSelecciones) {
             modelo.addRow(new Object[]{0, null, nombre, 0, 0, 0, 0, 0, 0, 0, 0});
@@ -166,7 +193,8 @@ public class Eliminatoria extends javax.swing.JFrame {
         }
     }
     //---------------------------------Metodo actualizar Putnos Partidos Jugados------------------------------------------------------------------------------------------
-private void actualizarPuntosPartidosJugados(JTable tabla) {
+
+    private void actualizarPuntosPartidosJugados(JTable tabla) {
         DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
 
         for (int i = 0; i < modelo.getRowCount(); i++) {
@@ -177,8 +205,27 @@ private void actualizarPuntosPartidosJugados(JTable tabla) {
             modelo.setValueAt(puntos, i, 3);
         }
     }
+
     //---------------------------------Metodo Actualizar Diferencia Goles------------------------------------------------------------------------------------------
-    
+    private void actualizarDiferenciaGoles(JTable tabla) {
+        DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+
+        for (int i = 0; i < modelo.getRowCount(); i++) {
+            int golesFavor = (int) modelo.getValueAt(i, 8);
+            int golesContra = (int) modelo.getValueAt(i, 9);
+            int diferenciaGoles = golesFavor - golesContra;
+
+            modelo.setValueAt(diferenciaGoles, i, 10);
+
+            // Evitar valores negativos en la columna de diferencia de goles
+            if (diferenciaGoles < 0) {
+                modelo.setValueAt(0, i, 10); // Establecer la diferencia de goles como 0
+                modelo.setValueAt(golesFavor, i, 8); // Actualizar los goles a favor
+                modelo.setValueAt(golesContra, i, 9); // Actualizar los goles en contra
+            }
+        }
+    }
+
     //---------------------------------Metodo Ordenar Posiciones------------------------------------------------------------------------------------------
     public Eliminatoria() {
 
@@ -705,15 +752,15 @@ private void actualizarPuntosPartidosJugados(JTable tabla) {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPartidoConcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoConcaActionPerformed
-        
+
     }//GEN-LAST:event_btnPartidoConcaActionPerformed
 
     private void btnSimularTodoConcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodoConcaActionPerformed
-        
+
     }//GEN-LAST:event_btnSimularTodoConcaActionPerformed
 
     private void btnResultadoConcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoConcaActionPerformed
-       
+
     }//GEN-LAST:event_btnResultadoConcaActionPerformed
 
     private void btnPartidoAFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoAFCActionPerformed
@@ -779,8 +826,6 @@ private void actualizarPuntosPartidosJugados(JTable tabla) {
     /**
      * @param args the command line arguments
      */
-    
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPartidoAFC;
