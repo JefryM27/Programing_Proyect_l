@@ -8,6 +8,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
@@ -354,11 +356,62 @@ public class Eliminatoria extends javax.swing.JFrame {
         }
     }
 
-    
-    
-    
-    public Eliminatoria() {
+   //--------------------------------------------Desactivar botones---------------------------------------------------
+    private void desactivarBotones(JButton simularPartido, JButton botonPartido, JButton botonResultado) {
+        btnSimularTodoConca.setEnabled(false);
+        btnPartidoConca.setEnabled(false);
+        btnResultadoConca.setEnabled(true);
+    }
 
+    //--------------------------------------------Cargar los metodos---------------------------------------------------
+    //---------------------------------------------Concacaf-----------------------------------------------------------
+    private void cargarConca() {
+        cargarModeloConca();
+        cargarSeleccionesConca();
+        simularPartidos(tblPuntajeCONCACAF);
+        actualizarPuntosPartidosJugados(tblPuntajeCONCACAF);
+        actualizarDiferenciaGoles(tblPuntajeCONCACAF);
+        ordenarPosiciones(tblPuntajeCONCACAF);
+        desactivarBotones(btnSimularTodoConca, btnPartidoConca, btnResultadoConca);
+    }
+
+    //---------------------------------------------AFC-----------------------------------------------------------
+    private void cargarAFC() {
+        cargarModeloAFC();
+        cargarSeleccionesAFC();
+        simularPartidos(tblPuntajeAFC);
+        actualizarPuntosPartidosJugados(tblPuntajeAFC);
+        actualizarDiferenciaGoles(tblPuntajeAFC);
+        ordenarPosiciones(tblPuntajeAFC);
+        desactivarBotones(btnSimularTodoAFC, btnPartidoAFC, btnResultadoAFC);
+    }
+    //---------------------------------------------OFC-----------------------------------------------------------
+
+    //---------------------------------------------CONMEBOL-----------------------------------------------------------
+    
+    //---------------------------------------------UEFA-----------------------------------------------------------
+    
+//-----------------------------------------------Mensajes--------------------------------------------------------------
+    private void mensajeTodo() {
+        JOptionPane.showMessageDialog(this, "Se a jugado todos los partidos");
+    }
+
+    private void mensajeUno() {
+        JOptionPane.showMessageDialog(this, "Se a jugado todos los partidos" + "\nPrecionar el boton (Ver resultados) para ver los encuentros.");
+    }
+
+//---------------------------------------------Eliminatoria---------------------------------------------------
+    public Eliminatoria() {
+        //------------Cargar modelos-------------------------------------
+        //----------Concacaf------------
+        cargarModeloConca();
+        cargarSeleccionesConca();
+        //-----------AFC--------------
+        cargarModeloAFC();
+        cargarSeleccionesAFC();
+        //-----------OFC--------------
+        //-----------CONMEBOL---------
+        //-----------UEFA-------------
     }
 
     /**
@@ -774,19 +827,21 @@ public class Eliminatoria extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+ //---------------------------Concacaf------------------------------------------------------
     private void btnPartidoConcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoConcaActionPerformed
-
+cargarConca();
+        mensajeUno();
     }//GEN-LAST:event_btnPartidoConcaActionPerformed
 
     private void btnSimularTodoConcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodoConcaActionPerformed
-
+cargarConca();
+        mensajeTodo();
     }//GEN-LAST:event_btnSimularTodoConcaActionPerformed
 
     private void btnResultadoConcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoConcaActionPerformed
 
     }//GEN-LAST:event_btnResultadoConcaActionPerformed
-
+//---------------------------AFC------------------------------------------------------
     private void btnPartidoAFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoAFCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnPartidoAFCActionPerformed
@@ -798,7 +853,7 @@ public class Eliminatoria extends javax.swing.JFrame {
     private void btnResultadoAFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoAFCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnResultadoAFCActionPerformed
-
+//---------------------------CAF------------------------------------------------------
     private void btnPartidoCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoCAFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnPartidoCAFActionPerformed
@@ -810,7 +865,7 @@ public class Eliminatoria extends javax.swing.JFrame {
     private void btnResultadoCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoCAFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnResultadoCAFActionPerformed
-
+//---------------------------CONMEBOL------------------------------------------------------
     private void btnPartidoCONMEBOLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoCONMEBOLActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnPartidoCONMEBOLActionPerformed
@@ -822,7 +877,7 @@ public class Eliminatoria extends javax.swing.JFrame {
     private void btnResultadoCONMEBOLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoCONMEBOLActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnResultadoCONMEBOLActionPerformed
-
+//---------------------------OFC------------------------------------------------------
     private void btnPartidoOFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoOFCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnPartidoOFCActionPerformed
@@ -834,7 +889,7 @@ public class Eliminatoria extends javax.swing.JFrame {
     private void btnResultadoOFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoOFCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnResultadoOFCActionPerformed
-
+//---------------------------UEFA------------------------------------------------------
     private void btnResultadoUEFAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoUEFAActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnResultadoUEFAActionPerformed
