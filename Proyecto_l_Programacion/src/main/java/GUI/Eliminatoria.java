@@ -441,11 +441,18 @@ public class Eliminatoria extends javax.swing.JFrame {
         //-----------AFC--------------
         cargarModeloAFC();
         cargarSeleccionesAFC();
+        //-----------CAF--------------
+        cargarModeloCAF();
+        cargarSeleccionesCAF();
         //-----------OFC--------------
+        cargarModeloOFC();
+        cargarSeleccionesOFC();
         //-----------CONMEBOL---------
         cargarModeloCONMEBOL();
         cargarSeleccionesCONMEBOL();
         //-----------UEFA-------------
+        cargarModeloUEFA();
+        cargarSeleccionesUEFA();
     }
 //-----------------------------------------SedeEncuentros----------------------------------------------------
 
@@ -902,11 +909,13 @@ public class Eliminatoria extends javax.swing.JFrame {
     }//GEN-LAST:event_btnResultadoCAFActionPerformed
 //---------------------------CONMEBOL------------------------------------------------------
     private void btnPartidoCONMEBOLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoCONMEBOLActionPerformed
-        // TODO add your handling code here:
+       cargarCONMEBOL();
+       mensajeUno();
     }//GEN-LAST:event_btnPartidoCONMEBOLActionPerformed
 
     private void btnSimularTodoCONMEBOLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodoCONMEBOLActionPerformed
-        // TODO add your handling code here:
+        cargarCONMEBOL();
+        mensajeTodo();
     }//GEN-LAST:event_btnSimularTodoCONMEBOLActionPerformed
 
     private void btnResultadoCONMEBOLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoCONMEBOLActionPerformed
@@ -930,11 +939,13 @@ public class Eliminatoria extends javax.swing.JFrame {
     }//GEN-LAST:event_btnResultadoUEFAActionPerformed
 
     private void btnPartidoUEFAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoUEFAActionPerformed
-        // TODO add your handling code here:
+        cargarUEFA();
+        mensajeUno();
     }//GEN-LAST:event_btnPartidoUEFAActionPerformed
 
     private void btnSimularTodoUEFAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodoUEFAActionPerformed
-        // TODO add your handling code here:
+        cargarUEFA();
+        mensajeTodo();
     }//GEN-LAST:event_btnSimularTodoUEFAActionPerformed
 
     /**
