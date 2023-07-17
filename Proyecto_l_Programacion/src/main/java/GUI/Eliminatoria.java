@@ -26,7 +26,6 @@ public class Eliminatoria extends javax.swing.JFrame {
     int identificadorIterativo = 1;
 
     DefaultTableModel modelo = new DefaultTableModel();//Se crean los objetos DefaultTableModel vacíos con los nombres modeloConca, modeloAFC, modeloCAF, modeloCONMEBOL, modeloOFC, modeloUEFA
-    DefaultTableModel PuntajeCONCACAF = new DefaultTableModel();
 
     private boolean modeloCargado = false;
 //------------------------------------------Espacios para cargar modelos------------------------------------------------------------------------------------------
@@ -56,7 +55,7 @@ public class Eliminatoria extends javax.swing.JFrame {
     }
 
     //------------------------------------------Carga modelo AFC------------------------------------------------------------------------------------------
-    private void cargarModeloAFC() {
+      private void cargarModeloAFC() {
         String[] columnas = {"Posición", "Bandera", "Selecciones", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"};
         DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
         tblPuntajeAFC.setModel(modelo);
@@ -391,47 +390,49 @@ public class Eliminatoria extends javax.swing.JFrame {
         ordenarPosiciones(tblPuntajeAFC);
         desactivarBotones(btnSimularTodoAFC, btnPartidoAFC, btnResultadoAFC);
     }
+
     //---------------------------------------------CAF-----------------------------------------------------------
-     private void cargarCAF() {
-        cargarModeloConca();
-        cargarSeleccionesConca();
+    private void cargarCAF() {
+        cargarModeloCAF();
+        cargarSeleccionesCAF();
         simularPartidos(tblPuntajeCAF);
         actualizarPuntosPartidosJugados(tblPuntajeCAF);
         actualizarDiferenciaGoles(tblPuntajeCAF);
         ordenarPosiciones(tblPuntajeCAF);
-        desactivarBotones(btnSimularTodoCAF,btnPartidoCAF,btnResultadoCAF);
+        desactivarBotones(btnSimularTodoCAF, btnPartidoCAF, btnResultadoCAF);
     }
     //---------------------------------------------OFC-----------------------------------------------------------
-    
- private void cargarOFC() {
-        cargarModeloConca();
-        cargarSeleccionesConca();
+
+    private void cargarOFC() {
+        cargarModeloOFC();
+        cargarSeleccionesOFC();
         simularPartidos(tblPuntajeOFC);
         actualizarPuntosPartidosJugados(tblPuntajeOFC);
         actualizarDiferenciaGoles(tblPuntajeOFC);
         ordenarPosiciones(tblPuntajeOFC);
-        desactivarBotones(btnSimularTodoOFC,btnPartidoOFC,btnResultadoOFC);
+        desactivarBotones(btnSimularTodoOFC, btnPartidoOFC, btnResultadoOFC);
     }
 
     //---------------------------------------------CONMEBOL-----------------------------------------------------------
     private void cargarCONMEBOL() {
-        cargarModeloAFC();
-        cargarSeleccionesAFC();
+        cargarModeloCONMEBOL();
+        cargarSeleccionesCONMEBOL();
         simularPartidos(tblPuntajeCONMEBOL);
         actualizarPuntosPartidosJugados(tblPuntajeCONMEBOL);
         actualizarDiferenciaGoles(tblPuntajeCONMEBOL);
         ordenarPosiciones(tblPuntajeCONMEBOL);
         desactivarBotones(btnSimularTodoCONMEBOL, btnPartidoCONMEBOL, btnResultadoCONMEBOL);
     }
+
     //---------------------------------------------UEFA-----------------------------------------------------------
     private void cargarUEFA() {
-        cargarModeloAFC();
-        cargarSeleccionesAFC();
+        cargarModeloUEFA();
+        cargarSeleccionesUEFA();
         simularPartidos(tblPuntajeUEFA);
         actualizarPuntosPartidosJugados(tblPuntajeUEFA);
         actualizarDiferenciaGoles(tblPuntajeUEFA);
         ordenarPosiciones(tblPuntajeUEFA);
-        desactivarBotones(btnSimularTodoUEFA,btnPartidoUEFA,btnResultadoUEFA);  
+        desactivarBotones(btnSimularTodoUEFA, btnPartidoUEFA, btnResultadoUEFA);
     }
 
 //-----------------------------------------------Mensajes--------------------------------------------------------------
@@ -445,6 +446,7 @@ public class Eliminatoria extends javax.swing.JFrame {
 
 //---------------------------------------------Eliminatoria---------------------------------------------------
     public Eliminatoria() {
+        initComponents();
         //------------Cargar modelos-------------------------------------
         //----------Concacaf------------
         cargarModeloConca();
@@ -466,6 +468,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         cargarSeleccionesUEFA();
     }
 //-----------------------------------------SedeEncuentros----------------------------------------------------
+
     public class SedesEncuentros {
 
         private String identificador;
@@ -628,6 +631,7 @@ public class Eliminatoria extends javax.swing.JFrame {
             }
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -637,8 +641,6 @@ public class Eliminatoria extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane6 = new javax.swing.JScrollPane();
-        tblPuntajeCONCACAF = new javax.swing.JTable();
         tblConfederaciones = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane16 = new javax.swing.JScrollPane();
@@ -660,7 +662,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        tblPuntajeCONCACAF1 = new javax.swing.JTable();
+        tblPuntajeCONCACAF = new javax.swing.JTable();
         btnPartidoConca = new javax.swing.JButton();
         btnSimularTodoConca = new javax.swing.JButton();
         jScrollPane13 = new javax.swing.JScrollPane();
@@ -697,16 +699,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-
-        tblPuntajeCONCACAF.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Pos.", "Seleccion", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif."
-            }
-        ));
-        jScrollPane6.setViewportView(tblPuntajeCONCACAF);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -814,7 +806,7 @@ public class Eliminatoria extends javax.swing.JFrame {
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tblPuntajeCONCACAF1.setModel(new javax.swing.table.DefaultTableModel(
+        tblPuntajeCONCACAF.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -822,7 +814,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 "Pos.", "Banderas", "Seleccion", "Pts.", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif."
             }
         ));
-        jScrollPane7.setViewportView(tblPuntajeCONCACAF1);
+        jScrollPane7.setViewportView(tblPuntajeCONCACAF);
 
         jPanel3.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 700, 450));
 
@@ -1083,8 +1075,8 @@ public class Eliminatoria extends javax.swing.JFrame {
     }//GEN-LAST:event_btnResultadoCAFActionPerformed
 //---------------------------CONMEBOL------------------------------------------------------
     private void btnPartidoCONMEBOLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoCONMEBOLActionPerformed
-       cargarCONMEBOL();
-       mensajeUno();
+        cargarCONMEBOL();
+        mensajeUno();
     }//GEN-LAST:event_btnPartidoCONMEBOLActionPerformed
 
     private void btnSimularTodoCONMEBOLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodoCONMEBOLActionPerformed
@@ -1171,13 +1163,11 @@ public class Eliminatoria extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane23;
     private javax.swing.JScrollPane jScrollPane24;
     private javax.swing.JScrollPane jScrollPane25;
-    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane tblConfederaciones;
     private javax.swing.JTable tblPuntajeAFC;
     private javax.swing.JTable tblPuntajeCAF;
     private javax.swing.JTable tblPuntajeCONCACAF;
-    private javax.swing.JTable tblPuntajeCONCACAF1;
     private javax.swing.JTable tblPuntajeCONMEBOL;
     private javax.swing.JTable tblPuntajeOFC;
     private javax.swing.JTable tblPuntajeUEFA;
