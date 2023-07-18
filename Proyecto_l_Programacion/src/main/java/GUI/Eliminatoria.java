@@ -28,29 +28,35 @@ public class Eliminatoria extends javax.swing.JFrame {
     private boolean modeloCargado = false;
 //------------------------------------------Espacios para cargar modelos------------------------------------------------------------------------------------------
     //------------------------------------------Carga modelo Conca------------------------------------------------------------------------------------------
+  private void cargarModeloConca() {
+    String[] columnas = {"Posición", "Bandera", "Selecciones", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"};
+    DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
+    tblPuntajeCONCACAF.setModel(modelo);
+    modeloCargado = true;
+    btnResultadoConca.setEnabled(false);
+    // Asignar el renderizador personalizado a todas las columnas
+    tblPuntajeCONCACAF.setDefaultRenderer(Object.class, (table, value, isSelected, hasFocus, row, column) -> {
+        Component cellComponent = new DefaultTableCellRenderer().getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 
-    private void cargarModeloConca() {
-        String[] columnas = {"Posición", "Bandera", "Selecciones", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"};
-        DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
-        tblPuntajeCONCACAF.setModel(modelo);
-        modeloCargado = true;
-        btnResultadoConca.setEnabled(false);
-        // Asignar el renderizador personalizado a todas las columnas
-        tblPuntajeCONCACAF.setDefaultRenderer(Object.class, (table, value, isSelected, hasFocus, row, column) -> {
-            Component cellComponent = new DefaultTableCellRenderer().getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-
-            // Verificar si el modelo ha sido cargado
-            if (modeloCargado) {
-                int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
-                Color color = (posicion <= 6) ? new Color(0, 255, 0) : ((posicion == 7 || posicion == 8) ? new Color(240, 70, 70) : table.getBackground());
-                cellComponent.setBackground(color);
+        // Verificar si el modelo ha sido cargado
+        if (modeloCargado) {
+            int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
+            Color color;
+            if (posicion <= 3) {
+                color = new Color(212, 237, 218); // Verde suave para las primeras 3 posiciones
+            } else if (posicion <= 5) {
+                color = new Color(255, 241, 171); // Amarillo suave para las posiciones 4 y 5
             } else {
-                cellComponent.setBackground(table.getBackground());
+                color = new Color(255, 195, 195); // Rojo suave para el resto de las posiciones
             }
+            cellComponent.setBackground(color);
+        } else {
+            cellComponent.setBackground(table.getBackground());
+        }
 
-            return cellComponent;
-        });
-    }
+        return cellComponent;
+    });
+}
 
     //------------------------------------------Carga modelo AFC------------------------------------------------------------------------------------------
       private void cargarModeloAFC() {
@@ -62,14 +68,21 @@ public class Eliminatoria extends javax.swing.JFrame {
         tblPuntajeAFC.setDefaultRenderer(Object.class, (table, value, isSelected, hasFocus, row, column) -> {
             Component cellComponent = new DefaultTableCellRenderer().getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 
-            // Verificar si el modelo ha sido cargado
-            if (modeloCargado) {
-                int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
-                Color color = (posicion <= 8) ? new Color(0, 255, 0) : ((posicion == 9 || posicion == 10) ? new Color(240, 70, 70) : table.getBackground());
-                cellComponent.setBackground(color);
+        // Verificar si el modelo ha sido cargado
+        if (modeloCargado) {
+            int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
+            Color color;
+            if (posicion <= 8) {
+                color = new Color(212, 237, 218); // Verde suave hasta la posición 8
+            } else if (posicion <= 10) {
+                color = new Color(255, 241, 171); // Amarillo suave para las posiciones 9 y 10
             } else {
-                cellComponent.setBackground(table.getBackground());
+                color = new Color(255, 195, 195); // Rojo suave para el resto de las posiciones
             }
+            cellComponent.setBackground(color);
+        } else {
+            cellComponent.setBackground(table.getBackground());
+        }
 
             return cellComponent;
         });
@@ -86,13 +99,20 @@ public class Eliminatoria extends javax.swing.JFrame {
             Component cellComponent = new DefaultTableCellRenderer().getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 
             // Verificar si el modelo ha sido cargado
-            if (modeloCargado) {
-                int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
-                Color color = (posicion <= 9) ? new Color(0, 255, 0) : ((posicion == 10) ? new Color(240, 70, 70) : table.getBackground());
-                cellComponent.setBackground(color);
+        if (modeloCargado) {
+            int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
+            Color color;
+            if (posicion <= 9) {
+                color = new Color(212, 237, 218); // Verde suave hasta la posición 8
+            } else if (posicion == 10) {
+                color = new Color(255, 241, 171); // Amarillo suave para las posiciones 9 y 10
             } else {
-                cellComponent.setBackground(table.getBackground());
+                color = new Color(255, 195, 195); // Rojo suave para el resto de las posiciones
             }
+            cellComponent.setBackground(color);
+        } else {
+            cellComponent.setBackground(table.getBackground());
+        }
 
             return cellComponent;
         });
@@ -109,13 +129,21 @@ public class Eliminatoria extends javax.swing.JFrame {
             Component cellComponent = new DefaultTableCellRenderer().getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 
             // Verificar si el modelo ha sido cargado
-            if (modeloCargado) {
-                int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
-                Color color = (posicion <= 6) ? new Color(0, 255, 0) : ((posicion == 7) ? new Color(240, 70, 70) : table.getBackground());
-                cellComponent.setBackground(color);
+           // Verificar si el modelo ha sido cargado
+        if (modeloCargado) {
+            int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
+            Color color;
+            if (posicion <= 6) {
+                color = new Color(212, 237, 218); // Verde suave hasta la posición 8
+            } else if (posicion == 7) {
+                color = new Color(255, 241, 171); // Amarillo suave para las posiciones 9 y 10
             } else {
-                cellComponent.setBackground(table.getBackground());
+                color = new Color(255, 195, 195); // Rojo suave para el resto de las posiciones
             }
+            cellComponent.setBackground(color);
+        } else {
+            cellComponent.setBackground(table.getBackground());
+        }
 
             return cellComponent;
         });
@@ -128,17 +156,25 @@ public class Eliminatoria extends javax.swing.JFrame {
         tblPuntajeOFC.setModel(modelo);
         modeloCargado = true;
         // Asignar el renderizador personalizado a todas las columnas
-        tblPuntajeCONMEBOL.setDefaultRenderer(Object.class, (table, value, isSelected, hasFocus, row, column) -> {
+        tblPuntajeOFC.setDefaultRenderer(Object.class, (table, value, isSelected, hasFocus, row, column) -> {
             Component cellComponent = new DefaultTableCellRenderer().getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 
             // Verificar si el modelo ha sido cargado
-            if (modeloCargado) {
-                int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
-                Color color = (posicion <= 6) ? new Color(0, 255, 0) : ((posicion == 7) ? new Color(240, 70, 70) : table.getBackground());
-                cellComponent.setBackground(color);
+            // Verificar si el modelo ha sido cargado
+        if (modeloCargado) {
+            int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
+            Color color;
+            if (posicion <= 1) {
+                color = new Color(212, 237, 218); // Verde suave hasta la posición 8
+            } else if (posicion == 2) {
+                color = new Color(255, 241, 171); // Amarillo suave para las posiciones 9 y 10
             } else {
-                cellComponent.setBackground(table.getBackground());
+                color = new Color(255, 195, 195); // Rojo suave para el resto de las posiciones
             }
+            cellComponent.setBackground(color);
+        } else {
+            cellComponent.setBackground(table.getBackground());
+        }
 
             return cellComponent;
         });
@@ -155,14 +191,19 @@ public class Eliminatoria extends javax.swing.JFrame {
             Component cellComponent = new DefaultTableCellRenderer().getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 
             // Verificar si el modelo ha sido cargado
-            if (modeloCargado) {
-                int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
-                Color color = (posicion <= 16) ? new Color(0, 255, 0) : table.getBackground();
-
-                cellComponent.setBackground(color);
+         // Verificar si el modelo ha sido cargado
+        if (modeloCargado) {
+            int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
+            Color color;
+            if (posicion <= 16) {
+                color = new Color(212, 237, 218); // Verde suave hasta la posición 8
             } else {
-                cellComponent.setBackground(table.getBackground());
+                color = new Color(255, 195, 195); // Rojo suave para el resto de las posiciones
             }
+            cellComponent.setBackground(color);
+        } else {
+            cellComponent.setBackground(table.getBackground());
+        }
 
             return cellComponent;
         });
@@ -361,9 +402,9 @@ public class Eliminatoria extends javax.swing.JFrame {
 
     //--------------------------------------------Desactivar botones---------------------------------------------------
     private void desactivarBotones(JButton simularPartido, JButton botonPartido, JButton botonResultado) {
-        btnSimularTodoConca.setEnabled(false);
-        btnPartidoConca.setEnabled(false);
-        btnResultadoConca.setEnabled(true);
+        simularPartido.setEnabled(false);
+        botonPartido.setEnabled(false);
+        botonResultado.setEnabled(true);
     }
 
     //--------------------------------------------Cargar los metodos---------------------------------------------------
@@ -751,8 +792,6 @@ public class Eliminatoria extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnResultadoAFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 170, 80));
-
-        lblFondoAFC.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\AFC.jpg")); // NOI18N
         jPanel1.add(lblFondoAFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 1510, 790));
 
         tblConfederaciones.addTab("AFC", jPanel1);
@@ -807,7 +846,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         });
         jPanel2.add(btnResultadoCAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 650, 170, 80));
 
-        lblFondoCAF.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\CAF.png")); // NOI18N
         lblFondoCAF.setText("jLabel1");
         jPanel2.add(lblFondoCAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1510, 810));
 
@@ -862,8 +900,6 @@ public class Eliminatoria extends javax.swing.JFrame {
             }
         });
         jPanel3.add(btnResultadoConca, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 530, 170, 80));
-
-        lblFondoCONCACAF.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\Concacaf.jpg")); // NOI18N
         jPanel3.add(lblFondoCONCACAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1510, 820));
 
         tblConfederaciones.addTab("CONCACAF", jPanel3);
@@ -917,8 +953,6 @@ public class Eliminatoria extends javax.swing.JFrame {
             }
         });
         jPanel4.add(btnResultadoCONMEBOL, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 450, 170, 70));
-
-        lblFondoCONMEBOL.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\Conmebol.jpg")); // NOI18N
         jPanel4.add(lblFondoCONMEBOL, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1510, 820));
 
         tblConfederaciones.addTab("CONMEBOL", jPanel4);
@@ -939,7 +973,6 @@ public class Eliminatoria extends javax.swing.JFrame {
 
         jPanel8.add(jScrollPane22, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 630, 340));
 
-        btnPartidoOFC.setBackground(new java.awt.Color(51, 51, 51));
         btnPartidoOFC.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         btnPartidoOFC.setForeground(new java.awt.Color(0, 0, 0));
         btnPartidoOFC.setText("Simular partido");
@@ -975,7 +1008,6 @@ public class Eliminatoria extends javax.swing.JFrame {
 
         btnResultadoOFC.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
         btnResultadoOFC.setForeground(new java.awt.Color(0, 0, 0));
-        btnResultadoOFC.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\Boton2.jpg")); // NOI18N
         btnResultadoOFC.setOpaque(true);
         btnResultadoOFC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -983,8 +1015,6 @@ public class Eliminatoria extends javax.swing.JFrame {
             }
         });
         jPanel8.add(btnResultadoOFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 140, 80));
-
-        lblFondoOFC.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\OFC.jpg")); // NOI18N
         jPanel8.add(lblFondoOFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1510, 830));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -992,7 +1022,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, 1514, Short.MAX_VALUE)
+                .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -1054,8 +1084,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         jScrollPane25.setViewportView(txtResultadoUEFA);
 
         jPanel6.add(jScrollPane25, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 210, 380));
-
-        lblFondoUEFA.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\UEFA.jpg")); // NOI18N
         jPanel6.add(lblFondoUEFA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 1520, 840));
 
         tblConfederaciones.addTab("UEFA", jPanel6);
@@ -1079,19 +1107,36 @@ public class Eliminatoria extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSimularTodoConcaActionPerformed
 
     private void btnResultadoConcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoConcaActionPerformed
+ String paises[] = {"Costa Rica", "Nicaragua", "Honduras", "Panamá", "El Salvador", "Jamaica", "Trinidad y Tobago", "Guatemala"};
+        // Crear instancia de SedesEncuentros
+        SedesEncuentros sedeEncuentro = new SedesEncuentros("1", "Estados Unidos", "Boston", paises, "2-4");
+
+// Obtener el resultado
+       sedeEncuentro.mostrarResultados();
 
     }//GEN-LAST:event_btnResultadoConcaActionPerformed
 //---------------------------AFC------------------------------------------------------
     private void btnPartidoAFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoAFCActionPerformed
-        // TODO add your handling code here:
+        cargarAFC();
+        mensajeUno();
     }//GEN-LAST:event_btnPartidoAFCActionPerformed
 
     private void btnSimularTodoAFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodoAFCActionPerformed
-        // TODO add your handling code here:
+        cargarAFC();
+        mensajeTodo();
     }//GEN-LAST:event_btnSimularTodoAFCActionPerformed
 
     private void btnResultadoAFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoAFCActionPerformed
-        // TODO add your handling code here:
+         String paises[] = {"Afganistán", "Arabia Saudí", "Australia", "Bahréin", "Bangladesh", "Brunéi Darussalam", "Bután ", "Camboya", "Chinese Taipei", "Emiratos Árabes Unidos", "Filipinas",
+            "Guam", "Hong Kong China", "India ", "Indonesia", "Irak", "Japón", "Jordania", "Kuwait", "Laos", "Líbano", "Macao", "Malasia", "Maldivas", "Mongolia", "Myanmar", "Nepal", "Omán", "Pakistán",
+            "Palestina", "Qatar", "RDP de Corea", "República de Corea", "República Kirguisa", "Rl de Irán", "RP China", "Singapur", "Siria", "Sri Lanka", "Tailandia", "Tayikistán", "Timor Oriental",
+            "Turkmenistán", "Uzbekistán", "Vietnam", "Yemen"};
+        // Crear instancia de SedesEncuentros
+        SedesEncuentros sedeEncuentro = new SedesEncuentros("1", "Estados Unidos", "Boston", paises, "2-4");
+
+// Obtener el resultado
+       sedeEncuentro.mostrarResultados();
+
     }//GEN-LAST:event_btnResultadoAFCActionPerformed
 //---------------------------CAF------------------------------------------------------
     private void btnPartidoCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoCAFActionPerformed
@@ -1105,7 +1150,17 @@ public class Eliminatoria extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSimularTodoCAFActionPerformed
 
     private void btnResultadoCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoCAFActionPerformed
-        // TODO add your handling code here:
+          String paises[] = {"Angola", "Argelia", "Benín", "Botsuana", "Botsuana", "Burkina Faso", "Burundi", "Cabo Verde", "Camerún", "Chad", "Comoras", "Congo", "Costa de Marfil", "Egipto", "Eritrea",
+            "Esuatini", "Etiopía", "Gabón", "Gambia", "Ghana", "Guinea", "Guinea Ecuatorial", "Guinea-Bissáu", "Kenia", "Lesoto", "Liberia", "Libia", "Madagascar", "Malaui", "Mali", "Marruecos", "Mauricio",
+            "Mauritania", "Mozambique", "Namibia", "Níger", "Nigeria", "RD del Congo", "República Centroafricana", "Ruanda", "Santo Tomé y Príncipe", "Senegal", "Seychelles", "Sierra Leona", "Somalia",
+            "Sudáfrica", "Sudán", "Sudán del Sur", "Tanzania", "Togo", "Túnez", "Uganda", "Yibuti", "Zambia"};
+        // Crear instancia de SedesEncuentros
+        SedesEncuentros sedeEncuentro = new SedesEncuentros("1", "Estados Unidos", "Boston", paises, "2-4");
+
+// Obtener el resultado
+       sedeEncuentro.mostrarResultados();
+
+    
     }//GEN-LAST:event_btnResultadoCAFActionPerformed
 //---------------------------CONMEBOL------------------------------------------------------
     private void btnPartidoCONMEBOLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoCONMEBOLActionPerformed
@@ -1119,23 +1174,46 @@ public class Eliminatoria extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSimularTodoCONMEBOLActionPerformed
 
     private void btnResultadoCONMEBOLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoCONMEBOLActionPerformed
-        // TODO add your handling code here:
+         String paises[] = {"Argentina", "Bolivia", "Brasil", "Chile", "Colombia", "Ecuador", "Paraguay", "Perú", "Uruguay", "Venezuela"};
+        // Crear instancia de SedesEncuentros
+        SedesEncuentros sedeEncuentro = new SedesEncuentros("1", "Estados Unidos", "Boston", paises, "2-4");
+
+// Obtener el resultado
+       sedeEncuentro.mostrarResultados();
+
     }//GEN-LAST:event_btnResultadoCONMEBOLActionPerformed
 //---------------------------OFC------------------------------------------------------
     private void btnPartidoOFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoOFCActionPerformed
-        // TODO add your handling code here:
+        cargarOFC();
+        mensajeUno();
     }//GEN-LAST:event_btnPartidoOFCActionPerformed
 
     private void btnSimularTodoOFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodoOFCActionPerformed
-        // TODO add your handling code here:
+       cargarOFC();
+        mensajeTodo();
     }//GEN-LAST:event_btnSimularTodoOFCActionPerformed
 
     private void btnResultadoOFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoOFCActionPerformed
-        // TODO add your handling code here:
+         String paises[] = {"Fiyi", "Islas Cook", "Islas Salomón", "Nueva Caledonia", "Nueva Zelanda", "Papúa Nueva Guinea", "Samoa", "Samoa Americana", "Tahití", "Tonga", "Vanuatu", "islas Kiribati", "Tuvalu"};
+        // Crear instancia de SedesEncuentros
+        SedesEncuentros sedeEncuentro = new SedesEncuentros("1", "Estados Unidos", "Boston", paises, "2-4");
+
+// Obtener el resultado
+       sedeEncuentro.mostrarResultados();
+
     }//GEN-LAST:event_btnResultadoOFCActionPerformed
 //---------------------------UEFA------------------------------------------------------
     private void btnResultadoUEFAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoUEFAActionPerformed
-        // TODO add your handling code here:
+          String paises[] = {"Albania", "Alemania", "Andorra", "Armenia", "Austria", "Azerbaiyán", "Bélgica", "Bielorrusia", "Bosnia y Herzegovina", "Bulgaria", "Chipre", "Croacia", "Dinamarca",
+            "Escocia" + "Eslovaqui", "Eslovenia", "España", "Estonia", "Finlandia", "Francia", "Gales", "Georgia", "Gibraltar", "Hungría", "Inglaterra", "Irlanda", "Irlanda del Norte",
+            "Islandia", "Islas Feroe", "Israel", "Italia", "Kazajistán", "Kosovo", "Letonia", "Liechtenstein", "Lituania", "Luxemburgo", "Macedonia del Norte", "Malta", "Moldavia", "Montenegro", "Noruega", "Paises Bajos",
+            "Polonia", "Portugal", "Republica Checa", "Rumania", "Rusia", "San Marino", "Serbia", "Suecia", "Suiza", "Turquia", "Ucrania"};
+        // Crear instancia de SedesEncuentros
+        SedesEncuentros sedeEncuentro = new SedesEncuentros("1", "México", "Boston", paises, "2-4");
+
+// Obtener el resultado
+       sedeEncuentro.mostrarResultados();
+
     }//GEN-LAST:event_btnResultadoUEFAActionPerformed
 
     private void btnPartidoUEFAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoUEFAActionPerformed

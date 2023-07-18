@@ -224,11 +224,6 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblFondoAFC">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\AFC.jpg"/>
-                </Property>
-              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="0" y="30" width="1510" height="790"/>
@@ -424,9 +419,6 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblFondoCAF">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\CAF.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="jLabel1"/>
               </Properties>
               <Constraints>
@@ -623,11 +615,6 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblFondoCONCACAF">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\Concacaf.jpg"/>
-                </Property>
-              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="0" y="0" width="1510" height="820"/>
@@ -822,11 +809,6 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblFondoCONMEBOL">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\Conmebol.jpg"/>
-                </Property>
-              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="0" y="0" width="1510" height="820"/>
@@ -853,7 +835,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jPanel8" pref="1514" max="32767" attributes="0"/>
+                      <Component id="jPanel8" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -972,9 +954,6 @@
                 </Container>
                 <Component class="javax.swing.JButton" name="btnPartidoOFC">
                   <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="33" green="33" red="33" type="rgb"/>
-                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="18" style="3"/>
                     </Property>
@@ -1059,9 +1038,6 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\Boton2.jpg"/>
-                    </Property>
                     <Property name="opaque" type="boolean" value="true"/>
                   </Properties>
                   <Events>
@@ -1074,11 +1050,6 @@
                   </Constraints>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblFondoOFC">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\OFC.jpg"/>
-                    </Property>
-                  </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="0" y="0" width="1510" height="830"/>
@@ -1275,11 +1246,6 @@
               </SubComponents>
             </Container>
             <Component class="javax.swing.JLabel" name="lblFondoUEFA">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\UEFA.jpg"/>
-                </Property>
-              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="0" y="6" width="1520" height="840"/>
