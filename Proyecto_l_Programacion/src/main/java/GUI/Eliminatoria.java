@@ -22,44 +22,45 @@ public class Eliminatoria extends javax.swing.JFrame {
 
     Confederacion confederacion = new Confederacion();
     int identificadorIterativo = 1;
-
+    private int contador = 0;
     DefaultTableModel modelo = new DefaultTableModel();//Se crean los objetos DefaultTableModel vacíos con los nombres modeloConca, modeloAFC, modeloCAF, modeloCONMEBOL, modeloOFC, modeloUEFA
 
     private boolean modeloCargado = false;
 //------------------------------------------Espacios para cargar modelos------------------------------------------------------------------------------------------
     //------------------------------------------Carga modelo Conca------------------------------------------------------------------------------------------
-  private void cargarModeloConca() {
-    String[] columnas = {"Posición", "Bandera", "Selecciones", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"};
-    DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
-    tblPuntajeCONCACAF.setModel(modelo);
-    modeloCargado = true;
-    btnResultadoConca.setEnabled(false);
-    // Asignar el renderizador personalizado a todas las columnas
-    tblPuntajeCONCACAF.setDefaultRenderer(Object.class, (table, value, isSelected, hasFocus, row, column) -> {
-        Component cellComponent = new DefaultTableCellRenderer().getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 
-        // Verificar si el modelo ha sido cargado
-        if (modeloCargado) {
-            int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
-            Color color;
-            if (posicion <= 3) {
-                color = new Color(212, 237, 218); // Verde suave para las primeras 3 posiciones
-            } else if (posicion <= 5) {
-                color = new Color(255, 241, 171); // Amarillo suave para las posiciones 4 y 5
+    private void cargarModeloConca() {
+        String[] columnas = {"Posición", "Bandera", "Selecciones", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"};
+        DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
+        tblPuntajeCONCACAF.setModel(modelo);
+        modeloCargado = true;
+        btnResultadoConca.setEnabled(false);
+        // Asignar el renderizador personalizado a todas las columnas
+        tblPuntajeCONCACAF.setDefaultRenderer(Object.class, (table, value, isSelected, hasFocus, row, column) -> {
+            Component cellComponent = new DefaultTableCellRenderer().getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+
+            // Verificar si el modelo ha sido cargado
+            if (modeloCargado) {
+                int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
+                Color color;
+                if (posicion <= 3) {
+                    color = new Color(212, 237, 218); // Verde suave para las primeras 3 posiciones
+                } else if (posicion <= 5) {
+                    color = new Color(255, 241, 171); // Amarillo suave para las posiciones 4 y 5
+                } else {
+                    color = new Color(255, 195, 195); // Rojo suave para el resto de las posiciones
+                }
+                cellComponent.setBackground(color);
             } else {
-                color = new Color(255, 195, 195); // Rojo suave para el resto de las posiciones
+                cellComponent.setBackground(table.getBackground());
             }
-            cellComponent.setBackground(color);
-        } else {
-            cellComponent.setBackground(table.getBackground());
-        }
 
-        return cellComponent;
-    });
-}
+            return cellComponent;
+        });
+    }
 
     //------------------------------------------Carga modelo AFC------------------------------------------------------------------------------------------
-      private void cargarModeloAFC() {
+    private void cargarModeloAFC() {
         String[] columnas = {"Posición", "Bandera", "Selecciones", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "DIF"};
         DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
         tblPuntajeAFC.setModel(modelo);
@@ -68,21 +69,21 @@ public class Eliminatoria extends javax.swing.JFrame {
         tblPuntajeAFC.setDefaultRenderer(Object.class, (table, value, isSelected, hasFocus, row, column) -> {
             Component cellComponent = new DefaultTableCellRenderer().getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 
-        // Verificar si el modelo ha sido cargado
-        if (modeloCargado) {
-            int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
-            Color color;
-            if (posicion <= 8) {
-                color = new Color(212, 237, 218); // Verde suave hasta la posición 8
-            } else if (posicion <= 10) {
-                color = new Color(255, 241, 171); // Amarillo suave para las posiciones 9 y 10
+            // Verificar si el modelo ha sido cargado
+            if (modeloCargado) {
+                int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
+                Color color;
+                if (posicion <= 8) {
+                    color = new Color(212, 237, 218); // Verde suave hasta la posición 8
+                } else if (posicion <= 10) {
+                    color = new Color(255, 241, 171); // Amarillo suave para las posiciones 9 y 10
+                } else {
+                    color = new Color(255, 195, 195); // Rojo suave para el resto de las posiciones
+                }
+                cellComponent.setBackground(color);
             } else {
-                color = new Color(255, 195, 195); // Rojo suave para el resto de las posiciones
+                cellComponent.setBackground(table.getBackground());
             }
-            cellComponent.setBackground(color);
-        } else {
-            cellComponent.setBackground(table.getBackground());
-        }
 
             return cellComponent;
         });
@@ -99,20 +100,20 @@ public class Eliminatoria extends javax.swing.JFrame {
             Component cellComponent = new DefaultTableCellRenderer().getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 
             // Verificar si el modelo ha sido cargado
-        if (modeloCargado) {
-            int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
-            Color color;
-            if (posicion <= 9) {
-                color = new Color(212, 237, 218); // Verde suave hasta la posición 8
-            } else if (posicion == 10) {
-                color = new Color(255, 241, 171); // Amarillo suave para las posiciones 9 y 10
+            if (modeloCargado) {
+                int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
+                Color color;
+                if (posicion <= 9) {
+                    color = new Color(212, 237, 218); // Verde suave hasta la posición 8
+                } else if (posicion == 10) {
+                    color = new Color(255, 241, 171); // Amarillo suave para las posiciones 9 y 10
+                } else {
+                    color = new Color(255, 195, 195); // Rojo suave para el resto de las posiciones
+                }
+                cellComponent.setBackground(color);
             } else {
-                color = new Color(255, 195, 195); // Rojo suave para el resto de las posiciones
+                cellComponent.setBackground(table.getBackground());
             }
-            cellComponent.setBackground(color);
-        } else {
-            cellComponent.setBackground(table.getBackground());
-        }
 
             return cellComponent;
         });
@@ -129,21 +130,21 @@ public class Eliminatoria extends javax.swing.JFrame {
             Component cellComponent = new DefaultTableCellRenderer().getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 
             // Verificar si el modelo ha sido cargado
-           // Verificar si el modelo ha sido cargado
-        if (modeloCargado) {
-            int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
-            Color color;
-            if (posicion <= 6) {
-                color = new Color(212, 237, 218); // Verde suave hasta la posición 8
-            } else if (posicion == 7) {
-                color = new Color(255, 241, 171); // Amarillo suave para las posiciones 9 y 10
+            // Verificar si el modelo ha sido cargado
+            if (modeloCargado) {
+                int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
+                Color color;
+                if (posicion <= 6) {
+                    color = new Color(212, 237, 218); // Verde suave hasta la posición 8
+                } else if (posicion == 7) {
+                    color = new Color(255, 241, 171); // Amarillo suave para las posiciones 9 y 10
+                } else {
+                    color = new Color(255, 195, 195); // Rojo suave para el resto de las posiciones
+                }
+                cellComponent.setBackground(color);
             } else {
-                color = new Color(255, 195, 195); // Rojo suave para el resto de las posiciones
+                cellComponent.setBackground(table.getBackground());
             }
-            cellComponent.setBackground(color);
-        } else {
-            cellComponent.setBackground(table.getBackground());
-        }
 
             return cellComponent;
         });
@@ -161,20 +162,20 @@ public class Eliminatoria extends javax.swing.JFrame {
 
             // Verificar si el modelo ha sido cargado
             // Verificar si el modelo ha sido cargado
-        if (modeloCargado) {
-            int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
-            Color color;
-            if (posicion <= 1) {
-                color = new Color(212, 237, 218); // Verde suave hasta la posición 8
-            } else if (posicion == 2) {
-                color = new Color(255, 241, 171); // Amarillo suave para las posiciones 9 y 10
+            if (modeloCargado) {
+                int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
+                Color color;
+                if (posicion <= 1) {
+                    color = new Color(212, 237, 218); // Verde suave hasta la posición 8
+                } else if (posicion == 2) {
+                    color = new Color(255, 241, 171); // Amarillo suave para las posiciones 9 y 10
+                } else {
+                    color = new Color(255, 195, 195); // Rojo suave para el resto de las posiciones
+                }
+                cellComponent.setBackground(color);
             } else {
-                color = new Color(255, 195, 195); // Rojo suave para el resto de las posiciones
+                cellComponent.setBackground(table.getBackground());
             }
-            cellComponent.setBackground(color);
-        } else {
-            cellComponent.setBackground(table.getBackground());
-        }
 
             return cellComponent;
         });
@@ -191,19 +192,19 @@ public class Eliminatoria extends javax.swing.JFrame {
             Component cellComponent = new DefaultTableCellRenderer().getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 
             // Verificar si el modelo ha sido cargado
-         // Verificar si el modelo ha sido cargado
-        if (modeloCargado) {
-            int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
-            Color color;
-            if (posicion <= 16) {
-                color = new Color(212, 237, 218); // Verde suave hasta la posición 8
+            // Verificar si el modelo ha sido cargado
+            if (modeloCargado) {
+                int posicion = Integer.parseInt(table.getValueAt(row, 0).toString());
+                Color color;
+                if (posicion <= 16) {
+                    color = new Color(212, 237, 218); // Verde suave hasta la posición 8
+                } else {
+                    color = new Color(255, 195, 195); // Rojo suave para el resto de las posiciones
+                }
+                cellComponent.setBackground(color);
             } else {
-                color = new Color(255, 195, 195); // Rojo suave para el resto de las posiciones
+                cellComponent.setBackground(table.getBackground());
             }
-            cellComponent.setBackground(color);
-        } else {
-            cellComponent.setBackground(table.getBackground());
-        }
 
             return cellComponent;
         });
@@ -367,7 +368,7 @@ public class Eliminatoria extends javax.swing.JFrame {
     }
 
     //---------------------------------Metodo Ordenar Posiciones------------------------------------------------------------------------------------------
-    private void ordenarPosiciones(JTable tabla) {
+    /*private void ordenarPosiciones(JTable tabla) {
         DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
 
         // Crear un comparador personalizado para ordenar las filas según el puntaje PTS en forma descendente
@@ -398,6 +399,46 @@ public class Eliminatoria extends javax.swing.JFrame {
             modelo.removeRow(i);
             modelo.insertRow(i, fila);
         }
+    }*/
+//---------------------------------------Simulate match by match--------------------------------
+
+    public static void equiposAlAzar() {
+        // Nombres de las selecciones
+        String[] nombresSelecciones = {"Anguila", "Antigua y Barbuda", "Aruba", "Bahamas", "Barbados", "Belice", "Bermudas", "Canadá", "Costa Rica", "Cuba", "Curazao", "Dominica", "EEUU", "El Salvador", "Granada", "Guatemala", "Guyana", "Haití", "Honduras", "Islas Caimán",
+            "Islas Vírgenes Británicas", "Islas Vírgenes Estadounidenses", "Jamaica", "México", "Montserrat", "Nicaragua", "Panamá", "Puerto Rico", "República Dominicana", "San Cristóbal y Nieves", "San Vicente y las Granadinas", "Santa Lucía", "Surinam", "Trinidad y Tobago", "Turcas y Caicos"};
+
+        Random random = new Random();
+
+        // Generar índices aleatorios para los equipos
+        int indiceEquipo1 = random.nextInt(nombresSelecciones.length);
+        int indiceEquipo2 = random.nextInt(nombresSelecciones.length);
+
+        // Asegurarse de que los índices de los equipos sean diferentes
+        while (indiceEquipo2 == indiceEquipo1) {
+            indiceEquipo2 = random.nextInt(nombresSelecciones.length);
+        }
+
+        // Obtener los nombres de los equipos
+        String equipo1 = nombresSelecciones[indiceEquipo1];
+        String equipo2 = nombresSelecciones[indiceEquipo2];
+
+        // Asignar goles aleatorios a cada equipo
+        int golesEquipo1 = asignarGoles();
+        int golesEquipo2 = asignarGoles();
+
+        // Calcular y mostrar el marcador
+        marcador(golesEquipo1, golesEquipo2);
+    }
+
+    public static int asignarGoles() {
+        Random random = new Random();
+        int maxGoles = 10;
+        int golesAsignados = random.nextInt(maxGoles + 1);
+        return golesAsignados;
+    }
+
+    public static void marcador(int golesEquipo1, int golesEquipo2) {
+        System.out.println("Marcador: " + golesEquipo1 + " - " + golesEquipo2);
     }
 
     //--------------------------------------------Desactivar botones---------------------------------------------------
@@ -481,6 +522,300 @@ public class Eliminatoria extends javax.swing.JFrame {
 
     private void mensajeUno() {
         JOptionPane.showMessageDialog(this, "Se a jugado todos los partidos" + "\nPrecionar el boton (Ver resultados) para ver los encuentros.");
+    }
+
+    private void muestraMensaje() {
+        JOptionPane.showMessageDialog(null, "Se está jugando partido por partido");
+    }
+
+    private void partidosUnoXUno(JTable tabla) {
+        String[] nombresSelecciones = {"Anguila", "Antigua y Barbuda", "Aruba", "Bahamas", "Barbados", "Belice", "Bermudas", "Canadá", "Costa Rica", "Cuba", "Curazao", "Dominica", "EEUU", "El Salvador", "Granada", "Guatemala", "Guyana", "Haití", "Honduras", "Islas Caimán",
+            "Islas Vírgenes Británicas", "Islas Vírgenes Estadounidenses", "Jamaica", "México", "Montserrat", "Nicaragua", "Panamá", "Puerto Rico", "República Dominicana", "San Cristóbal y Nieves", "San Vicente y las Granadinas", "Santa Lucía", "Surinam", "Trinidad y Tobago", "Turcas y Caicos"};
+
+        Random random = new Random();
+
+        // Generar todos los posibles partidos entre las selecciones
+        for (int i = 0; i < nombresSelecciones.length - 1; i++) {
+            for (int j = i + 1; j < nombresSelecciones.length; j++) {
+                String equipo1 = nombresSelecciones[i];
+                String equipo2 = nombresSelecciones[j];
+
+                int golesEquipo1 = asignarGoles(random);
+                int golesEquipo2 = asignarGoles(random);
+
+                // Mostrar marcador
+                mostrarMarcadorAFC(equipo1, equipo2, golesEquipo1, golesEquipo2);
+
+                // Actualizar la tabla con los resultados del partido
+                actualizarTabla(equipo1, equipo2, golesEquipo1, golesEquipo2, tblPuntajeCONCACAF);
+            }
+        }
+
+        // Ordenar las posiciones en la tabla
+        ordenarPosiciones(tabla);
+    }
+    private void partidosUnoXUnoUEFA(JTable tabla) {
+        String[] nombresSelecciones = {"Anguila", "Antigua y Barbuda", "Aruba", "Bahamas", "Barbados", "Belice", "Bermudas", "Canadá", "Costa Rica", "Cuba", "Curazao", "Dominica", "EEUU", "El Salvador", "Granada", "Guatemala", "Guyana", "Haití", "Honduras", "Islas Caimán",
+            "Islas Vírgenes Británicas", "Islas Vírgenes Estadounidenses", "Jamaica", "México", "Montserrat", "Nicaragua", "Panamá", "Puerto Rico", "República Dominicana", "San Cristóbal y Nieves", "San Vicente y las Granadinas", "Santa Lucía", "Surinam", "Trinidad y Tobago", "Turcas y Caicos"};
+
+        Random random = new Random();
+
+        // Generar todos los posibles partidos entre las selecciones
+        for (int i = 0; i < nombresSelecciones.length - 1; i++) {
+            for (int j = i + 1; j < nombresSelecciones.length; j++) {
+                String equipo1 = nombresSelecciones[i];
+                String equipo2 = nombresSelecciones[j];
+
+                int golesEquipo1 = asignarGoles(random);
+                int golesEquipo2 = asignarGoles(random);
+
+                // Mostrar marcador
+                mostrarMarcadorUEFA(equipo1, equipo2, golesEquipo1, golesEquipo2);
+
+                // Actualizar la tabla con los resultados del partido
+                actualizarTabla(equipo1, equipo2, golesEquipo1, golesEquipo2, tblPuntajeCONCACAF);
+            }
+        }
+
+        // Ordenar las posiciones en la tabla
+        ordenarPosiciones(tabla);
+    }
+
+    public static int asignarGoles(Random random) {
+        int maxGoles = 10;
+        return random.nextInt(maxGoles + 1);
+    }
+
+    public void mostrarMarcadorAFC(String equipo1, String equipo2, int golesEquipo1, int golesEquipo2) {
+        txtResultadoAFC.append("Partido: " + equipo1 + " vs " + equipo2 + "\n");
+        txtResultadoAFC.append("Marcador: " + equipo1 + " " + golesEquipo1 + " - " + golesEquipo2 + " " + equipo2 + "\n");
+        txtResultadoAFC.append("------------------------------------\n");
+
+    }
+    public void mostrarMarcadorCAF(String equipo1, String equipo2, int golesEquipo1, int golesEquipo2) {
+        txtResultadoAFC.append("Partido: " + equipo1 + " vs " + equipo2 + "\n");
+        txtResultadoAFC.append("Marcador: " + equipo1 + " " + golesEquipo1 + " - " + golesEquipo2 + " " + equipo2 + "\n");
+        txtResultadoAFC.append("------------------------------------\n");
+
+    }
+    public void mostrarMarcadorUEFA(String equipo1, String equipo2, int golesEquipo1, int golesEquipo2) {
+        txtResultadoAFC.append("Partido: " + equipo1 + " vs " + equipo2 + "\n");
+        txtResultadoAFC.append("Marcador: " + equipo1 + " " + golesEquipo1 + " - " + golesEquipo2 + " " + equipo2 + "\n");
+        txtResultadoAFC.append("------------------------------------\n");
+
+    }
+    public void mostrarMarcadorCONCACAF(String equipo1, String equipo2, int golesEquipo1, int golesEquipo2) {
+        txtResultadoAFC.append("Partido: " + equipo1 + " vs " + equipo2 + "\n");
+        txtResultadoAFC.append("Marcador: " + equipo1 + " " + golesEquipo1 + " - " + golesEquipo2 + " " + equipo2 + "\n");
+        txtResultadoAFC.append("------------------------------------\n");
+
+    }
+    public void mostrarMarcadorOFC(String equipo1, String equipo2, int golesEquipo1, int golesEquipo2) {
+        txtResultadoAFC.append("Partido: " + equipo1 + " vs " + equipo2 + "\n");
+        txtResultadoAFC.append("Marcador: " + equipo1 + " " + golesEquipo1 + " - " + golesEquipo2 + " " + equipo2 + "\n");
+        txtResultadoAFC.append("------------------------------------\n");
+
+    }
+    public void mostrarMarcadorCONMEBOL(String equipo1, String equipo2, int golesEquipo1, int golesEquipo2) {
+        txtResultadoAFC.append("Partido: " + equipo1 + " vs " + equipo2 + "\n");
+        txtResultadoAFC.append("Marcador: " + equipo1 + " " + golesEquipo1 + " - " + golesEquipo2 + " " + equipo2 + "\n");
+        txtResultadoAFC.append("------------------------------------\n");
+
+    }
+
+    public void actualizarTabla(String equipo1, String equipo2, int golesEquipo1, int golesEquipo2, JTable tabla) {
+        DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+        int rowCount = modelo.getRowCount();
+
+        // Buscar las filas correspondientes a los equipos en la tabla
+        int indexEquipo1 = -1;
+        int indexEquipo2 = -1;
+        for (int i = 0; i < rowCount; i++) {
+            String equipo = (String) modelo.getValueAt(i, 1);
+            if (equipo != null && equipo.equals(equipo1)) {
+                indexEquipo1 = i;
+            } else if (equipo != null && equipo.equals(equipo2)) {
+                indexEquipo2 = i;
+            }
+
+            // Salir del bucle si se encontraron ambas filas
+            if (indexEquipo1 != -1 && indexEquipo2 != -1) {
+                break;
+            }
+        }
+
+        // Actualizar los datos de los equipos en la tabla
+        if (indexEquipo1 != -1 && indexEquipo2 != -1) {
+            int golesFavorEquipo1 = (int) modelo.getValueAt(indexEquipo1, 2) + golesEquipo1;
+            int golesFavorEquipo2 = (int) modelo.getValueAt(indexEquipo2, 2) + golesEquipo2;
+            int golesContraEquipo1 = (int) modelo.getValueAt(indexEquipo1, 3) + golesEquipo2;
+            int golesContraEquipo2 = (int) modelo.getValueAt(indexEquipo2, 3) + golesEquipo1;
+            int partidosJugadosEquipo1 = (int) modelo.getValueAt(indexEquipo1, 4) + 1;
+            int partidosJugadosEquipo2 = (int) modelo.getValueAt(indexEquipo2, 4) + 1;
+            int puntosEquipo1 = (int) modelo.getValueAt(indexEquipo1, 5);
+            int puntosEquipo2 = (int) modelo.getValueAt(indexEquipo2, 5);
+
+            // Calcular puntos según el resultado del partido
+            if (golesEquipo1 == golesEquipo2) {
+                puntosEquipo1 += 1;
+                puntosEquipo2 += 1;
+            } else if (golesEquipo1 > golesEquipo2) {
+                puntosEquipo1 += 3;
+            } else {
+                puntosEquipo2 += 3;
+            }
+
+            // Actualizar los valores en la tabla
+            modelo.setValueAt(golesFavorEquipo1, indexEquipo1, 2);
+            modelo.setValueAt(golesFavorEquipo2, indexEquipo2, 2);
+            modelo.setValueAt(golesContraEquipo1, indexEquipo1, 3);
+            modelo.setValueAt(golesContraEquipo2, indexEquipo2, 3);
+            modelo.setValueAt(partidosJugadosEquipo1, indexEquipo1, 4);
+            modelo.setValueAt(partidosJugadosEquipo2, indexEquipo2, 4);
+            modelo.setValueAt(puntosEquipo1, indexEquipo1, 5);
+            modelo.setValueAt(puntosEquipo2, indexEquipo2, 5);
+
+            // Actualizar la diferencia de goles
+            int diferenciaGolesEquipo1 = golesFavorEquipo1 - golesContraEquipo1;
+            int diferenciaGolesEquipo2 = golesFavorEquipo2 - golesContraEquipo2;
+            modelo.setValueAt(diferenciaGolesEquipo1, indexEquipo1, 6);
+            modelo.setValueAt(diferenciaGolesEquipo2, indexEquipo2, 6);
+        }
+    }
+
+    public void ordenarPosiciones(JTable tabla) {
+        DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+
+        // Crear un comparador personalizado para ordenar las filas según el puntaje PTS en forma descendente
+        Comparator<Object[]> comparador = (fila1, fila2) -> {
+            int pts1 = (int) fila1[5];
+            int pts2 = (int) fila2[5];
+            return Integer.compare(pts2, pts1);
+        };
+
+        // Obtener la cantidad de filas del modelo
+        int rowCount = modelo.getRowCount();
+
+        // Crear una lista temporal para almacenar las filas ordenadas
+        List<Object[]> filas = new ArrayList<>();
+        for (int i = 0; i < rowCount; i++) {
+            Object[] fila = new Object[modelo.getColumnCount()];
+            for (int j = 0; j < modelo.getColumnCount(); j++) {
+                fila[j] = modelo.getValueAt(i, j);
+            }
+            filas.add(fila);
+        }
+
+        // Ordenar las filas según el puntaje PTS en forma descendente
+        filas.sort(comparador);
+
+        // Limpiar el modelo de tabla existente
+        modelo.setRowCount(0);
+
+        // Insertar las filas ordenadas en el modelo de tabla
+        for (int i = 0; i < filas.size(); i++) {
+            Object[] fila = filas.get(i);
+            fila[0] = i + 1; // Actualizar la posición
+            modelo.addRow(fila);
+        }
+        modelo.fireTableDataChanged();
+    }
+
+    private void simularPartidosUno(JTable tabla) {
+        Random rand = new Random();
+        int maxGoles = 10;
+        DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+
+        for (int i = 0; i < modelo.getRowCount(); i++) {
+            for (int j = i + 1; j < modelo.getRowCount(); j++) {
+                int golesLocal = rand.nextInt(maxGoles + 1);
+                int golesVisitante = rand.nextInt(maxGoles + 1);
+
+                int golesLocalAntes = (int) modelo.getValueAt(i, 8);
+                int golesVisitanteAntes = (int) modelo.getValueAt(j, 8);
+                int golesLocalContraAntes = (int) modelo.getValueAt(i, 9);
+                int golesVisitanteContraAntes = (int) modelo.getValueAt(j, 9);
+
+                int golesLocalDespues = golesLocalAntes + golesLocal;
+                int golesVisitanteDespues = golesVisitanteAntes + golesVisitante;
+                int golesLocalContraDespues = golesLocalContraAntes + golesVisitante;
+                int golesVisitanteContraDespues = golesVisitanteContraAntes + golesLocal;
+
+                modelo.setValueAt(golesLocalDespues, i, 8);
+                modelo.setValueAt(golesVisitanteDespues, j, 8);
+                modelo.setValueAt(golesLocalContraDespues, i, 9);
+                modelo.setValueAt(golesVisitanteContraDespues, j, 9);
+
+                int puntosLocal = (int) modelo.getValueAt(i, 3);
+                int puntosVisitante = (int) modelo.getValueAt(j, 3);
+
+                if (golesLocal == golesVisitante) {
+                    puntosLocal += 1;
+                    puntosVisitante += 1;
+                    modelo.setValueAt(puntosLocal, i, 3);
+                    modelo.setValueAt(puntosVisitante, j, 3);
+
+                    int empatesLocal = (int) modelo.getValueAt(i, 6);
+                    int empatesVisitante = (int) modelo.getValueAt(j, 6);
+                    modelo.setValueAt(empatesLocal + 1, i, 6);
+                    modelo.setValueAt(empatesVisitante + 1, j, 6);
+                } else if (golesLocal > golesVisitante) {
+                    puntosLocal += 3;
+                    modelo.setValueAt(puntosLocal, i, 3);
+
+                    int victoriasLocal = (int) modelo.getValueAt(i, 5);
+                    int derrotasVisitante = (int) modelo.getValueAt(j, 7);
+                    modelo.setValueAt(victoriasLocal + 1, i, 5);
+                    modelo.setValueAt(derrotasVisitante + 1, j, 7);
+                } else {
+                    puntosVisitante += 3;
+                    modelo.setValueAt(puntosVisitante, j, 3);
+
+                    int victoriasVisitante = (int) modelo.getValueAt(j, 5);
+                    int derrotasLocal = (int) modelo.getValueAt(i, 7);
+                    modelo.setValueAt(victoriasVisitante + 1, j, 5);
+                    modelo.setValueAt(derrotasLocal + 1, i, 7);
+                }
+            }
+        }
+
+        // Actualizar los puntos, partidos jugados y diferencia de goles
+        actualizarPuntosPartidosJugados(tabla);
+        actualizarDiferenciaGoles(tabla);
+
+        // Ordenar las posiciones en la tabla
+        ordenarPosiciones(tabla);
+    }
+
+    private void actualizarPuntosPartidosJugadosUno(JTable tabla) {
+        DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+
+        for (int i = 0; i < modelo.getRowCount(); i++) {
+            int partidosJugados = (int) modelo.getValueAt(i, 5) + (int) modelo.getValueAt(i, 6) + (int) modelo.getValueAt(i, 7);
+            int puntos = 3 * (int) modelo.getValueAt(i, 6) + (int) modelo.getValueAt(i, 7);
+
+            modelo.setValueAt(partidosJugados, i, 4);
+            modelo.setValueAt(puntos, i, 3);
+        }
+    }
+
+    private void actualizarDiferenciaGolesUno(JTable tabla) {
+        DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+
+        for (int i = 0; i < modelo.getRowCount(); i++) {
+            int golesFavor = (int) modelo.getValueAt(i, 8);
+            int golesContra = (int) modelo.getValueAt(i, 9);
+            int diferenciaGoles = golesFavor - golesContra;
+
+            modelo.setValueAt(diferenciaGoles, i, 10);
+
+            // Evitar valores negativos en la columna de diferencia de goles
+            if (diferenciaGoles < 0) {
+                modelo.setValueAt(0, i, 10); // Establecer la diferencia de goles como 0
+                modelo.setValueAt(golesFavor, i, 8); // Actualizar los goles a favor
+                modelo.setValueAt(golesContra, i, 9); // Actualizar los goles en contra
+            }
+        }
     }
 
 //---------------------------------------------Eliminatoria---------------------------------------------------
@@ -671,6 +1006,13 @@ public class Eliminatoria extends javax.swing.JFrame {
         }
     }
 
+    private void desactivarBotonDespuesDeDosClicks(javax.swing.JButton boton) {
+    contador++;
+
+    if (contador >= 2) {
+        boton.setEnabled(false);
+    }
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -1225,8 +1567,12 @@ public class Eliminatoria extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
  //---------------------------Concacaf------------------------------------------------------
     private void btnPartidoConcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoConcaActionPerformed
-        cargarConca();
-        mensajeUno();
+        desactivarBotonDespuesDeDosClicks(btnPartidoConca);
+        partidosUnoXUno(tblPuntajeCONCACAF);
+        simularPartidosUno(tblPuntajeCONCACAF);
+        actualizarPuntosPartidosJugadosUno(tblPuntajeCONCACAF);
+        actualizarDiferenciaGolesUno(tblPuntajeCONCACAF);
+        ordenarPosiciones(tblPuntajeCONCACAF);
     }//GEN-LAST:event_btnPartidoConcaActionPerformed
 
     private void btnSimularTodoConcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodoConcaActionPerformed
@@ -1235,12 +1581,12 @@ public class Eliminatoria extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSimularTodoConcaActionPerformed
 
     private void btnResultadoConcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoConcaActionPerformed
- String paises[] = {"Costa Rica", "Nicaragua", "Honduras", "Panamá", "El Salvador", "Jamaica", "Trinidad y Tobago", "Guatemala"};
+        String paises[] = {"Costa Rica", "Nicaragua", "Honduras", "Panamá", "El Salvador", "Jamaica", "Trinidad y Tobago", "Guatemala"};
         // Crear instancia de SedesEncuentros
         SedesEncuentros sedeEncuentro = new SedesEncuentros("1", "Estados Unidos", "Boston", paises, "2-4");
 
 // Obtener el resultado
-       sedeEncuentro.mostrarResultados();
+        sedeEncuentro.mostrarResultados();
 
     }//GEN-LAST:event_btnResultadoConcaActionPerformed
 //---------------------------AFC------------------------------------------------------
@@ -1255,7 +1601,7 @@ public class Eliminatoria extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSimularTodoAFCActionPerformed
 
     private void btnResultadoAFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoAFCActionPerformed
-         String paises[] = {"Afganistán", "Arabia Saudí", "Australia", "Bahréin", "Bangladesh", "Brunéi Darussalam", "Bután ", "Camboya", "Chinese Taipei", "Emiratos Árabes Unidos", "Filipinas",
+        String paises[] = {"Afganistán", "Arabia Saudí", "Australia", "Bahréin", "Bangladesh", "Brunéi Darussalam", "Bután ", "Camboya", "Chinese Taipei", "Emiratos Árabes Unidos", "Filipinas",
             "Guam", "Hong Kong China", "India ", "Indonesia", "Irak", "Japón", "Jordania", "Kuwait", "Laos", "Líbano", "Macao", "Malasia", "Maldivas", "Mongolia", "Myanmar", "Nepal", "Omán", "Pakistán",
             "Palestina", "Qatar", "RDP de Corea", "República de Corea", "República Kirguisa", "Rl de Irán", "RP China", "Singapur", "Siria", "Sri Lanka", "Tailandia", "Tayikistán", "Timor Oriental",
             "Turkmenistán", "Uzbekistán", "Vietnam", "Yemen"};
@@ -1263,13 +1609,17 @@ public class Eliminatoria extends javax.swing.JFrame {
         SedesEncuentros sedeEncuentro = new SedesEncuentros("1", "Estados Unidos", "Boston", paises, "2-4");
 
 // Obtener el resultado
-       sedeEncuentro.mostrarResultados();
+        sedeEncuentro.mostrarResultados();
 
     }//GEN-LAST:event_btnResultadoAFCActionPerformed
 //---------------------------CAF------------------------------------------------------
     private void btnPartidoCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoCAFActionPerformed
-        cargarCAF();
-        mensajeUno();
+        desactivarBotonDespuesDeDosClicks(btnPartidoCAF);
+        partidosUnoXUno(tblPuntajeCAF);
+        simularPartidosUno(tblPuntajeCAF);
+        actualizarPuntosPartidosJugadosUno(tblPuntajeCAF);
+        actualizarDiferenciaGolesUno(tblPuntajeCAF);
+        ordenarPosiciones(tblPuntajeCAF);
     }//GEN-LAST:event_btnPartidoCAFActionPerformed
 
     private void btnSimularTodoCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodoCAFActionPerformed
@@ -1278,7 +1628,7 @@ public class Eliminatoria extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSimularTodoCAFActionPerformed
 
     private void btnResultadoCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoCAFActionPerformed
-          String paises[] = {"Angola", "Argelia", "Benín", "Botsuana", "Botsuana", "Burkina Faso", "Burundi", "Cabo Verde", "Camerún", "Chad", "Comoras", "Congo", "Costa de Marfil", "Egipto", "Eritrea",
+        String paises[] = {"Angola", "Argelia", "Benín", "Botsuana", "Botsuana", "Burkina Faso", "Burundi", "Cabo Verde", "Camerún", "Chad", "Comoras", "Congo", "Costa de Marfil", "Egipto", "Eritrea",
             "Esuatini", "Etiopía", "Gabón", "Gambia", "Ghana", "Guinea", "Guinea Ecuatorial", "Guinea-Bissáu", "Kenia", "Lesoto", "Liberia", "Libia", "Madagascar", "Malaui", "Mali", "Marruecos", "Mauricio",
             "Mauritania", "Mozambique", "Namibia", "Níger", "Nigeria", "RD del Congo", "República Centroafricana", "Ruanda", "Santo Tomé y Príncipe", "Senegal", "Seychelles", "Sierra Leona", "Somalia",
             "Sudáfrica", "Sudán", "Sudán del Sur", "Tanzania", "Togo", "Túnez", "Uganda", "Yibuti", "Zambia"};
@@ -1286,14 +1636,18 @@ public class Eliminatoria extends javax.swing.JFrame {
         SedesEncuentros sedeEncuentro = new SedesEncuentros("1", "Estados Unidos", "Boston", paises, "2-4");
 
 // Obtener el resultado
-       sedeEncuentro.mostrarResultados();
+        sedeEncuentro.mostrarResultados();
 
-    
+
     }//GEN-LAST:event_btnResultadoCAFActionPerformed
 //---------------------------CONMEBOL------------------------------------------------------
     private void btnPartidoCONMEBOLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoCONMEBOLActionPerformed
-        cargarCONMEBOL();
-        mensajeUno();
+        desactivarBotonDespuesDeDosClicks(btnPartidoCONMEBOL);
+        partidosUnoXUno(tblPuntajeCONMEBOL);
+        simularPartidosUno(tblPuntajeCONMEBOL);
+        actualizarPuntosPartidosJugadosUno(tblPuntajeCONMEBOL);
+        actualizarDiferenciaGolesUno(tblPuntajeCONMEBOL);
+        ordenarPosiciones(tblPuntajeCONMEBOL);
     }//GEN-LAST:event_btnPartidoCONMEBOLActionPerformed
 
     private void btnSimularTodoCONMEBOLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodoCONMEBOLActionPerformed
@@ -1302,37 +1656,41 @@ public class Eliminatoria extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSimularTodoCONMEBOLActionPerformed
 
     private void btnResultadoCONMEBOLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoCONMEBOLActionPerformed
-         String paises[] = {"Argentina", "Bolivia", "Brasil", "Chile", "Colombia", "Ecuador", "Paraguay", "Perú", "Uruguay", "Venezuela"};
+        String paises[] = {"Argentina", "Bolivia", "Brasil", "Chile", "Colombia", "Ecuador", "Paraguay", "Perú", "Uruguay", "Venezuela"};
         // Crear instancia de SedesEncuentros
         SedesEncuentros sedeEncuentro = new SedesEncuentros("1", "Estados Unidos", "Boston", paises, "2-4");
 
 // Obtener el resultado
-       sedeEncuentro.mostrarResultados();
+        sedeEncuentro.mostrarResultados();
 
     }//GEN-LAST:event_btnResultadoCONMEBOLActionPerformed
 //---------------------------OFC------------------------------------------------------
     private void btnPartidoOFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoOFCActionPerformed
-        cargarOFC();
-        mensajeUno();
+        desactivarBotonDespuesDeDosClicks(btnPartidoOFC);
+        partidosUnoXUno(tblPuntajeOFC);
+        simularPartidosUno(tblPuntajeOFC);
+        actualizarPuntosPartidosJugadosUno(tblPuntajeOFC);
+        actualizarDiferenciaGolesUno(tblPuntajeOFC);
+        ordenarPosiciones(tblPuntajeOFC);
     }//GEN-LAST:event_btnPartidoOFCActionPerformed
 
     private void btnSimularTodoOFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodoOFCActionPerformed
-       cargarOFC();
+        cargarOFC();
         mensajeTodo();
     }//GEN-LAST:event_btnSimularTodoOFCActionPerformed
 
     private void btnResultadoOFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoOFCActionPerformed
-         String paises[] = {"Fiyi", "Islas Cook", "Islas Salomón", "Nueva Caledonia", "Nueva Zelanda", "Papúa Nueva Guinea", "Samoa", "Samoa Americana", "Tahití", "Tonga", "Vanuatu", "islas Kiribati", "Tuvalu"};
+        String paises[] = {"Fiyi", "Islas Cook", "Islas Salomón", "Nueva Caledonia", "Nueva Zelanda", "Papúa Nueva Guinea", "Samoa", "Samoa Americana", "Tahití", "Tonga", "Vanuatu", "islas Kiribati", "Tuvalu"};
         // Crear instancia de SedesEncuentros
         SedesEncuentros sedeEncuentro = new SedesEncuentros("1", "Estados Unidos", "Boston", paises, "2-4");
 
 // Obtener el resultado
-       sedeEncuentro.mostrarResultados();
+        sedeEncuentro.mostrarResultados();
 
     }//GEN-LAST:event_btnResultadoOFCActionPerformed
 //---------------------------UEFA------------------------------------------------------
     private void btnResultadoUEFAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoUEFAActionPerformed
-          String paises[] = {"Albania", "Alemania", "Andorra", "Armenia", "Austria", "Azerbaiyán", "Bélgica", "Bielorrusia", "Bosnia y Herzegovina", "Bulgaria", "Chipre", "Croacia", "Dinamarca",
+        String paises[] = {"Albania", "Alemania", "Andorra", "Armenia", "Austria", "Azerbaiyán", "Bélgica", "Bielorrusia", "Bosnia y Herzegovina", "Bulgaria", "Chipre", "Croacia", "Dinamarca",
             "Escocia" + "Eslovaqui", "Eslovenia", "España", "Estonia", "Finlandia", "Francia", "Gales", "Georgia", "Gibraltar", "Hungría", "Inglaterra", "Irlanda", "Irlanda del Norte",
             "Islandia", "Islas Feroe", "Israel", "Italia", "Kazajistán", "Kosovo", "Letonia", "Liechtenstein", "Lituania", "Luxemburgo", "Macedonia del Norte", "Malta", "Moldavia", "Montenegro", "Noruega", "Paises Bajos",
             "Polonia", "Portugal", "Republica Checa", "Rumania", "Rusia", "San Marino", "Serbia", "Suecia", "Suiza", "Turquia", "Ucrania"};
@@ -1340,13 +1698,17 @@ public class Eliminatoria extends javax.swing.JFrame {
         SedesEncuentros sedeEncuentro = new SedesEncuentros("1", "México", "Boston", paises, "2-4");
 
 // Obtener el resultado
-       sedeEncuentro.mostrarResultados();
+        sedeEncuentro.mostrarResultados();
 
     }//GEN-LAST:event_btnResultadoUEFAActionPerformed
 
     private void btnPartidoUEFAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoUEFAActionPerformed
-        cargarUEFA();
-        mensajeUno();
+       desactivarBotonDespuesDeDosClicks(btnPartidoUEFA);
+        partidosUnoXUno(tblPuntajeUEFA);
+        simularPartidosUno(tblPuntajeUEFA);
+        actualizarPuntosPartidosJugadosUno(tblPuntajeUEFA);
+        actualizarDiferenciaGolesUno(tblPuntajeUEFA);
+        ordenarPosiciones(tblPuntajeUEFA);
     }//GEN-LAST:event_btnPartidoUEFAActionPerformed
 
     private void btnSimularTodoUEFAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularTodoUEFAActionPerformed

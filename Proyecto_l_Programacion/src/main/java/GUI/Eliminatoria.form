@@ -151,12 +151,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\TodosLosBotones.jpg"/>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPartidoAFCActionPerformed"/>
@@ -171,12 +165,6 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\TodosLosBotones.jpg"/>
                 </Property>
               </Properties>
               <Events>
@@ -213,12 +201,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\TodosLosBotones.jpg"/>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnResultadoAFCActionPerformed"/>
@@ -233,9 +215,6 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Ver Resultados"/>
               </Properties>
@@ -253,9 +232,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Simular Todos"/>
               </Properties>
               <Events>
@@ -272,9 +248,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Simular Partido"/>
               </Properties>
               <Constraints>
@@ -284,11 +257,6 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblFondoAFC">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\AFC.jpg"/>
-                </Property>
-              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="0" y="20" width="1510" height="820"/>
@@ -410,12 +378,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\TodosLosBotones.jpg"/>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPartidoCAFActionPerformed"/>
@@ -430,12 +392,6 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\TodosLosBotones.jpg"/>
                 </Property>
               </Properties>
               <Events>
@@ -472,12 +428,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\TodosLosBotones.jpg"/>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnResultadoCAFActionPerformed"/>
@@ -493,9 +443,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Simular Partido"/>
               </Properties>
               <Constraints>
@@ -508,9 +455,6 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Simular Todos"/>
               </Properties>
@@ -525,9 +469,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Ver Resultados"/>
               </Properties>
               <Constraints>
@@ -538,9 +479,6 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblFondoCAF">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\CAF.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="jLabel1"/>
               </Properties>
               <Constraints>
@@ -664,12 +602,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\TodosLosBotones.jpg"/>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPartidoConcaActionPerformed"/>
@@ -684,12 +616,6 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\TodosLosBotones.jpg"/>
                 </Property>
               </Properties>
               <Events>
@@ -726,12 +652,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\TodosLosBotones.jpg"/>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnResultadoConcaActionPerformed"/>
@@ -747,9 +667,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Simular Partido"/>
               </Properties>
               <Constraints>
@@ -762,9 +679,6 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Simular Todos"/>
               </Properties>
@@ -779,9 +693,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Ver Resultados"/>
               </Properties>
               <Constraints>
@@ -791,11 +702,6 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblFondoCONCACAF">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\Concacaf.jpg"/>
-                </Property>
-              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="0" y="0" width="1510" height="820"/>
@@ -917,12 +823,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\TodosLosBotones.jpg"/>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPartidoCONMEBOLActionPerformed"/>
@@ -937,12 +837,6 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\TodosLosBotones.jpg"/>
                 </Property>
               </Properties>
               <Events>
@@ -979,12 +873,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\TodosLosBotones.jpg"/>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnResultadoCONMEBOLActionPerformed"/>
@@ -1000,9 +888,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Simular Partido"/>
               </Properties>
               <Constraints>
@@ -1015,9 +900,6 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Simular Todos"/>
               </Properties>
@@ -1032,9 +914,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Ver Resultados"/>
               </Properties>
               <Constraints>
@@ -1044,11 +923,6 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="lblFondoCONMEBOL">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\Conmebol.jpg"/>
-                </Property>
-              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="0" y="0" width="1510" height="820"/>
@@ -1197,12 +1071,6 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="18" style="3"/>
                     </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\TodosLosBotones.jpg"/>
-                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPartidoOFCActionPerformed"/>
@@ -1217,12 +1085,6 @@
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="18" style="3"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\TodosLosBotones.jpg"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -1259,12 +1121,6 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="18" style="3"/>
                     </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\TodosLosBotones.jpg"/>
-                    </Property>
                     <Property name="opaque" type="boolean" value="true"/>
                   </Properties>
                   <Events>
@@ -1281,9 +1137,6 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="18" style="3"/>
                     </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Ver Resultados"/>
                   </Properties>
                   <Constraints>
@@ -1296,9 +1149,6 @@
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="18" style="3"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Simular Todos"/>
                   </Properties>
@@ -1313,9 +1163,6 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="18" style="3"/>
                     </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="text" type="java.lang.String" value="Simular Partido"/>
                   </Properties>
                   <Constraints>
@@ -1325,11 +1172,6 @@
                   </Constraints>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblFondoOFC">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\OFC.jpg"/>
-                    </Property>
-                  </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="0" y="0" width="1510" height="830"/>
@@ -1357,12 +1199,6 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\TodosLosBotones.jpg"/>
                 </Property>
               </Properties>
               <Events>
@@ -1474,12 +1310,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\TodosLosBotones.jpg"/>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPartidoUEFAActionPerformed"/>
@@ -1494,12 +1324,6 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\TodosLosBotones.jpg"/>
                 </Property>
               </Properties>
               <Events>
@@ -1536,9 +1360,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Ver Resultados"/>
               </Properties>
               <Constraints>
@@ -1551,9 +1372,6 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Simular Todos"/>
               </Properties>
@@ -1568,9 +1386,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Simular Partido"/>
               </Properties>
               <Constraints>
@@ -1583,9 +1398,6 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="3"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\UEFA.jpg"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -1610,11 +1422,6 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="lblFondoPP">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\jefry\OneDrive\Desktop\UTN\2&#xba; Cuatrimestre\Programacion I\Proyectos\Programing_Proyect_l\Proyecto_l_Programacion\Fondos\Mundial2.jpg"/>
-                </Property>
-              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="0" y="-4" width="1570" height="840"/>
