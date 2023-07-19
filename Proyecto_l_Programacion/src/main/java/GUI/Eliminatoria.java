@@ -528,7 +528,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Se está jugando partido por partido");
     }
 
-    private void partidosUnoXUno(JTable tabla) {
+    private void partidosUnoXUnoAFC(JTable tabla) {
         String[] nombresSelecciones = {"Anguila", "Antigua y Barbuda", "Aruba", "Bahamas", "Barbados", "Belice", "Bermudas", "Canadá", "Costa Rica", "Cuba", "Curazao", "Dominica", "EEUU", "El Salvador", "Granada", "Guatemala", "Guyana", "Haití", "Honduras", "Islas Caimán",
             "Islas Vírgenes Británicas", "Islas Vírgenes Estadounidenses", "Jamaica", "México", "Montserrat", "Nicaragua", "Panamá", "Puerto Rico", "República Dominicana", "San Cristóbal y Nieves", "San Vicente y las Granadinas", "Santa Lucía", "Surinam", "Trinidad y Tobago", "Turcas y Caicos"};
 
@@ -554,9 +554,110 @@ public class Eliminatoria extends javax.swing.JFrame {
         // Ordenar las posiciones en la tabla
         ordenarPosiciones(tabla);
     }
-    private void partidosUnoXUnoUEFA(JTable tabla) {
+    private void partidosUnoXUnoCONMEBOL(JTable tabla) {
+        String[] nombresSelecciones = {"Argentina", "Bolivia", "Brasil", "Chile", "Colombia", "Ecuador", "Paraguay", "Perú", "Uruguay", "Venezuela"};
+
+        Random random = new Random();
+
+        // Generar todos los posibles partidos entre las selecciones
+        for (int i = 0; i < nombresSelecciones.length - 1; i++) {
+            for (int j = i + 1; j < nombresSelecciones.length; j++) {
+                String equipo1 = nombresSelecciones[i];
+                String equipo2 = nombresSelecciones[j];
+
+                int golesEquipo1 = asignarGoles(random);
+                int golesEquipo2 = asignarGoles(random);
+
+                // Mostrar marcador
+                mostrarMarcadorCONMEBOL(equipo1, equipo2, golesEquipo1, golesEquipo2);
+
+                // Actualizar la tabla con los resultados del partido
+                actualizarTabla(equipo1, equipo2, golesEquipo1, golesEquipo2, tblPuntajeCONMEBOL);
+            }
+        }
+
+        // Ordenar las posiciones en la tabla
+        ordenarPosiciones(tabla);
+    }
+    private void partidosUnoXUnoCAF(JTable tabla) {
+        String[] nombresSelecciones = {"Argentina", "Bolivia", "Brasil", "Chile", "Colombia", "Ecuador", "Paraguay", "Perú", "Uruguay", "Venezuela"};
+
+        Random random = new Random();
+
+        // Generar todos los posibles partidos entre las selecciones
+        for (int i = 0; i < nombresSelecciones.length - 1; i++) {
+            for (int j = i + 1; j < nombresSelecciones.length; j++) {
+                String equipo1 = nombresSelecciones[i];
+                String equipo2 = nombresSelecciones[j];
+
+                int golesEquipo1 = asignarGoles(random);
+                int golesEquipo2 = asignarGoles(random);
+
+                // Mostrar marcador
+                mostrarMarcadorCAF(equipo1, equipo2, golesEquipo1, golesEquipo2);
+
+                // Actualizar la tabla con los resultados del partido
+                actualizarTabla(equipo1, equipo2, golesEquipo1, golesEquipo2, tblPuntajeCONMEBOL);
+            }
+        }
+
+        // Ordenar las posiciones en la tabla
+        ordenarPosiciones(tabla);
+    }
+    private void partidosUnoXUnoOFC(JTable tabla) {
         String[] nombresSelecciones = {"Anguila", "Antigua y Barbuda", "Aruba", "Bahamas", "Barbados", "Belice", "Bermudas", "Canadá", "Costa Rica", "Cuba", "Curazao", "Dominica", "EEUU", "El Salvador", "Granada", "Guatemala", "Guyana", "Haití", "Honduras", "Islas Caimán",
             "Islas Vírgenes Británicas", "Islas Vírgenes Estadounidenses", "Jamaica", "México", "Montserrat", "Nicaragua", "Panamá", "Puerto Rico", "República Dominicana", "San Cristóbal y Nieves", "San Vicente y las Granadinas", "Santa Lucía", "Surinam", "Trinidad y Tobago", "Turcas y Caicos"};
+
+        Random random = new Random();
+
+        // Generar todos los posibles partidos entre las selecciones
+        for (int i = 0; i < nombresSelecciones.length - 1; i++) {
+            for (int j = i + 1; j < nombresSelecciones.length; j++) {
+                String equipo1 = nombresSelecciones[i];
+                String equipo2 = nombresSelecciones[j];
+
+                int golesEquipo1 = asignarGoles(random);
+                int golesEquipo2 = asignarGoles(random);
+
+                // Mostrar marcador
+                mostrarMarcadorOFC(equipo1, equipo2, golesEquipo1, golesEquipo2);
+
+                // Actualizar la tabla con los resultados del partido
+                actualizarTabla(equipo1, equipo2, golesEquipo1, golesEquipo2, tblPuntajeCONCACAF);
+            }
+        }
+
+        // Ordenar las posiciones en la tabla
+        ordenarPosiciones(tabla);
+    }
+
+    private void partidosUnoXUnoCONCACAF(JTable tabla) {
+        String[] nombresSelecciones = {"Argentina", "Bolivia", "Brasil", "Chile", "Colombia", "Ecuador", "Paraguay", "Perú", "Uruguay", "Venezuela"};
+
+        Random random = new Random();
+
+        // Generar todos los posibles partidos entre las selecciones
+        for (int i = 0; i < nombresSelecciones.length - 1; i++) {
+            for (int j = i + 1; j < nombresSelecciones.length; j++) {
+                String equipo1 = nombresSelecciones[i];
+                String equipo2 = nombresSelecciones[j];
+
+                int golesEquipo1 = asignarGoles(random);
+                int golesEquipo2 = asignarGoles(random);
+
+                // Mostrar marcador
+                mostrarMarcadorCONCACAF(equipo1, equipo2, golesEquipo1, golesEquipo2);
+
+                // Actualizar la tabla con los resultados del partido
+                actualizarTabla(equipo1, equipo2, golesEquipo1, golesEquipo2, tblPuntajeCONMEBOL);
+            }
+        }
+
+        // Ordenar las posiciones en la tabla
+        ordenarPosiciones(tabla);
+    }
+    private void partidosUnoXUnoUEFA(JTable tabla) {
+        String[] nombresSelecciones = {"Argentina", "Bolivia", "Brasil", "Chile", "Colombia", "Ecuador", "Paraguay", "Perú", "Uruguay", "Venezuela"};
 
         Random random = new Random();
 
@@ -573,7 +674,7 @@ public class Eliminatoria extends javax.swing.JFrame {
                 mostrarMarcadorUEFA(equipo1, equipo2, golesEquipo1, golesEquipo2);
 
                 // Actualizar la tabla con los resultados del partido
-                actualizarTabla(equipo1, equipo2, golesEquipo1, golesEquipo2, tblPuntajeCONCACAF);
+                actualizarTabla(equipo1, equipo2, golesEquipo1, golesEquipo2, tblPuntajeCONMEBOL);
             }
         }
 
@@ -900,6 +1001,114 @@ public class Eliminatoria extends javax.swing.JFrame {
         }
 
         // Método para obtener dos equipos al azar de una confederación, EL ERROR ESTÁ EN OBTENER INFORMACION DE LA CLASE CONFEDERACION 
+        private List<String> obtenerEquiposAlAzarAFC(Confederacion confederacion, Random random) {
+            String[] equiposArray = confederacion.getAFC();
+            List<String> equipos = new ArrayList<>(Arrays.asList(equiposArray));
+
+            int numEquipos = equipos.size();
+
+            // Obtener dos índices aleatorios distintos para los equipos
+            int indexEquipo1 = random.nextInt(numEquipos);
+            int indexEquipo2 = random.nextInt(numEquipos - 1);
+            if (indexEquipo2 >= indexEquipo1) {
+                indexEquipo2++; // Asegurar que el segundo índice sea distinto del primero
+            }
+
+            String equipo1 = equipos.get(indexEquipo1);
+            String equipo2 = equipos.get(indexEquipo2);
+
+            return Arrays.asList(equipo1, equipo2);
+        }
+        private List<String> obtenerEquiposAlAzarCAF(Confederacion confederacion, Random random) {
+            String[] equiposArray = confederacion.getCAF();
+            List<String> equipos = new ArrayList<>(Arrays.asList(equiposArray));
+
+            int numEquipos = equipos.size();
+
+            // Obtener dos índices aleatorios distintos para los equipos
+            int indexEquipo1 = random.nextInt(numEquipos);
+            int indexEquipo2 = random.nextInt(numEquipos - 1);
+            if (indexEquipo2 >= indexEquipo1) {
+                indexEquipo2++; // Asegurar que el segundo índice sea distinto del primero
+            }
+
+            String equipo1 = equipos.get(indexEquipo1);
+            String equipo2 = equipos.get(indexEquipo2);
+
+            return Arrays.asList(equipo1, equipo2);
+        }
+        private List<String> obtenerEquiposAlAzarCONMEBOL(Confederacion confederacion, Random random) {
+            String[] equiposArray = confederacion.getCONMEBOL();
+            List<String> equipos = new ArrayList<>(Arrays.asList(equiposArray));
+
+            int numEquipos = equipos.size();
+
+            // Obtener dos índices aleatorios distintos para los equipos
+            int indexEquipo1 = random.nextInt(numEquipos);
+            int indexEquipo2 = random.nextInt(numEquipos - 1);
+            if (indexEquipo2 >= indexEquipo1) {
+                indexEquipo2++; // Asegurar que el segundo índice sea distinto del primero
+            }
+
+            String equipo1 = equipos.get(indexEquipo1);
+            String equipo2 = equipos.get(indexEquipo2);
+
+            return Arrays.asList(equipo1, equipo2);
+        }
+        private List<String> obtenerEquiposAlAzarOFC(Confederacion confederacion, Random random) {
+            String[] equiposArray = confederacion.getOFC();
+            List<String> equipos = new ArrayList<>(Arrays.asList(equiposArray));
+
+            int numEquipos = equipos.size();
+
+            // Obtener dos índices aleatorios distintos para los equipos
+            int indexEquipo1 = random.nextInt(numEquipos);
+            int indexEquipo2 = random.nextInt(numEquipos - 1);
+            if (indexEquipo2 >= indexEquipo1) {
+                indexEquipo2++; // Asegurar que el segundo índice sea distinto del primero
+            }
+
+            String equipo1 = equipos.get(indexEquipo1);
+            String equipo2 = equipos.get(indexEquipo2);
+
+            return Arrays.asList(equipo1, equipo2);
+        }
+        private List<String> obtenerEquiposAlAzarCONCACAF(Confederacion confederacion, Random random) {
+            String[] equiposArray = confederacion.getCONCACAF();
+            List<String> equipos = new ArrayList<>(Arrays.asList(equiposArray));
+
+            int numEquipos = equipos.size();
+
+            // Obtener dos índices aleatorios distintos para los equipos
+            int indexEquipo1 = random.nextInt(numEquipos);
+            int indexEquipo2 = random.nextInt(numEquipos - 1);
+            if (indexEquipo2 >= indexEquipo1) {
+                indexEquipo2++; // Asegurar que el segundo índice sea distinto del primero
+            }
+
+            String equipo1 = equipos.get(indexEquipo1);
+            String equipo2 = equipos.get(indexEquipo2);
+
+            return Arrays.asList(equipo1, equipo2);
+        }
+        private List<String> obtenerEquiposAlAzarUEFA(Confederacion confederacion, Random random) {
+            String[] equiposArray = confederacion.getUEFA();
+            List<String> equipos = new ArrayList<>(Arrays.asList(equiposArray));
+
+            int numEquipos = equipos.size();
+
+            // Obtener dos índices aleatorios distintos para los equipos
+            int indexEquipo1 = random.nextInt(numEquipos);
+            int indexEquipo2 = random.nextInt(numEquipos - 1);
+            if (indexEquipo2 >= indexEquipo1) {
+                indexEquipo2++; // Asegurar que el segundo índice sea distinto del primero
+            }
+
+            String equipo1 = equipos.get(indexEquipo1);
+            String equipo2 = equipos.get(indexEquipo2);
+
+            return Arrays.asList(equipo1, equipo2);
+        }
         private List<String> obtenerEquiposAlAzar(Confederacion confederacion, Random random) {
             String[] equiposArray = confederacion.getCONCACAF();
             List<String> equipos = new ArrayList<>(Arrays.asList(equiposArray));
@@ -987,9 +1196,9 @@ public class Eliminatoria extends javax.swing.JFrame {
         }
 
         // Método para obtener el resultado como String
-        private void obtenerResultadoSedeEncuentro() {
+        private void obtenerResultadoSedeEncuentroAFC() {
             Random random = new Random();
-            String[] equipos = obtenerEquiposAlAzar(confederacion, random).toArray(new String[0]);
+            String[] equipos = obtenerEquiposAlAzarAFC(confederacion, random).toArray(new String[0]);
             String paisSede = generarPaisSede(random);
             String sede = generarSede(random, paisSede);
             String marcador = generarMarcador(random);
@@ -998,10 +1207,90 @@ public class Eliminatoria extends javax.swing.JFrame {
             SedesEncuentros sedeEncuentro = new SedesEncuentros(identificador, paisSede, sede, equipos, marcador);
             txtResultadoAFC.append(sedeEncuentro.toString() + "\n");
         }
+        private void obtenerResultadoSedeEncuentroCAF() {
+            Random random = new Random();
+            String[] equipos = obtenerEquiposAlAzarCAF(confederacion, random).toArray(new String[0]);
+            String paisSede = generarPaisSede(random);
+            String sede = generarSede(random, paisSede);
+            String marcador = generarMarcador(random);
+            String identificador = generarIdentificador();
 
-        public void mostrarResultados() {
+            SedesEncuentros sedeEncuentro = new SedesEncuentros(identificador, paisSede, sede, equipos, marcador);
+            txtResultadoCAF.append(sedeEncuentro.toString() + "\n");
+        }
+        private void obtenerResultadoSedeEncuentroCONCA() {
+            Random random = new Random();
+            String[] equipos = obtenerEquiposAlAzarCONCACAF(confederacion, random).toArray(new String[0]);
+            String paisSede = generarPaisSede(random);
+            String sede = generarSede(random, paisSede);
+            String marcador = generarMarcador(random);
+            String identificador = generarIdentificador();
+
+            SedesEncuentros sedeEncuentro = new SedesEncuentros(identificador, paisSede, sede, equipos, marcador);
+            txtResultadoCONCACAF.append(sedeEncuentro.toString() + "\n");
+        }
+        private void obtenerResultadoSedeEncuentroCONMEBOL() {
+            Random random = new Random();
+            String[] equipos = obtenerEquiposAlAzarCONMEBOL(confederacion, random).toArray(new String[0]);
+            String paisSede = generarPaisSede(random);
+            String sede = generarSede(random, paisSede);
+            String marcador = generarMarcador(random);
+            String identificador = generarIdentificador();
+
+            SedesEncuentros sedeEncuentro = new SedesEncuentros(identificador, paisSede, sede, equipos, marcador);
+            txtResultadoCONMEBOL.append(sedeEncuentro.toString() + "\n");
+        }
+        private void obtenerResultadoSedeEncuentroOFC() {
+            Random random = new Random();
+            String[] equipos = obtenerEquiposAlAzarOFC(confederacion, random).toArray(new String[0]);
+            String paisSede = generarPaisSede(random);
+            String sede = generarSede(random, paisSede);
+            String marcador = generarMarcador(random);
+            String identificador = generarIdentificador();
+
+            SedesEncuentros sedeEncuentro = new SedesEncuentros(identificador, paisSede, sede, equipos, marcador);
+            txtResultadoOFC.append(sedeEncuentro.toString() + "\n");
+        }
+        private void obtenerResultadoSedeEncuentroUEFA() {
+            Random random = new Random();
+            String[] equipos = obtenerEquiposAlAzarUEFA(confederacion, random).toArray(new String[0]);
+            String paisSede = generarPaisSede(random);
+            String sede = generarSede(random, paisSede);
+            String marcador = generarMarcador(random);
+            String identificador = generarIdentificador();
+
+            SedesEncuentros sedeEncuentro = new SedesEncuentros(identificador, paisSede, sede, equipos, marcador);
+            txtResultadoUEFA.append(sedeEncuentro.toString() + "\n");
+        }
+
+        public void mostrarResultadosAFC() {
             for (int i = 0; i < 160; i++) {
-                obtenerResultadoSedeEncuentro();
+                obtenerResultadoSedeEncuentroAFC();
+            }
+        }
+        public void mostrarResultadosCAF() {
+            for (int i = 0; i < 160; i++) {
+                obtenerResultadoSedeEncuentroCAF();
+            }
+        }
+        public void mostrarResultadosCONCA() {
+            for (int i = 0; i < 160; i++) {
+                obtenerResultadoSedeEncuentroCONCA();
+            }
+        }
+        public void mostrarResultadosCONMEBOL() {
+            for (int i = 0; i < 160; i++) {
+                obtenerResultadoSedeEncuentroCONMEBOL();
+            }
+        }
+        public void mostrarResultadosUEFA() {
+            for (int i = 0; i < 160; i++) {
+                obtenerResultadoSedeEncuentroUEFA();
+            }
+        }
+        public void mostrarResultadosOFC() {
+            for (int i = 0; i < 160; i++) {
+                obtenerResultadoSedeEncuentroOFC();
             }
         }
     }
@@ -1568,7 +1857,7 @@ public class Eliminatoria extends javax.swing.JFrame {
  //---------------------------Concacaf------------------------------------------------------
     private void btnPartidoConcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoConcaActionPerformed
         desactivarBotonDespuesDeDosClicks(btnPartidoConca);
-        partidosUnoXUno(tblPuntajeCONCACAF);
+        partidosUnoXUnoCONCACAF(tblPuntajeCONCACAF);
         simularPartidosUno(tblPuntajeCONCACAF);
         actualizarPuntosPartidosJugadosUno(tblPuntajeCONCACAF);
         actualizarDiferenciaGolesUno(tblPuntajeCONCACAF);
@@ -1586,7 +1875,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         SedesEncuentros sedeEncuentro = new SedesEncuentros("1", "Estados Unidos", "Boston", paises, "2-4");
 
 // Obtener el resultado
-        sedeEncuentro.mostrarResultados();
+        sedeEncuentro.mostrarResultadosCONCA();
 
     }//GEN-LAST:event_btnResultadoConcaActionPerformed
 //---------------------------AFC------------------------------------------------------
@@ -1609,13 +1898,13 @@ public class Eliminatoria extends javax.swing.JFrame {
         SedesEncuentros sedeEncuentro = new SedesEncuentros("1", "Estados Unidos", "Boston", paises, "2-4");
 
 // Obtener el resultado
-        sedeEncuentro.mostrarResultados();
+        sedeEncuentro.mostrarResultadosAFC();
 
     }//GEN-LAST:event_btnResultadoAFCActionPerformed
 //---------------------------CAF------------------------------------------------------
     private void btnPartidoCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoCAFActionPerformed
         desactivarBotonDespuesDeDosClicks(btnPartidoCAF);
-        partidosUnoXUno(tblPuntajeCAF);
+        partidosUnoXUnoCAF(tblPuntajeCAF);
         simularPartidosUno(tblPuntajeCAF);
         actualizarPuntosPartidosJugadosUno(tblPuntajeCAF);
         actualizarDiferenciaGolesUno(tblPuntajeCAF);
@@ -1636,14 +1925,14 @@ public class Eliminatoria extends javax.swing.JFrame {
         SedesEncuentros sedeEncuentro = new SedesEncuentros("1", "Estados Unidos", "Boston", paises, "2-4");
 
 // Obtener el resultado
-        sedeEncuentro.mostrarResultados();
+        sedeEncuentro.mostrarResultadosCAF();
 
 
     }//GEN-LAST:event_btnResultadoCAFActionPerformed
 //---------------------------CONMEBOL------------------------------------------------------
     private void btnPartidoCONMEBOLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoCONMEBOLActionPerformed
         desactivarBotonDespuesDeDosClicks(btnPartidoCONMEBOL);
-        partidosUnoXUno(tblPuntajeCONMEBOL);
+        partidosUnoXUnoCONMEBOL(tblPuntajeCONMEBOL);
         simularPartidosUno(tblPuntajeCONMEBOL);
         actualizarPuntosPartidosJugadosUno(tblPuntajeCONMEBOL);
         actualizarDiferenciaGolesUno(tblPuntajeCONMEBOL);
@@ -1661,13 +1950,13 @@ public class Eliminatoria extends javax.swing.JFrame {
         SedesEncuentros sedeEncuentro = new SedesEncuentros("1", "Estados Unidos", "Boston", paises, "2-4");
 
 // Obtener el resultado
-        sedeEncuentro.mostrarResultados();
+        sedeEncuentro.mostrarResultadosCONMEBOL();
 
     }//GEN-LAST:event_btnResultadoCONMEBOLActionPerformed
 //---------------------------OFC------------------------------------------------------
     private void btnPartidoOFCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoOFCActionPerformed
         desactivarBotonDespuesDeDosClicks(btnPartidoOFC);
-        partidosUnoXUno(tblPuntajeOFC);
+        partidosUnoXUnoOFC(tblPuntajeOFC);
         simularPartidosUno(tblPuntajeOFC);
         actualizarPuntosPartidosJugadosUno(tblPuntajeOFC);
         actualizarDiferenciaGolesUno(tblPuntajeOFC);
@@ -1685,7 +1974,7 @@ public class Eliminatoria extends javax.swing.JFrame {
         SedesEncuentros sedeEncuentro = new SedesEncuentros("1", "Estados Unidos", "Boston", paises, "2-4");
 
 // Obtener el resultado
-        sedeEncuentro.mostrarResultados();
+        sedeEncuentro.mostrarResultadosOFC();
 
     }//GEN-LAST:event_btnResultadoOFCActionPerformed
 //---------------------------UEFA------------------------------------------------------
@@ -1698,13 +1987,13 @@ public class Eliminatoria extends javax.swing.JFrame {
         SedesEncuentros sedeEncuentro = new SedesEncuentros("1", "México", "Boston", paises, "2-4");
 
 // Obtener el resultado
-        sedeEncuentro.mostrarResultados();
+        sedeEncuentro.mostrarResultadosUEFA();
 
     }//GEN-LAST:event_btnResultadoUEFAActionPerformed
 
     private void btnPartidoUEFAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidoUEFAActionPerformed
        desactivarBotonDespuesDeDosClicks(btnPartidoUEFA);
-        partidosUnoXUno(tblPuntajeUEFA);
+        partidosUnoXUnoUEFA(tblPuntajeUEFA);
         simularPartidosUno(tblPuntajeUEFA);
         actualizarPuntosPartidosJugadosUno(tblPuntajeUEFA);
         actualizarDiferenciaGolesUno(tblPuntajeUEFA);
