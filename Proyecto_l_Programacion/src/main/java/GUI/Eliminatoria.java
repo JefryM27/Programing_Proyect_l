@@ -12,12 +12,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 import logica.Confederacion;
 
-/**
- *
- * @author 50672
- */
+
 public class Eliminatoria extends javax.swing.JFrame {
 
     Confederacion confederacion = new Confederacion();
@@ -333,114 +332,42 @@ public class Eliminatoria extends javax.swing.JFrame {
             }
         }
     }
-    //---------------------------------Metodo actualizar Putnos Partidos Jugados------------------------------------------------------------------------------------------
+    //---------------------------------Metodo actualizar Puntos Partidos Jugados------------------------------------------------------------------------------------------
 
     private void actualizarPuntosPartidosJugados(JTable tabla) {
-        DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+    DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
 
-        for (int i = 0; i < modelo.getRowCount(); i++) {
-            int partidosJugados = (int) modelo.getValueAt(i, 5) + (int) modelo.getValueAt(i, 6) + (int) modelo.getValueAt(i, 7);
-            int puntos = 3 * (int) modelo.getValueAt(i, 6) + (int) modelo.getValueAt(i, 7);
+    for (int i = 0; i < modelo.getRowCount(); i++) {
+        int partidosJugados = (int) modelo.getValueAt(i, 5) + (int) modelo.getValueAt(i, 6) + (int) modelo.getValueAt(i, 7);
+        int puntos = 3 * (int) modelo.getValueAt(i, 6) + (int) modelo.getValueAt(i, 7);
 
-            modelo.setValueAt(partidosJugados, i, 4);
-            modelo.setValueAt(puntos, i, 3);
-        }
+        modelo.setValueAt(partidosJugados, i, 4);
+        modelo.setValueAt(puntos, i, 3);
     }
+
+    TableRowSorter<TableModel> sorter = new TableRowSorter<>(modelo);
+    tabla.setRowSorter(sorter);
+
+    // Especificar el comparador para la columna de puntos (columna 3) para ordenar en orden descendente
+    sorter.setComparator(3, Comparator.reverseOrder());
+    sorter.sort();
+}
 
     //---------------------------------Metodo Actualizar Diferencia Goles------------------------------------------------------------------------------------------
     private void actualizarDiferenciaGoles(JTable tabla) {
-        DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+    DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
 
-        for (int i = 0; i < modelo.getRowCount(); i++) {
-            int golesFavor = (int) modelo.getValueAt(i, 8);
-            int golesContra = (int) modelo.getValueAt(i, 9);
-            int diferenciaGoles = golesFavor - golesContra;
+    for (int i = 0; i < modelo.getRowCount(); i++) {
+        int golesFavor = (int) modelo.getValueAt(i, 8);
+        int golesContra = (int) modelo.getValueAt(i, 9);
+        int diferenciaGoles = golesFavor - golesContra;
 
-            modelo.setValueAt(diferenciaGoles, i, 10);
+        // Calcular el valor absoluto de la diferencia de goles
+        int diferenciaGolesAbs = Math.abs(diferenciaGoles);
 
-            // Evitar valores negativos en la columna de diferencia de goles
-            if (diferenciaGoles < 0) {
-                modelo.setValueAt(0, i, 10); // Establecer la diferencia de goles como 0
-                modelo.setValueAt(golesFavor, i, 8); // Actualizar los goles a favor
-                modelo.setValueAt(golesContra, i, 9); // Actualizar los goles en contra
-            }
-        }
+        modelo.setValueAt(diferenciaGolesAbs, i, 10);
     }
-
-    //---------------------------------Metodo Ordenar Posiciones------------------------------------------------------------------------------------------
-    /*private void ordenarPosiciones(JTable tabla) {
-        DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
-
-        // Crear un comparador personalizado para ordenar las filas según el puntaje PTS en forma descendente
-        Comparator<Object[]> comparador = (fila1, fila2) -> {
-            int pts1 = (int) fila1[3];
-            int pts2 = (int) fila2[3];
-            return Integer.compare(pts2, pts1);
-        };
-
-        // Obtener la cantidad de filas del modelo
-        int rowCount = modelo.getRowCount();
-
-        // Ordenar las filas según el puntaje PTS en forma descendente
-        List<Object[]> filas = new ArrayList<>();
-        for (int i = 0; i < rowCount; i++) {
-            Object[] fila = new Object[modelo.getColumnCount()];
-            for (int j = 0; j < modelo.getColumnCount(); j++) {
-                fila[j] = modelo.getValueAt(i, j);
-            }
-            filas.add(fila);
-        }
-        filas.sort(comparador);
-
-        // Actualizar las posiciones en la tabla de posiciones
-        for (int i = 0; i < filas.size(); i++) {
-            Object[] fila = filas.get(i);
-            fila[0] = i + 1; // Actualizar la posición
-            modelo.removeRow(i);
-            modelo.insertRow(i, fila);
-        }
-    }*/
-//---------------------------------------Simulate match by match--------------------------------
-
-    public static void equiposAlAzar() {
-        // Nombres de las selecciones
-        String[] nombresSelecciones = {"Anguila", "Antigua y Barbuda", "Aruba", "Bahamas", "Barbados", "Belice", "Bermudas", "Canadá", "Costa Rica", "Cuba", "Curazao", "Dominica", "EEUU", "El Salvador", "Granada", "Guatemala", "Guyana", "Haití", "Honduras", "Islas Caimán",
-            "Islas Vírgenes Británicas", "Islas Vírgenes Estadounidenses", "Jamaica", "México", "Montserrat", "Nicaragua", "Panamá", "Puerto Rico", "República Dominicana", "San Cristóbal y Nieves", "San Vicente y las Granadinas", "Santa Lucía", "Surinam", "Trinidad y Tobago", "Turcas y Caicos"};
-
-        Random random = new Random();
-
-        // Generar índices aleatorios para los equipos
-        int indiceEquipo1 = random.nextInt(nombresSelecciones.length);
-        int indiceEquipo2 = random.nextInt(nombresSelecciones.length);
-
-        // Asegurarse de que los índices de los equipos sean diferentes
-        while (indiceEquipo2 == indiceEquipo1) {
-            indiceEquipo2 = random.nextInt(nombresSelecciones.length);
-        }
-
-        // Obtener los nombres de los equipos
-        String equipo1 = nombresSelecciones[indiceEquipo1];
-        String equipo2 = nombresSelecciones[indiceEquipo2];
-
-        // Asignar goles aleatorios a cada equipo
-        int golesEquipo1 = asignarGoles();
-        int golesEquipo2 = asignarGoles();
-
-        // Calcular y mostrar el marcador
-        marcador(golesEquipo1, golesEquipo2);
-    }
-
-    public static int asignarGoles() {
-        Random random = new Random();
-        int maxGoles = 10;
-        int golesAsignados = random.nextInt(maxGoles + 1);
-        return golesAsignados;
-    }
-
-    public static void marcador(int golesEquipo1, int golesEquipo2) {
-        System.out.println("Marcador: " + golesEquipo1 + " - " + golesEquipo2);
-    }
-
+}
     //--------------------------------------------Desactivar botones---------------------------------------------------
     private void desactivarBotones(JButton simularPartido, JButton botonPartido, JButton botonResultado) {
         simularPartido.setEnabled(false);
@@ -681,7 +608,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         // Ordenar las posiciones en la tabla
         ordenarPosiciones(tabla);
     }
-
     public static int asignarGoles(Random random) {
         int maxGoles = 10;
         return random.nextInt(maxGoles + 1);
@@ -722,8 +648,8 @@ public class Eliminatoria extends javax.swing.JFrame {
         txtResultadoAFC.append("Marcador: " + equipo1 + " " + golesEquipo1 + " - " + golesEquipo2 + " " + equipo2 + "\n");
         txtResultadoAFC.append("------------------------------------\n");
 
+    
     }
-
     public void actualizarTabla(String equipo1, String equipo2, int golesEquipo1, int golesEquipo2, JTable tabla) {
         DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
         int rowCount = modelo.getRowCount();
@@ -784,43 +710,44 @@ public class Eliminatoria extends javax.swing.JFrame {
         }
     }
 
-    public void ordenarPosiciones(JTable tabla) {
-        DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+     public void ordenarPosiciones(JTable tabla) {
+    DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
 
-        // Crear un comparador personalizado para ordenar las filas según el puntaje PTS en forma descendente
-        Comparator<Object[]> comparador = (fila1, fila2) -> {
-            int pts1 = (int) fila1[5];
-            int pts2 = (int) fila2[5];
-            return Integer.compare(pts2, pts1);
-        };
+    // Crear un comparador personalizado para ordenar las filas según el puntaje PTS en forma descendente
+    Comparator<Object[]> comparador = (fila1, fila2) -> {
+        int pts1 = (int) fila1[3]; // Columna de puntos (índice 3)
+        int pts2 = (int) fila2[3]; // Columna de puntos (índice 3)
+        return Integer.compare(pts2, pts1);
+    };
 
-        // Obtener la cantidad de filas del modelo
-        int rowCount = modelo.getRowCount();
+    // Obtener la cantidad de filas del modelo
+    int rowCount = modelo.getRowCount();
 
-        // Crear una lista temporal para almacenar las filas ordenadas
-        List<Object[]> filas = new ArrayList<>();
-        for (int i = 0; i < rowCount; i++) {
-            Object[] fila = new Object[modelo.getColumnCount()];
-            for (int j = 0; j < modelo.getColumnCount(); j++) {
-                fila[j] = modelo.getValueAt(i, j);
-            }
-            filas.add(fila);
+    // Crear una lista temporal para almacenar las filas ordenadas
+    List<Object[]> filas = new ArrayList<>();
+    for (int i = 0; i < rowCount; i++) {
+        Object[] fila = new Object[modelo.getColumnCount()];
+        for (int j = 0; j < modelo.getColumnCount(); j++) {
+            fila[j] = modelo.getValueAt(i, j);
         }
-
-        // Ordenar las filas según el puntaje PTS en forma descendente
-        filas.sort(comparador);
-
-        // Limpiar el modelo de tabla existente
-        modelo.setRowCount(0);
-
-        // Insertar las filas ordenadas en el modelo de tabla
-        for (int i = 0; i < filas.size(); i++) {
-            Object[] fila = filas.get(i);
-            fila[0] = i + 1; // Actualizar la posición
-            modelo.addRow(fila);
-        }
-        modelo.fireTableDataChanged();
+        filas.add(fila);
     }
+
+    // Ordenar las filas según el puntaje PTS en forma descendente
+    filas.sort(comparador);
+
+    // Limpiar el modelo de tabla existente
+    modelo.setRowCount(0);
+
+    // Insertar las filas ordenadas en el modelo de tabla
+    for (int i = 0; i < filas.size(); i++) {
+        Object[] fila = filas.get(i);
+        fila[0] = i + 1; // Actualizar la posición
+        modelo.addRow(fila);
+    }
+    modelo.fireTableDataChanged();
+}
+
 
     private void simularPartidosUno(JTable tabla) {
         Random rand = new Random();
@@ -1407,8 +1334,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel1.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 830, 440));
 
         btnPartidoAFC.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        btnPartidoAFC.setForeground(new java.awt.Color(0, 0, 0));
-        btnPartidoAFC.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\TodosLosBotones.jpg")); // NOI18N
         btnPartidoAFC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPartidoAFCActionPerformed(evt);
@@ -1417,14 +1342,12 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel1.add(btnPartidoAFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 510, 150, 80));
 
         btnSimularTodoAFC.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        btnSimularTodoAFC.setForeground(new java.awt.Color(0, 0, 0));
-        btnSimularTodoAFC.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\TodosLosBotones.jpg")); // NOI18N
         btnSimularTodoAFC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSimularTodoAFCActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSimularTodoAFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 510, -1, 80));
+        jPanel1.add(btnSimularTodoAFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 510, 160, 80));
 
         txtResultadoAFC.setColumns(20);
         txtResultadoAFC.setRows(5);
@@ -1433,8 +1356,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel1.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 220, 440));
 
         btnResultadoAFC.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        btnResultadoAFC.setForeground(new java.awt.Color(0, 0, 0));
-        btnResultadoAFC.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\TodosLosBotones.jpg")); // NOI18N
         btnResultadoAFC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResultadoAFCActionPerformed(evt);
@@ -1443,7 +1364,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel1.add(btnResultadoAFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 150, 80));
 
         jTextField1.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
         jTextField1.setText("Ver Resultados");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1453,7 +1373,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, 150, 30));
 
         jTextField2.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
         jTextField2.setText("Simular Todos");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1463,12 +1382,9 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 590, 140, 30));
 
         jTextField3.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
         jTextField3.setText("Simular Partido");
         jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 590, 150, 30));
-
-        lblFondoAFC.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\AFC.jpg")); // NOI18N
-        jPanel1.add(lblFondoAFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1510, 820));
+        jPanel1.add(lblFondoAFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 1510, 820));
 
         tblConfederaciones.addTab("AFC", jPanel1);
 
@@ -1487,8 +1403,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel2.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 840, 380));
 
         btnPartidoCAF.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        btnPartidoCAF.setForeground(new java.awt.Color(0, 0, 0));
-        btnPartidoCAF.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\TodosLosBotones.jpg")); // NOI18N
         btnPartidoCAF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPartidoCAFActionPerformed(evt);
@@ -1497,8 +1411,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel2.add(btnPartidoCAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 660, 150, 80));
 
         btnSimularTodoCAF.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        btnSimularTodoCAF.setForeground(new java.awt.Color(0, 0, 0));
-        btnSimularTodoCAF.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\TodosLosBotones.jpg")); // NOI18N
         btnSimularTodoCAF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSimularTodoCAFActionPerformed(evt);
@@ -1513,8 +1425,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel2.add(jScrollPane19, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 0, 290, 390));
 
         btnResultadoCAF.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        btnResultadoCAF.setForeground(new java.awt.Color(0, 0, 0));
-        btnResultadoCAF.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\TodosLosBotones.jpg")); // NOI18N
         btnResultadoCAF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResultadoCAFActionPerformed(evt);
@@ -1523,22 +1433,16 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel2.add(btnResultadoCAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 650, 150, 80));
 
         jTextField4.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
         jTextField4.setText("Simular Partido");
         jPanel2.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 740, 150, 30));
 
         jTextField5.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(0, 0, 0));
         jTextField5.setText("Simular Todos");
         jPanel2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 730, 140, 30));
 
         jTextField6.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jTextField6.setForeground(new java.awt.Color(0, 0, 0));
         jTextField6.setText("Ver Resultados");
         jPanel2.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 730, 150, -1));
-
-        lblFondoCAF.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\CAF.png")); // NOI18N
-        lblFondoCAF.setText("jLabel1");
         jPanel2.add(lblFondoCAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1510, 840));
 
         tblConfederaciones.addTab("CAF", jPanel2);
@@ -1558,8 +1462,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel3.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 700, 450));
 
         btnPartidoConca.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        btnPartidoConca.setForeground(new java.awt.Color(0, 0, 0));
-        btnPartidoConca.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\TodosLosBotones.jpg")); // NOI18N
         btnPartidoConca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPartidoConcaActionPerformed(evt);
@@ -1568,8 +1470,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel3.add(btnPartidoConca, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 530, 150, 80));
 
         btnSimularTodoConca.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        btnSimularTodoConca.setForeground(new java.awt.Color(0, 0, 0));
-        btnSimularTodoConca.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\TodosLosBotones.jpg")); // NOI18N
         btnSimularTodoConca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSimularTodoConcaActionPerformed(evt);
@@ -1584,8 +1484,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel3.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1241, 0, 240, 410));
 
         btnResultadoConca.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        btnResultadoConca.setForeground(new java.awt.Color(0, 0, 0));
-        btnResultadoConca.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\TodosLosBotones.jpg")); // NOI18N
         btnResultadoConca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResultadoConcaActionPerformed(evt);
@@ -1594,21 +1492,16 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel3.add(btnResultadoConca, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 530, 150, 80));
 
         jTextField7.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jTextField7.setForeground(new java.awt.Color(0, 0, 0));
         jTextField7.setText("Simular Partido");
         jPanel3.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 610, 150, -1));
 
         jTextField8.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jTextField8.setForeground(new java.awt.Color(0, 0, 0));
         jTextField8.setText("Simular Todos");
         jPanel3.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 610, 140, -1));
 
         jTextField9.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jTextField9.setForeground(new java.awt.Color(0, 0, 0));
         jTextField9.setText("Ver Resultados");
         jPanel3.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 610, 150, -1));
-
-        lblFondoCONCACAF.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\Concacaf.jpg")); // NOI18N
         jPanel3.add(lblFondoCONCACAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1510, 820));
 
         tblConfederaciones.addTab("CONCACAF", jPanel3);
@@ -1628,8 +1521,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel4.add(jScrollPane20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 720, 200));
 
         btnPartidoCONMEBOL.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        btnPartidoCONMEBOL.setForeground(new java.awt.Color(0, 0, 0));
-        btnPartidoCONMEBOL.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\TodosLosBotones.jpg")); // NOI18N
         btnPartidoCONMEBOL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPartidoCONMEBOLActionPerformed(evt);
@@ -1638,8 +1529,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel4.add(btnPartidoCONMEBOL, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 430, 150, 70));
 
         btnSimularTodoCONMEBOL.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        btnSimularTodoCONMEBOL.setForeground(new java.awt.Color(0, 0, 0));
-        btnSimularTodoCONMEBOL.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\TodosLosBotones.jpg")); // NOI18N
         btnSimularTodoCONMEBOL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSimularTodoCONMEBOLActionPerformed(evt);
@@ -1654,8 +1543,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel4.add(jScrollPane21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 0, 240, 360));
 
         btnResultadoCONMEBOL.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        btnResultadoCONMEBOL.setForeground(new java.awt.Color(0, 0, 0));
-        btnResultadoCONMEBOL.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\TodosLosBotones.jpg")); // NOI18N
         btnResultadoCONMEBOL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResultadoCONMEBOLActionPerformed(evt);
@@ -1664,21 +1551,16 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel4.add(btnResultadoCONMEBOL, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 430, 160, 70));
 
         jTextField10.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jTextField10.setForeground(new java.awt.Color(0, 0, 0));
         jTextField10.setText("Simular Partido");
         jPanel4.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 500, 150, -1));
 
         jTextField11.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jTextField11.setForeground(new java.awt.Color(0, 0, 0));
         jTextField11.setText("Simular Todos");
         jPanel4.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 500, 140, -1));
 
         jTextField12.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jTextField12.setForeground(new java.awt.Color(0, 0, 0));
         jTextField12.setText("Ver Resultados");
         jPanel4.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 500, 140, -1));
-
-        lblFondoCONMEBOL.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\Conmebol.jpg")); // NOI18N
         jPanel4.add(lblFondoCONMEBOL, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1510, 820));
 
         tblConfederaciones.addTab("CONMEBOL", jPanel4);
@@ -1700,8 +1582,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel8.add(jScrollPane22, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 630, 340));
 
         btnPartidoOFC.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        btnPartidoOFC.setForeground(new java.awt.Color(0, 0, 0));
-        btnPartidoOFC.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\TodosLosBotones.jpg")); // NOI18N
         btnPartidoOFC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPartidoOFCActionPerformed(evt);
@@ -1710,8 +1590,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel8.add(btnPartidoOFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 400, 150, 70));
 
         btnSimularTodoOFC.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        btnSimularTodoOFC.setForeground(new java.awt.Color(0, 0, 0));
-        btnSimularTodoOFC.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\TodosLosBotones.jpg")); // NOI18N
         btnSimularTodoOFC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSimularTodoOFCActionPerformed(evt);
@@ -1726,8 +1604,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel8.add(jScrollPane23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 210, 340));
 
         btnResultadoOFC.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        btnResultadoOFC.setForeground(new java.awt.Color(0, 0, 0));
-        btnResultadoOFC.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\TodosLosBotones.jpg")); // NOI18N
         btnResultadoOFC.setOpaque(true);
         btnResultadoOFC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1737,21 +1613,16 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel8.add(btnResultadoOFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 150, 80));
 
         jTextField13.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jTextField13.setForeground(new java.awt.Color(0, 0, 0));
         jTextField13.setText("Ver Resultados");
         jPanel8.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, 150, -1));
 
         jTextField14.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jTextField14.setForeground(new java.awt.Color(0, 0, 0));
         jTextField14.setText("Simular Todos");
         jPanel8.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 470, 140, -1));
 
         jTextField15.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jTextField15.setForeground(new java.awt.Color(0, 0, 0));
         jTextField15.setText("Simular Partido");
         jPanel8.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 470, 150, -1));
-
-        lblFondoOFC.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\OFC.jpg")); // NOI18N
         jPanel8.add(lblFondoOFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1510, 830));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -1775,8 +1646,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnResultadoUEFA.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        btnResultadoUEFA.setForeground(new java.awt.Color(0, 0, 0));
-        btnResultadoUEFA.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\TodosLosBotones.jpg")); // NOI18N
         btnResultadoUEFA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResultadoUEFAActionPerformed(evt);
@@ -1797,8 +1666,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel6.add(jScrollPane24, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 650, 390));
 
         btnPartidoUEFA.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        btnPartidoUEFA.setForeground(new java.awt.Color(0, 0, 0));
-        btnPartidoUEFA.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\TodosLosBotones.jpg")); // NOI18N
         btnPartidoUEFA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPartidoUEFAActionPerformed(evt);
@@ -1807,8 +1674,6 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel6.add(btnPartidoUEFA, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 480, 150, 80));
 
         btnSimularTodoUEFA.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        btnSimularTodoUEFA.setForeground(new java.awt.Color(0, 0, 0));
-        btnSimularTodoUEFA.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\TodosLosBotones.jpg")); // NOI18N
         btnSimularTodoUEFA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSimularTodoUEFAActionPerformed(evt);
@@ -1823,29 +1688,23 @@ public class Eliminatoria extends javax.swing.JFrame {
         jPanel6.add(jScrollPane25, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 210, 380));
 
         jTextField16.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jTextField16.setForeground(new java.awt.Color(0, 0, 0));
         jTextField16.setText("Ver Resultados");
         jPanel6.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 560, -1, -1));
 
         jTextField17.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jTextField17.setForeground(new java.awt.Color(0, 0, 0));
         jTextField17.setText("Simular Todos");
         jPanel6.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 560, 150, -1));
 
         jTextField18.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        jTextField18.setForeground(new java.awt.Color(0, 0, 0));
         jTextField18.setText("Simular Partido");
         jPanel6.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 560, 150, -1));
 
         lblFondoUEFA.setFont(new java.awt.Font("Arial", 3, 18)); // NOI18N
-        lblFondoUEFA.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\UEFA.jpg")); // NOI18N
         jPanel6.add(lblFondoUEFA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 1520, 840));
 
         tblConfederaciones.addTab("UEFA", jPanel6);
 
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblFondoPP.setIcon(new javax.swing.ImageIcon("C:\\Users\\jefry\\OneDrive\\Desktop\\UTN\\2º Cuatrimestre\\Programacion I\\Proyectos\\Programing_Proyect_l\\Proyecto_l_Programacion\\Fondos\\Mundial2.jpg")); // NOI18N
         jPanel7.add(lblFondoPP, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -4, 1570, 840));
 
         tblConfederaciones.addTab("PANTALLA PRINCIPAL", jPanel7);
